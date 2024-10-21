@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  font-family: inter;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+
+.cursor {
+  opacity: 0;
+  animation: blink 800ms steps(1) infinite;
+  animation-delay: 100ms;
+}
