@@ -7,7 +7,7 @@ const SplashScreen = ({ children }) => {
   // Hide the splash screen after a delay
   setTimeout(() => {
     setVisible(false);
-  }, 3000);
+  }, 3200);
 
   return (
     <>
