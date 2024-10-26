@@ -1,15 +1,51 @@
+import { createSignal } from "solid-js";
 import ListMenu from "./ListMenu";
 
-const NavBar = () => {
-  return (
-    <div className="sticky top-0 z-50 flex flex-row gap-4 justify-between bg-gray-950 p-4 w-full text-white">
-      <a href="#" class=" cursor-pointer text-lg font-bold">My Portofolio 🚀</a>
-      <div className="sm:hidden lg:block">
-        <ListMenu />
-      </div>
-      <a class="sm:hidden lg:block hover:font-bold hover:text-lg cursor-pointer">Be Friends</a>
-    </div>
-  );
-}
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 
+const NavBar = () => {
+  const [hidden, setHidden] = createSignal(true);
+  return (
+    <nav className="flex flex-row sticky top-0 z-[999] justify-between gap-4 items-center bg-gray-950 p-4 h-16 w-full text-white">
+      <button onclick={() => scrollToSection('hero')} className="cursor-pointer text-lg font-bold text-nowrap">
+        My Portfolio 🚀
+      </button>
+      {/* Mobile */}
+      <div className="relative w-full">
+        <div className={`sm:${hidden() ? "hidden" : "block"} sm:absolute top-[31px] left-[-165px] z-[888] md:static lg:block w-[393px] md:w-full h-fit sm:bg-white md:bg-gray-950`}>
+            <ListMenu />
+        </div>
+      </div>
+      <button
+        className="sm:block lg:hidden p-2 border hover:bg-blue-950"
+        onClick={() => {
+          setHidden((prev) => !prev);
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="size-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
+    </nav>
+  );
+};
 export default NavBar;

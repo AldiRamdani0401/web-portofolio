@@ -4,8 +4,8 @@ import hero from "../../assets/images/hero.png";
 
 const Carousel = () => {
   return (
-    <div className="bg-gray-950 w-full h-full flex sm:gap-16 sm:flex-col-reverse md:flex-row lg:flex-row xl:flex-row md:justify-around lg:justify-around xl:justify-around relative">
-      <div className="self-center mx-auto animate-fadeIn">
+    <div className="bg-gray-950 w-full h-full flex gap-16 sm:flex-col md:flex-row lg:flex-row xl:flex-row md:justify-around lg:justify-around xl:justify-around relative">
+      <div className="flex self-center justify-center mx-auto text-nowrap mt-5 p-5 w-full md:w-fit bg-black md:bg-gray-950 animate-fadeIn">
         <span className="text-white font-bold sm:text-xl md:text-5xl text-center sm:w-80 lg:w-148 xl:w-148">
           <SolidTyper
             text={[
@@ -22,8 +22,8 @@ const Carousel = () => {
           />
         </span>
       </div>
-      <div className="relative animate-fadeIn mx-16">
-        <div className="relative top-0 z-10">
+      <div className="absolute md:relative bottom-0 h-130 w-full md:h-fit md:w-fit animate-fadeIn mx-0 md:mx-16">
+        <div className="relative h-full w-full z-10 ">
           <div className="h-12 w-36 sm:h-14 sm:w-44 rounded-full bg-gradient-to-r from-slate-900 to-slate-800 z-20 text-center py-2 sm:py-4 shadow-lg flex items-center justify-center absolute bottom-5 right-8">
             <span className="font-semibold text-slate-200 text-lg sm:text-lg font-sans tracking-wide hover:font-extrabold">
               <SolidTyper
@@ -33,7 +33,7 @@ const Carousel = () => {
               />
             </span>
           </div>
-          <img className="z-10" src={hero} class="pt-16" alt="Profile" />
+          <img className="z-10 h-full mx-auto md:pt-[76px]" src={hero} alt="aldi-ramdani" />
         </div>
       </div>
     </div>

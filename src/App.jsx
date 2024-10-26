@@ -6,13 +6,15 @@ import MainLayout from "./components/layouts/MainLayout";
 
 function App() {
   return (
-    <SplashScreen>
-      <NavBar/>
-      <MainLayout>
-        <ContentLayout/>
-        <Footer/>
-      </MainLayout>
-    </SplashScreen>
+    <div className="flex flex-col h-screen w-full">
+      <SplashScreen>
+        <NavBar />
+        <MainLayout>
+          <ContentLayout />
+          <Footer />
+        </MainLayout>
+      </SplashScreen>
+    </div>
   );
 }
 

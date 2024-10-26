@@ -36,22 +36,21 @@ import SliderImage from "../fragments/SliderImage";
 
 const ContentLayout = () => {
   return (
-    <div id="content" className="w-full h-full flex flex-col">
-      <div className="flex flex-col">
-        <section id="#">
+      <div id="content" className="flex flex-col relative">
+        <section id="hero" className="h-[645px] md:h-fit">
           <Carousel />
         </section>
         {/* ABOUT ME */}
-        <section id="about-me" className="w-full py-20">
+        <section id="about-me" className="w-full mb-24 mt-10">
           <div className="bg-indigo-950 text-white">
             <h1 className="text-center font-bold text-4xl py-5">About Me 👨🏻‍💼</h1>
           </div>
-          <div className="grid grid-row md:grid-flow-col h-fit gap-5 py-10 px-10 bg-zinc-950">
-            <div className=" w-full h-fit self-center">
-              <img src={profile} class="bg-gray-950 rounded-full md:rounded-sm w-100 hover:bg-indigo-950" />
+          <div className="grid grid-row md:grid-flow-col h-fit py-[50px] gap-0 md:gap-5 sm:px-0 md:px-10 bg-zinc-950">
+            <div className=" w-full h-fit self-center pt-4">
+              <img src={profile} class="bg-gray-950 rounded-none md:rounded-sm sm:w-full md:w-100 hover:bg-indigo-950" />
             </div>
-            <div className="flex flex-col justify-center align-middle h-full self-center">
-              <div className="bg-black p-5 text-white">
+            <div className="flex flex-col justify-center align-middle h-full self-center py-10">
+              <div className="bg-black p-8 md:p-5 text-white">
                 <p className="mb-4 text-justify">
                 👋🏻 Hello, My name is <span className="text-blue-600 font-bold text-xl">Aldi Ramdani</span>, and I proudly come from the vibrant city of
                   <span className="text-indigo-600 font-bold text-md"> Karawang, West Java, Indonesia</span>.
@@ -88,56 +87,62 @@ const ContentLayout = () => {
           </div>
         </section>
         {/* MY EXPERTISE */}
-        <section id="my-expertise" className="w-full py-20">
+        <section id="my-expertise" className="w-full mb-24">
           <div className="bg-indigo-950 text-white">
             <h1 className="text-center font-bold text-4xl py-5"> My Expertise 👨🏻‍💻</h1>
           </div>
-          <div className="grid grid-row md:grid-flow-col md:grid-cols-2 h-fit gap-5 px-5 md:px-10 py-10 bg-zinc-950">
-            <div className="flex flex-col gap-5 md:gap-3">
+          <div className="grid grid-row md:grid-flow-col md:grid-cols-2 h-fit gap-5 md:gap-10 md:px-10 py-10 bg-zinc-950">
+            <div className="flex flex-col gap-3 md:gap-3">
               <h4 className="text-white text-center font-bold text-2xl py-5">Technologies :</h4>
-              <div className="flex flex-row justify-center gap-2 md:gap-2">
+              <div className="flex flex-wrap justify-center gap-2 px-0 md:px-24">
                 <img
                   src={logoHTML}
-                  className="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                  className="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
-                <img src={logoCSS} class="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-                <img src={logoJS} class="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoCSS} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoJS} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
                 <img src={logoPHP} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-                <img src={logoWebPack} class="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-                <img src={logoAstro} class="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-                <img src={logoNodeJS} class="bg-white h-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-              </div>
-              <div className="flex flex-row justify-center gap-2 md:gap-2">
-                <img src={logoLaravel} class="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-                <img src={logoComposer} class="bg-white h-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-                <img src={logoNPM} class="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-                <img src={logoReact} class="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-                <img src={logoReactNative} class="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-                <img src={logoSolidJS} class="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
-                <img src={logoBootstrap} class="bg-white h-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoWebPack} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoAstro} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoNodeJS} class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoLaravel} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoComposer} class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoNPM} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoReact} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoReactNative} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoSolidJS} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
+                <img src={logoBootstrap} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
                 <img src={logoTailwind} class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"/>
               </div>
-              <div className="flex flex-row justify-center gap-2 md:gap-2">
-                <img src={logoReefJS} class="bg-white h-16 p-1 w-28 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-                <img src={logoExpressJS} class="bg-white h-16 p-2 w-36 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-                <img src={logoFastify} class="bg-white h-16 p-1 w-36 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-                <img src={logoBulma} class="bg-white h-16 p-2 w-36 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-              </div>
-              <div className="flex flex-row justify-center gap-2 md:gap-3">
-                <img src={logoMySQL} class="bg-white h-16 p-2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-                <img src={logoPostgreSQL} class="bg-white h-16 p-3 w-36 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-                <img src={logoMongoDB} class="bg-white h-16 p-2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-                <img src={logoSupaBase} class="bg-white h-16 p-3 w-36 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-              </div>
-              <div className="flex flex-row justify-center gap-2 md:gap-3">
-                <img src={logoGoogleCloud} class="bg-white h-16 p-3 w-36 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-                <img src={logoKubernetes} class="bg-white h-16 p-3 w-36 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-                <img src={logoDocker} class="bg-white h-16 p-3 w-36 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
-                <img src={logoNgrok} class="bg-white h-16 p-1 w-36 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+              <div className="flex flex-wrap justify-center gap-2 md:gap-2">
+                <div className="flex justify-center gap-1 w-full md:w-1/3 px-5 md:px-0">
+                  <img src={logoReefJS} class="bg-white h-16 p-1 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                  <img src={logoExpressJS} class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                </div>
+                <div className="flex justify-center gap-1 w-full md:w-1/3 px-5 md:px-0">
+                  <img src={logoFastify} class="bg-white h-16 p-1 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                  <img src={logoBulma} class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                </div>
+                <div className="flex justify-center gap-1 w-full md:w-1/3 px-5 md:px-0">
+                  <img src={logoMySQL} class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                  <img src={logoPostgreSQL} class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                </div>
+                <div className="flex justify-center gap-1 w-full md:w-1/3 px-5 md:px-0">
+                  <img src={logoMongoDB} class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                  <img src={logoSupaBase} class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                </div>
+                <div className="flex justify-center gap-1 w-full md:w-1/3 px-5 md:px-0">
+                  <img src={logoGoogleCloud} class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                  <img src={logoKubernetes} class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                </div>
+                <div className="flex justify-center gap-1 w-full md:w-1/3 px-5 md:px-0">
+                  <img src={logoDocker} class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                  <img src={logoNgrok} class="bg-white h-16 p-1 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"/>
+                </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center align-middle h-full self-center">
-              <div className="bg-black p-5 text-white">
+            <div className="flex flex-col justify-center py-0 md:py-8 align-middle h-full self-center">
+              <div className="bg-black p-8 md:p-5 text-white">
                 <p className="mb-4 text-left md:text-justify">
                 I specialize in a wide range of cutting-edge technologies across various fields, including <span className="text-purple-600 font-bold text-md"> Web</span>, <span className="text-purple-600 font-bold text-md"> Mobile</span>, <span className="text-purple-600 font-bold text-md"> Machine Learning</span>, and <span className="text-purple-600 font-bold text-md"> IoT</span>.
                 </p>
@@ -162,7 +167,7 @@ const ContentLayout = () => {
           </div>
         </section>
         {/* MY EXPERIENCE */}
-        <section id="my-experience" className="w-full py-20">
+        <section id="my-experience" className="w-full mb-24">
           <div className="bg-indigo-950 text-white">
             <h1 className="text-center font-bold text-4xl py-5">My Experience 🚀</h1>
           </div>
@@ -308,7 +313,7 @@ const ContentLayout = () => {
           </div>
         </section>
         {/* PROJECTS */}
-        <section id="projects" className="w-full py-20">
+        <section id="projects" className="w-full mb-24">
           <div className="bg-indigo-950 text-white">
             <h1 className="text-center font-bold text-4xl py-5">Projects 📱📐</h1>
           </div>
@@ -389,7 +394,6 @@ const ContentLayout = () => {
           </div>
         </section>
       </div>
-    </div>
   );
 };
 
