@@ -20,12 +20,12 @@ const NavBar = () => {
       </button>
       {/* Mobile */}
       <div className="relative w-full">
-        <div className={`sm:${hidden() ? "hidden" : "block"} sm:absolute top-[31px] left-[-165px] z-[888] md:static lg:block w-[393px] md:w-full h-fit sm:bg-white md:bg-gray-950`}>
+        <div className={`${hidden() ? "hidden" : "block"} absolute top-[31px] left-[-165px] z-[888] lg:static lg:block w-[393px] lg:w-full h-fit lg:bg-gray-950`}>
             <ListMenu />
         </div>
       </div>
       <button
-        className="sm:block lg:hidden p-2 border hover:bg-blue-950"
+        className="block lg:hidden p-2 border hover:bg-blue-950"
         onClick={() => {
           setHidden((prev) => !prev);
         }}
