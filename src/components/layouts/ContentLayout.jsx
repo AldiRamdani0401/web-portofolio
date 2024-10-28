@@ -36,12 +36,12 @@ import SliderImage from "../fragments/SliderImage";
 
 const ContentLayout = () => {
   return (
-      <div id="content" className="flex flex-col relative">
+      <div id="content" className="relative">
         <section id="hero" className="h-fit">
           <Carousel />
         </section>
         {/* ABOUT ME */}
-        <section id="about-me" className="w-full mb-24 mt-10">
+        <section id="about-me" className="w-full mt-10">
           <div className="bg-indigo-950 text-white">
             <h1 className="text-center font-bold text-4xl py-5">About Me 👨🏻‍💼</h1>
           </div>
@@ -87,7 +87,7 @@ const ContentLayout = () => {
           </div>
         </section>
         {/* MY EXPERTISE */}
-        <section id="my-expertise" className="w-full mb-24">
+        <section id="my-expertise" className="w-full">
           <div className="bg-indigo-950 text-white">
             <h1 className="text-center font-bold text-4xl py-5"> My Expertise 👨🏻‍💻</h1>
           </div>
@@ -148,11 +148,11 @@ const ContentLayout = () => {
                 </p>
 
                 <p className="mb-4 text-justify">
-                  <span className="ml-8">With a strong foundation in</span> <span className="text-purple-600 font-bold text-lg">PHP</span> <span className="font-light">( <i>Laravel, PHP Native, Composer</i> )</span> and <span className="text-purple-600 font-bold text-lg">JavaScript</span> <span className="font-light">( <i>Astro, NPM, NodeJS, React, React-Native, SolidJS, ReefJS, ExpressJS, Fastify</i> )</span>, I am adept at building dynamic and scalable applications for both <span className="text-purple-600 font-bold text-lg">Front-End</span> and <span className="text-purple-600 font-bold text-lg">Back-End</span>.
+                  <span className="ml-8">With a strong foundation in</span> <span className="text-purple-600 font-bold text-lg">PHP</span> <span className="font-light">(<i>Laravel, PHP Native, Composer</i>)</span> and <span className="text-purple-600 font-bold text-lg">JavaScript</span> <span className="font-light">(<i>Astro, NPM, NodeJS, React, React-Native, SolidJS, ReefJS, ExpressJS, Fastify</i>)</span>. I am adept at building dynamic and scalable applications for both <span className="text-purple-600 font-bold text-lg">Front-End</span> and <span className="text-purple-600 font-bold text-lg">Back-End</span>.
                 </p>
                 <p className="mb-4 text-justify">
                 <span className="ml-8">My technical expertise also extends to</span> <span className="text-purple-600 font-bold text-lg">HTML</span>, <span className="text-purple-600 font-bold text-lg">CSS</span>
-                  <span className="font-light"> ( <i>Tailwind, Bulma, Bootstrap</i> )</span>, and databases like <span className="text-purple-600 font-bold text-lg">MySQL</span>, <span className="text-purple-600 font-bold text-lg">PostgreSQL</span>, <span className="text-purple-600 font-bold text-lg">MongoDB</span>, and <span className="text-purple-600 font-bold text-lg">SupaBase</span>.
+                  <span className="font-light"> (<i>Tailwind, Bulma, Bootstrap</i>)</span>, and databases like <span className="text-purple-600 font-bold text-lg">MySQL</span>, <span className="text-purple-600 font-bold text-lg">PostgreSQL</span>, <span className="text-purple-600 font-bold text-lg">MongoDB</span>, and <span className="text-purple-600 font-bold text-lg">SupaBase</span>.
                 </p>
 
                 <p className="mb-4 text-justify">
@@ -167,7 +167,7 @@ const ContentLayout = () => {
           </div>
         </section>
         {/* MY EXPERIENCE */}
-        <section id="my-experience" className="w-full mb-24">
+        <section id="my-experience" className="w-full">
           <div className="bg-indigo-950 text-white">
             <h1 className="text-center font-bold text-4xl py-5">My Experience 🚀</h1>
           </div>
@@ -183,14 +183,14 @@ const ContentLayout = () => {
                 <span className="ml-8">I am excited to join</span> <span class="font-semibold text-blue-500">PT. Pilar Anugerah Digital Indonesia</span>, known as <span class="font-semibold text-indigo-500">Heart Developer</span>, a leading creative industry in information technology in Indonesia.
                 </p>
                 <p className="mb-4 text-justify">
-                Established in early 2024 in DKI Jakarta, <span class="font-semibold text-indigo-500">Heart Developer</span> specializes in turnkey applications and IT consulting, backed by a team of certified professionals with over nine years of experience in impactful digital projects.
+                <span className="ml-8">Established in early 2024 in DKI Jakarta,</span> <span class="font-semibold text-indigo-500">Heart Developer</span> specializes in turnkey applications and IT consulting, backed by a team of certified professionals with over nine years of experience in impactful digital projects.
                 </p>
                 <p className="mb-4 text-justify">
-                As a Junior Fullstack Developer, I aim to significantly contribute by designing and developing innovative applications using Node.js, Astro.js, React, React Native, Solid.js, PostgreSQL, Express, and Fastify.
+                <span className="ml-8">As a Junior Fullstack Developer,</span> I aim to significantly contribute by designing and developing innovative applications using Node.js, Astro.js, React, React Native, Solid.js, PostgreSQL, Express, and Fastify.
                 </p>
 
                 <p className="mb-4 text-justify">
-                I am committed to leveraging my abilities to improve project outcomes and contribute to the company’s mission while growing in a dynamic and supportive environment.
+                <span className="ml-8">I am committed to leveraging my abilities</span> to improve project outcomes and contribute to the company’s mission while growing in a dynamic and supportive environment.
                 </p>
               </div>
             </div>
@@ -214,10 +214,10 @@ const ContentLayout = () => {
                 <p className="mb-4 text-base font-normal lg:text-lg lg:font-light text-justify">Status : Internship Program</p>
                 <hr className="mt-1 mb-2 lg:mb-5" />
                 <p className="mb-4 text-justify">
-                <span class="font-semibold text-blue-500">PT. Layanan Medik Indonesia</span>, through its platform <span className="font-semibold text-indigo-500">GetMedik </span>, established in <span className="font-semibold">2016</span>, is a digital healthcare aggregator in Indonesia, connecting verified healthcare providers with the public to ensure accessible and efficient healthcare services.
+                <span class="ml-8 font-semibold text-blue-500">PT. Layanan Medik Indonesia</span>, through its platform <span className="font-semibold text-indigo-500">GetMedik </span>, established in <span className="font-semibold">2016</span>, is a digital healthcare aggregator in Indonesia, connecting verified healthcare providers with the public to ensure accessible and efficient healthcare services.
                 </p>
                 <p className="mb-4 text-justify">
-                During my 3-month internship as a <span class="font-semibold text-indigo-500">Fullstack Developer Intern</span> at <span class="font-semibold text-indigo-500">GetMedik</span>, was responsible for developing the application using <span class="font-semibold text-indigo-500">NodeJS</span>, <span class="font-semibold text-indigo-500">TotalJS</span>, and <span class="font-semibold text-indigo-500">PostgreSQL</span>. In this role, I contributed to enchancing user efficiency and convenience, while also strengthening my end-to-end application development skills in the digital healthcare sector.
+                <span className="ml-8">During my 3-month internship as a</span> <span class="font-semibold text-indigo-500">Fullstack Developer Intern</span> at <span class="font-semibold text-indigo-500">GetMedik</span>, was responsible for developing the application using <span class="font-semibold text-indigo-500">NodeJS</span>, <span class="font-semibold text-indigo-500">TotalJS</span>, and <span class="font-semibold text-indigo-500">PostgreSQL</span>. In this role, I contributed to enchancing user efficiency and convenience, while also strengthening my end-to-end application development skills in the digital healthcare sector.
                 </p>
               </div>
             </div>
@@ -232,16 +232,13 @@ const ContentLayout = () => {
                 <p className="mb-4 text-[15px] text-left font-light lg:text-lg lg:text-justify">Status : Internship Program</p>
                 <hr className="mt-1 mb-2 lg:mb-5" />
                 <p className="mb-4 text-justify">
-                The <span class="font-semibold text-blue-500">Sony Sugema Institute of Information Technology</span> (STTISS).
+                <span className="ml-8">The</span> <span class="font-semibold text-blue-500">Sony Sugema Institute of Information Technology</span> (STTISS).  is a higher education institution with a vision to become a center of excellence in informatics education with global competitiveness in <span class="font-semibold text-indigo-500">Indonesia</span>.
                 </p>
                 <p className="mb-4 text-justify">
-                is a higher education institution with a vision to become a center of excellence in informatics education with global competitiveness in <span class="font-semibold text-indigo-500">Indonesia</span>.
+                <span className="ml-8">As a Teaching Assistant</span> for the Advanced Internet Programming course in <span class="font-semibold text-indigo-500">PHP</span>. sI was responsible for supporting the course through lecture material preparation, managing assignments and exams, and assisting students in understanding the course content.
                 </p>
                 <p className="mb-4 text-justify">
-                As a Teaching Assistant for the Advanced Internet Programming course in <span class="font-semibold text-indigo-500">PHP</span>. sI was responsible for supporting the course through lecture material preparation, managing assignments and exams, and assisting students in understanding the course content.
-                </p>
-                <p className="mb-4 text-justify">
-                Additionally, I contributed to research, curriculum development, and the evaluation of the learning process, committed to maintaining educational quality and enhancing the student learning experience.
+                <span className="ml-8">Additionally,</span> I contributed to research, curriculum development, and the evaluation of the learning process, committed to maintaining educational quality and enhancing the student learning experience.
                 </p>
               </div>
             </div>
@@ -271,14 +268,14 @@ const ContentLayout = () => {
                 <p className="mb-4 text-[13px] lg:text-lg font-light text-justify">Status : Internship Program</p>
                 <hr className="mt-1 mb-2 lg:mb-5" />
                 <p className="mb-4 text-justify">
-                <span class="font-semibold text-blue-500">Bangkit Academy</span>, is an intensive educational initiative designed to shape top digital talent in collaboration with <span class="font-semibold text-indigo-500">Google</span>, <span class="font-semibold text-indigo-500">Gojek</span>, <span class="font-semibold text-indigo-500">Tokopedia</span>, and <span class="font-semibold text-indigo-500">Traveloka</span>.
+                <span class="ml-8 font-semibold text-blue-500">Bangkit Academy</span>, is an intensive educational initiative designed to shape top digital talent in collaboration with <span class="font-semibold text-indigo-500">Google</span>, <span class="font-semibold text-indigo-500">Gojek</span>, <span class="font-semibold text-indigo-500">Tokopedia</span>, and <span class="font-semibold text-indigo-500">Traveloka</span>.
                 </p>
                 <p className="mb-4 text-justify">
-                With a focus on <span class="font-semibold text-indigo-500">Machine Learning</span>, <span class="font-semibold text-indigo-500">Mobile Development</span>, <span class="font-semibold text-indigo-500">Cloud Computing</span>, this program empowers participants with industry-relevant skills, preparing them to excel as future-ready professionals in Indonesia’s growing digital landscape.
+                <span className="ml-8">With a focus on</span> <span class="font-semibold text-indigo-500">Machine Learning</span>, <span class="font-semibold text-indigo-500">Mobile Development</span>, <span class="font-semibold text-indigo-500">Cloud Computing</span>, this program empowers participants with industry-relevant skills, preparing them to excel as future-ready professionals in Indonesia’s growing digital landscape.
                 </p>
 
                 <p className="mb-4 text-justify">
-                I am committed to leveraging my abilities to improve project outcomes and contribute to the company’s mission while growing in a dynamic and supportive environment.
+                <span className="ml-8">I am committed to leveraging my abilities</span> to improve project outcomes and contribute to the company’s mission while growing in a dynamic and supportive environment.
                 </p>
               </div>
             </div>
@@ -290,105 +287,187 @@ const ContentLayout = () => {
                 <p className="mb-4 text-2xl font-extrabold lg:font-semibold lg:text-4xl text-left bg-gradient-to-r from-slate-100 via-yellow-500 to-slate-100 bg-clip-text text-transparent animate-gradient-x">
                   Computer Science Student
                 </p>
-                <p className="mb-4 text-[13px] text-left font-normal lg:text-lg lg:text-justify lg:font-light">( March - September 2024 ) - STTI Sony Sugema</p>
+                <p className="mb-4 text-[13px] text-left font-normal lg:text-lg lg:text-justify lg:font-light">( 2021 - Current ) - STTI Sony Sugema</p>
                 <p className="mb-4 text-[15px] text-left font-light lg:text-lg lg:text-justify">Status : College Student</p>
                 <hr className="mt-1 mb-2 lg:mb-5" />
                 <p className="mb-4 text-justify">
-                I am excited to join <span class="font-semibold text-blue-500">PT. Pilar Anugerah Digital Indonesia</span>, known as <span class="font-semibold text-indigo-500">Heart Developer</span>, a leading creative industry in information technology in Indonesia.
+                  <span className="ml-8">As a student in the</span> <span class="font-semibold text-blue-500">Informatics Engineering program</span>, known as at the Sony Sugema Institute of Information Technology (STTISS), a leading creative industry in information technology in Indonesia.
                 </p>
                 <p className="mb-4 text-justify">
-                Established in early 2024 in DKI Jakarta, <span class="font-semibold text-indigo-500">Heart Developer</span> specializes in turnkey applications and IT consulting, backed by a team of certified professionals with over nine years of experience in impactful digital projects.
+                  <span className="ml-8"> I have developed a solid foundation in</span> <span class="font-semibold text-indigo-500">computer science</span> and <span class="font-semibold text-indigo-500">programming</span>. My studies have equipped me with the technical skills and analytical mindset necessary to address complex challenges in software development and digital technology.
                 </p>
                 <p className="mb-4 text-justify">
-                As a Junior Fullstack Developer, I aim to significantly contribute by designing and developing innovative applications using Node.js, Astro.js, React, React Native, Solid.js, PostgreSQL, Express, and Fastify.
-                </p>
-
-                <p className="mb-4 text-justify">
-                I am committed to leveraging my abilities to improve project outcomes and contribute to the company’s mission while growing in a dynamic and supportive environment.
+                <span className="ml-8">This academic experience</span> has strengthened my capabilities, preparing me to contribute effectively in a professional tech environment.
                 </p>
               </div>
             </div>
           </div>
         </section>
         {/* PROJECTS */}
-        <section id="projects" className="w-full mb-24">
+        <section id="projects" className="w-full">
           <div className="bg-indigo-950 text-white">
             <h1 className="text-center font-bold text-4xl py-5">Projects 📱📐</h1>
           </div>
-          <div className="flex justify-center bg-black text-white py-5">
-            <input type="text" />
-          </div>
-          <div className="flex flex-row flex-wrap justify-center align-middle h-full self-center bg-zinc-950 py-7 px-3 gap-10 text-white">
-              {/* Project 1 */}
-              <div class="bg-blue-950 rounded-lg">
-                <img src="https://placehold.co/200x200" class="rounded-t-lg" />
-                <div className="p-1">
-                  <span>Project 1</span>
-                </div>
+          {/* Interactive Container Projects */}
+          <div className="flex flex-row align-middle lg:grid lg:grid-flow-col lg:auto-cols-max lg:w-full gap-5 overflow-auto scrollbar-hide bg-zinc-950">
+            {/* PHP */}
+            <div className="w-full lg:w-screen">
+              <div className="flex justify-center align-middle gap-4 bg-black text-white py-5">
+                <h1 className="text-2xl self-center font-bold">PHP</h1>
+                <img src={logoPHP} className="h-10 rounded-full" alt="logo-php" />
               </div>
-              {/* Project 2 */}
-              <div class="bg-blue-950 rounded-lg">
-                <img src="https://placehold.co/200x200" class="rounded-t-lg" />
-                <div className="p-1">
-                  <span>Project 2</span>
-                </div>
+              <div className="grid grid-flow-col auto-cols-max align-middle justify-start lg:flex lg:flex-wrap lg:justify-center w-full overflow-auto scrollbar-hide self-center bg-zinc-900 py-7 px-3 sm:px-6 md:px-6 lg:px-20 gap-12 lg:gap-5 text-white">
+                  {/* Project 1 */}
+                  <div class="bg-blue-950 w-85 md:w-75 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                  {/* Project 2 */}
+                  <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 3 */}
+                <div class="bg-blue-950 w-85 md:w-75 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 4 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 5 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 6 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 7 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 8 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 9 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 10 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
               </div>
-             {/* Project 3 */}
-             <div class="bg-blue-950 rounded-lg">
-                <img src="https://placehold.co/200x200" class="rounded-t-lg" />
-                <div className="p-1">
-                  <span>Project 3</span>
-                </div>
-             </div>
-             {/* Project 4 */}
-             <div class="bg-blue-950 rounded-lg">
-                <img src="https://placehold.co/200x200" class="rounded-t-lg" />
-                <div className="p-1">
-                  <span>Project 4</span>
-                </div>
-             </div>
-             {/* Project 4 */}
-             <div class="bg-blue-950 rounded-lg">
-                <img src="https://placehold.co/200x200" class="rounded-t-lg" />
-                <div className="p-1">
-                  <span>Project 4</span>
-                </div>
-             </div>
-             {/* Project 4 */}
-             <div class="bg-blue-950 rounded-lg">
-                <img src="https://placehold.co/200x200" class="rounded-t-lg" />
-                <div className="p-1">
-                  <span>Project 4</span>
-                </div>
-             </div>
-             {/* Project 4 */}
-             <div class="bg-blue-950 rounded-lg">
-                <img src="https://placehold.co/200x200" class="rounded-t-lg" />
-                <div className="p-1">
-                  <span>Project 4</span>
-                </div>
-             </div>
-             {/* Project 4 */}
-             <div class="bg-blue-950 rounded-lg">
-                <img src="https://placehold.co/200x200" class="rounded-t-lg" />
-                <div className="p-1">
-                  <span>Project 4</span>
-                </div>
-             </div>
-             {/* Project 4 */}
-             <div class="bg-blue-950 rounded-lg">
-                <img src="https://placehold.co/200x200" class="rounded-t-lg" />
-                <div className="p-1">
-                  <span>Project 4</span>
-                </div>
-             </div>
-             {/* Project 4 */}
-             <div class="bg-blue-950 rounded-lg">
-                <img src="https://placehold.co/200x200" class="rounded-t-lg" />
-                <div className="p-1">
-                  <span>Project 4</span>
-                </div>
-             </div>
+            </div>
+            {/* NodeJS */}
+            <div className="w-full lg:w-screen">
+              <div className="flex justify-center align-middle gap-4 bg-black text-white py-5">
+                <h1 className="text-2xl self-center font-bold">NodeJS</h1>
+                <img src={logoNodeJS} className="h-10 rounded-full" alt="logo-php" />
+              </div>
+              <div className="grid grid-flow-col auto-cols-max align-middle justify-start lg:flex lg:flex-wrap lg:justify-center w-full overflow-auto scrollbar-hide self-center bg-zinc-900 py-7 px-3 sm:px-6 md:px-6 lg:px-20 gap-12 lg:gap-5 text-white">
+                  {/* Project 1 */}
+                  <div class="bg-blue-950 w-85 md:w-75 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                  {/* Project 2 */}
+                  <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 3 */}
+                <div class="bg-blue-950 w-85 md:w-75 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 4 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 5 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 6 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 7 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 8 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 9 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+                {/* Project 10 */}
+                <div class="bg-blue-950 w-85 lg:w-fit rounded-lg">
+                    <img src="https://placehold.co/200x200" class="w-full rounded-t-lg" />
+                    <div className="p-1">
+                      <span>Project 1</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>

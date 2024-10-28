@@ -48,3 +48,21 @@ html {
 .animate-gradient-y {
   animation: gradient-y 5s ease infinite;
 }
+
+/* Custom Scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Untuk Chrome, Safari, dan Opera */
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  cursor: grab; /* Kursor grab */
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb:active {
+  cursor: grabbing; /* Kursor berubah saat di-drag */
+}

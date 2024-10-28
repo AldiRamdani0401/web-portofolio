@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="flex flex-col h-screen w-full">
       <SplashScreen>
-        <Notification/>
         <NavBar />
+        <Notification/>
         <MainLayout>
           <ContentLayout />
           <Footer />
