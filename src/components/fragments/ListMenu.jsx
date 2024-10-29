@@ -48,10 +48,12 @@ const ListMenu = (props) => {
   };
 
   // Attach scroll event listener
-  window.addEventListener("scroll", handleScroll);
+  let mainElement = document.getElementsByTagName("main");
+      mainElement = mainElement[0];
+      mainElement.addEventListener("scroll", handleScroll);
 
   // Cleanup the event listener on component unmount
-  onCleanup(() => window.removeEventListener("scroll", handleScroll));
+  onCleanup(() => mainElement.removeEventListener("scroll", handleScroll));
 
   return (
       <div className="flex flex-col lg:flex-row justify-center align-middle py-2 lg:py-0 gap-0 lg:gap-2 w-full bg-black lg:bg-gray-950 top-0 relative">
