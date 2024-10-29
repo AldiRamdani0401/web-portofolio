@@ -25,7 +25,7 @@ const NavBar = () => {
         </div>
       </div>
       <button
-        className="block lg:hidden p-2 border hover:bg-blue-950"
+        className="block lg:hidden p-2 hover:bg-blue-950"
         onClick={() => {
           setHidden((prev) => !prev);
         }}

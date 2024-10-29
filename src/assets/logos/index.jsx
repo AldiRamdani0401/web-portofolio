@@ -12,6 +12,7 @@ import logoReact from "./react.png";
 import logoReactNative from "./react-native.png";
 import logoSolidJS from "./solidjs.png";
 import logoReefJS from "./reefjs.png";
+import logoSmallReefJS from "./reefjs-small.png";
 import logoExpressJS from "./express.png";
 import logoFastify from "./fastify.png";
 import logoTailwind from "./tailwind.png";
@@ -41,6 +42,7 @@ export {
   logoReactNative,
   logoSolidJS,
   logoReefJS,
+  logoSmallReefJS,
   logoExpressJS,
   logoFastify,
   logoTailwind,

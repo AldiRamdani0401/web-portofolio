@@ -48,9 +48,12 @@ const ListMenu = (props) => {
   };
 
   // Attach scroll event listener
-  let mainElement = document.getElementsByTagName("main");
-      mainElement = mainElement[0];
-      mainElement.addEventListener("scroll", handleScroll);
+  window.addEventListener('DOMContentLoaded', () => {
+    let mainElement = document.getElementsByTagName("main");
+        mainElement = mainElement[0];
+        mainElement?.addEventListener("scroll", "handleScroll()");
+        console.log(mainElement);
+  });
 
   // Cleanup the event listener on component unmount
   onCleanup(() => mainElement.removeEventListener("scroll", handleScroll));
