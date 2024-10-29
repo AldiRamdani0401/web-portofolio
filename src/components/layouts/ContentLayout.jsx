@@ -1,6 +1,5 @@
 import Carousel from "../fragments/Carousel";
 import SliderImage from "../fragments/SliderImage";
-import ProjectsList from "../fragments/ProjectsList";
 
 import profile from "../../assets/images/profile.png";
 
@@ -15,6 +14,7 @@ import {
   logoBootstrap, logoMySQL, logoPostgreSQL, logoMongoDB, logoSupaBase, logoGoogleCloud,
   logoKubernetes, logoDocker, logoNgrok
 } from "../../assets/logos/index";
+import Projects from "../fragments/Projects";
 
 const ContentLayout = () => {
   return (
@@ -654,16 +654,7 @@ const ContentLayout = () => {
         </div>
       </section>
       {/* PROJECTS */}
-      <section id="projects" className="w-full">
-        <div className="bg-indigo-950 text-white">
-          <h1 className="text-center font-bold text-4xl py-5">Projects 📱📐</h1>
-        </div>
-        {/* Interactive Container Projects */}
-        <div className="flex flex-row align-middle lg:grid lg:grid-flow-col lg:auto-cols-max lg:w-full gap-5 overflow-auto scrollbar-hide bg-zinc-950">
-          {/* Projects */}
-          <ProjectsList/>
-        </div>
-      </section>
+      <Projects/>
     </div>
   );
 };
