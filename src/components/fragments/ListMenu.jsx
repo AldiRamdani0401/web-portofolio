@@ -10,8 +10,12 @@ const scrollToSection = (id) => {
   }
 };
 
-const ListMenu = () => {
+const ListMenu = (props) => {
   const [activeSection, setActiveSection] = createSignal(null); // Track the active section
+
+  const clickMenu = () => {
+    props.hidden(true);
+  }
 
   const handleScroll = () => {
     const content = document.getElementById("content");
@@ -53,8 +57,12 @@ const ListMenu = () => {
       <div className="flex flex-col lg:flex-row justify-center align-middle py-2 lg:py-0 gap-0 lg:gap-2 w-full bg-black lg:bg-gray-950 top-0 relative">
         <div className="flex flex-col justify-center w-full h-full pt-[20px] lg:pt-0 lg:h-16 bg-black lg:bg-gray-950">
           <div className="flex flex-col lg:flex-row gap-5 justify-center text-base">
+            {/* About Me */}
             <button
-              onClick={() => scrollToSection("about-me")}
+              onClick={() => {
+                scrollToSection("about-me");
+                clickMenu();
+              }}
               class={`hover:font-bold hover:text-lg cursor-pointer ${
                 activeSection() === 1 ? "font-bold text-lg" : ""
               }`}
@@ -64,8 +72,12 @@ const ListMenu = () => {
                 <span class="block lg:hidden">👨🏻‍💼</span>
               </div>
             </button>
+            {/* My Expertise */}
             <button
-              onClick={() => scrollToSection("my-expertise")}
+              onClick={() => {
+                scrollToSection("my-expertise");
+                clickMenu();
+              }}
               class={`hover:font-bold hover:text-lg cursor-pointer ${
                 activeSection() === 2 ? "font-bold text-lg" : ""
               }`}
@@ -75,8 +87,12 @@ const ListMenu = () => {
                 <span class="block lg:hidden">👨🏻‍💻</span>
               </div>
             </button>
+            {/* My Experience */}
             <button
-              onClick={() => scrollToSection("my-experience")}
+              onClick={() => {
+                scrollToSection("my-experience");
+                clickMenu();
+              }}
               class={`hover:font-bold hover:text-lg cursor-pointer ${
                 activeSection() === 3 ? "font-bold text-lg" : ""
               }`}
@@ -86,8 +102,12 @@ const ListMenu = () => {
                 <span class="block lg:hidden">🚀</span>
               </div>
             </button>
+            {/* Projects */}
             <button
-              onClick={() => scrollToSection("projects")}
+              onClick={() => {
+                scrollToSection("projects");
+                clickMenu();
+              }}
               class={`hover:font-bold hover:text-lg cursor-pointer ${
                 activeSection() === 4 ? "font-bold text-lg" : ""
               }`}

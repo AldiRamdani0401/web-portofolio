@@ -21,7 +21,7 @@ const NavBar = () => {
       {/* Mobile */}
       <div className="relative w-full">
         <div className={`${hidden() ? "hidden" : "block"} absolute top-[31px] left-[-165px] z-[888] lg:static lg:block w-[393px] lg:w-full h-fit lg:bg-gray-950`}>
-            <ListMenu />
+            <ListMenu hidden={setHidden} />
         </div>
       </div>
       <button
