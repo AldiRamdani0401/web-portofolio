@@ -34,8 +34,8 @@ const ListMenu = (props) => {
       // Check if the middle of the viewport is within the section
       if (element.id === "#") {
         if (elementTop < viewportTarget && elementBottom > viewportTarget) {
-          setActiveSection(null); // Clear active section when in the '#' section
-          sectionFound = true; // Mark that we found the section with id="#"
+          setActiveSection(null);
+          sectionFound = true;
         }
       } else if (
         elementTop < viewportTarget &&
@@ -47,16 +47,17 @@ const ListMenu = (props) => {
     });
   };
 
-  // Attach scroll event listener
-  window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () =>
+  setTimeout(() => {
+    // Attach scroll event listener
     let mainElement = document.getElementsByTagName("main");
-        mainElement = mainElement[0];
-        mainElement?.addEventListener("scroll", "handleScroll()");
-        console.log(mainElement);
-  });
+    mainElement = mainElement[0];
+    mainElement.addEventListener("scroll", handleScroll);
 
-  // Cleanup the event listener on component unmount
-  onCleanup(() => mainElement.removeEventListener("scroll", handleScroll));
+    // Cleanup the event listener on component unmount
+      onCleanup(() => mainElement.removeEventListener("scroll", handleScroll));
+  }, 5000)
+);
 
   return (
       <div className="flex flex-col lg:flex-row justify-center align-middle py-2 lg:py-0 gap-0 lg:gap-2 w-full bg-black lg:bg-gray-950 top-0 relative">
