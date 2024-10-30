@@ -11,7 +11,7 @@ const scrollToSection = (id) => {
 };
 
 const ListMenu = (props) => {
-  const [activeSection, setActiveSection] = createSignal(null); // Track the active section
+  const [activeSection, setActiveSection] = createSignal(null);
 
   const clickMenu = () => {
     props.hidden(true);
@@ -24,14 +24,13 @@ const ListMenu = (props) => {
     // Get the middle of the viewport
     const viewportTarget = window.innerHeight / 2;
 
-    let sectionFound = false; // To track if we are in the section with id="#"
+    let sectionFound = false;
 
     elements.forEach((element, i) => {
       const rect = element.getBoundingClientRect();
       const elementTop = rect.top;
       const elementBottom = rect.bottom;
 
-      // Check if the middle of the viewport is within the section
       if (element.id === "#") {
         if (elementTop < viewportTarget && elementBottom > viewportTarget) {
           setActiveSection(null);
@@ -42,7 +41,7 @@ const ListMenu = (props) => {
         elementBottom > viewportTarget &&
         !sectionFound
       ) {
-        setActiveSection(i); // Set the active section index for other sections
+        setActiveSection(i);
       }
     });
   };
