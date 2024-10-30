@@ -23,13 +23,15 @@ const projects = [
     projects: [
       {
         id: 1,
-        name: "Pembayaran SPP",
+        name: "Project 1",
+        category: "E-Commerce",
         status: "On Progress",
         stack: [logoPHP, logoHTML, logoCSS, logoJS, logoTailwind],
       },
       {
         id: 2,
-        name: "SISVAKAT",
+        name: "Project 2",
+        category: "E-Commerce",
         status: "On Progress",
         stack: [logoPHP, logoHTML, logoCSS, logoJS, logoBootstrap],
       },
