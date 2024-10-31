@@ -7,7 +7,7 @@ const Projects = () => {
         <h1 className="text-center font-bold text-4xl py-5">Projects 📱📐</h1>
       </div>
       <div
-        className="flex flex-row align-middle justify-start lg:flex-row lg:w-full gap-5 overflow-x-auto scrollbar-hide bg-zinc-950 scroll-smooth snap-x snap-mandatory relative"
+        className="flex flex-row align-middle justify-start lg:flex-row lg:w-full gap-5 overflow-x-auto scrollbar-hide bg-zinc-950 scroll-smooth snap-x snap-mandatory"
       >
         <ProjectsList/>
       </div>

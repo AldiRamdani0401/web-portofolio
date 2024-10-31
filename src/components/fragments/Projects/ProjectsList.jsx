@@ -403,7 +403,7 @@ const ProjectsList = () => {
     return (
       <div
         id={`container-${index}`}
-        className="w-full lg:shrink-0 px-0 lg:px-5 snap-center relative"
+        className="w-full lg:shrink-0 px-0 lg:px-5 snap-center "
         key={index}
       >
         <div className="flex flex-col justify-center w-full">
@@ -449,7 +449,7 @@ const ProjectsList = () => {
         </div>
         {/* Show detail di induk */}
         <Show when={activeProject()}>
-          <div className="absolute w-full h-full top-0 left-0 z-50">
+          <div className="absolute top-[-1px] left-0 z-50 border">
             <CardDetail project={activeProject()} onClose={closeDetail} />
           </div>
         </Show>
