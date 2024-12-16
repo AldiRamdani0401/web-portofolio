@@ -125,8 +125,8 @@ window.addEventListener('DOMContentLoaded', () =>
           </div>
         </div>
         <div className="flex justify-center align-middle py-[20px] lg:py-0 h-fit lg:h-16 w-full lg:w-32">
-          <a class="self-center hover:font-bold hover:text-lg cursor-pointer ">
-              Be Friends
+          <a class="self-center hover:font-bold cursor-pointer ">
+              Donwload CV
           </a>
         </div>
       </div>
