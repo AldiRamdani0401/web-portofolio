@@ -14,6 +14,7 @@ import {
 } from "../../../assets/logos/index";
 import ContainerListProject from "./ContainerListProject";
 import CardDetail from "./CardDetail";
+import { setState } from "../../../store/store";
 
 // Project Datas
 const projects = [
@@ -376,11 +377,13 @@ const ProjectsList = () => {
     // Fungsi untuk menampilkan detail
     const showDetail = (project) => {
       setActiveProject(project);
+      setState("isVisible", false);
     };
 
     // Fungsi untuk menutup detail
     const closeDetail = () => {
       setActiveProject(null);
+      setState("isVisible", true);
     };
 
     const checkInView = (id) => {

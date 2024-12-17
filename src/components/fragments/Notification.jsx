@@ -10,7 +10,7 @@ const Notification = () => {
         className="rounded-lg bg-red-600 hover:bg-red-400 text-white font-light hover:font-bold px-2 py-1"
         onClick={() => setVisible((prev) => !prev)}
       >
-        Close
+        X
       </button>
     </div>
   );

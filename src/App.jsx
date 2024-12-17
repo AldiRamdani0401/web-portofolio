@@ -1,3 +1,4 @@
+import { state, setState } from "./store/store";
 import Footer from "./components/fragments/Footer";
 import NavBar from "./components/fragments/NavBar";
 import Notification from "./components/fragments/Notification";
@@ -9,10 +10,10 @@ function App() {
   return (
     <div className="flex flex-col h-screen w-full">
       <SplashScreen>
-        <NavBar />
+        <NavBar/>
         <Notification/>
         <MainLayout>
-          <ContentLayout />
+          <ContentLayout/>
           <Footer />
         </MainLayout>
       </SplashScreen>

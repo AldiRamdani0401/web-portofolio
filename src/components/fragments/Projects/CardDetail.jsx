@@ -37,8 +37,8 @@ const CardDetail = ({ project, onClose }) => {
   const [index, setIndex] = createSignal(0);
   const [minMax, setMinMax] = createSignal(false);
   return (
-    <div className="flex justify-center w-screen h-full bg-black bg-opacity-70 py-5 px-0 lg:py-5 lg:px-5 fixed">
-      <div className="flex flex-col-reverse lg:flex-row justify-between bg-white rounded-lg p-2 shadow-lg h-[90%] w-[90%] lg:h-fit lg:w-[90%] gap-1 relative">
+    <div className="flex justify-center w-screen h-full bg-black bg-opacity-70 py-5 px-0 lg:py-5 lg:px-5 z-50 fixed">
+      <div className="flex flex-col-reverse lg:flex-row justify-between bg-white rounded-lg p-2 shadow-lg h-[95%] w-[90%] lg:w-[90%] gap-1 absolute">
         {/* Container Project Detail & Image */}
         <div className="flex flex-col-reverse align-start lg:flex-row w-full h-full lg:h-full gap-2">
           {/* Container Project Detail */}

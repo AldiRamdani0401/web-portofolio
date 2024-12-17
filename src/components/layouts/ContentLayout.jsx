@@ -16,14 +16,14 @@ import {
 } from "../../assets/logos/index";
 import Projects from "../fragments/Projects";
 
-const ContentLayout = () => {
+const ContentLayout = ({setVisible}) => {
   return (
     <div id="content" className="relative">
-      <section id="hero" className="h-fit">
+      <section id="hero" className="h-dvh">
         <Carousel />
       </section>
       {/* ABOUT ME */}
-      <section id="about-me" className="w-full mt-10">
+      <section id="about-me" className="h-fit w-full mt-10">
         <div className="bg-indigo-950 text-white">
           <h1 className="text-center font-bold text-4xl py-5">About Me 👨🏻‍💼</h1>
         </div>
@@ -125,7 +125,7 @@ const ContentLayout = () => {
         </div>
       </section>
       {/* MY EXPERTISE */}
-      <section id="my-expertise" className="w-full">
+      <section id="my-expertise" className="h-fit w-full">
         <div className="bg-indigo-950 text-white">
           <h1 className="text-center font-bold text-4xl py-5">
             {" "}
@@ -380,7 +380,7 @@ const ContentLayout = () => {
         </div>
       </section>
       {/* MY EXPERIENCE */}
-      <section id="my-experience" className="w-full">
+      <section id="my-experience" className="h-fit w-full">
         <div className="bg-indigo-950 text-white">
           <h1 className="text-center font-bold text-4xl py-5">
             My Experience 🚀

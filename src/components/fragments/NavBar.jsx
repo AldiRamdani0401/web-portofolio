@@ -1,4 +1,8 @@
 import { createSignal } from "solid-js";
+
+// Store
+import { state } from "../../store/store";
+
 import ListMenu from "./ListMenu";
 
 const scrollToSection = (id) => {
@@ -14,7 +18,7 @@ const scrollToSection = (id) => {
 const NavBar = () => {
   const [hidden, setHidden] = createSignal(true);
   return (
-    <nav className="flex flex-row sticky top-0 z-[999] justify-between gap-4 items-center bg-gray-950 p-4 h-16 w-full text-white">
+    <nav className={`${state.isVisible ? 'flex' : 'hidden'} flex-row sticky top-0 z-[999] justify-between gap-4 items-center bg-gray-950 py-4 px-2 lg:px-10 h-16 w-full text-white`}>
       <button onclick={() => scrollToSection('hero')} className="cursor-pointer text-lg font-bold text-nowrap">
         My Portfolio 🚀
       </button>
