@@ -17,7 +17,7 @@ const languageData = {
       'Saya selalu ', 'bersemangat untuk belajar ',
       'dan menyambut setiap kesempatan untuk memperluas pengetahuan serta keterampilan saya. Saya berharap dapat berkontribusi dalam ',
       'proyek-proyek inovatif ', 'yang memberikan tantangan dan membuat saya semakin berkembang.',
-      'Dengan keahlian teknis dan kekuatan pribadi saya, saya yakin dapat menjadi aset berharga bagi tim pengembangan manapun.'
+      'Dengan keahlian teknis dan minat saya, saya yakin dapat menjadi anggota tim dan memberikan kontribusi yang baik.'
       ],
       [
         'Saya memiliki keahlian di bidang', ' Web', ' Mobile', ' Machine Learning', 'dan ', 'IoT',
@@ -40,7 +40,7 @@ const languageData = {
       ' Over the years, I have refined my skills in both ', ' and ', ' It enables me to design applications with dynamic solutions, user-friendly interfaces, and scalability. I take great pride in being involved in both Front-end and Back-end development, ensuring that every project I work on is polished and optimized from every aspect.',
       ' What truly sets me apart is my ability to work collaboratively within a team, ', 'my adaptability to fast-paced environments, and my critical thinking skillsthat enable me to solve complex problems effectively.', 'I am always ', 'eager to learn ', 'and embrace every opportunity to expand my knowledge and skills. I look forward to contributing to ',
       'innovative projects ', 'that present challenges and help me grow further.',
-      'With my technical expertise and personal strengths, I am confident that I can be a valuable asset to any development team.'
+      'With my technical expertise and personal strengths, I am confident that I can be a valuable member of the team and make meaningful contributions.'
       ],
       [
         'I have expertise in ', ' Web', ' Mobile', ' Machine Learning', 'and ', 'IoT', 'With proficiency in ', 'PHP ', ' and ', 'JavaScript ', 'I am capable of building dynamic, responsive, and scalable applications for both ', 'Front-End', ' and ', 'Back-End',
