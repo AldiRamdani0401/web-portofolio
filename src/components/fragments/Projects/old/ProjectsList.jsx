@@ -443,7 +443,7 @@ const ProjectsList = () => {
           {/* Snap Scroll Container */}
           <div
             id={`container-list-project-${index}`}
-            className="grid grid-flow-col auto-cols-max align-middle justify-start lg:grid lg:grid-flow-col lg:justify-start w-full h-full lg:h-full lg:w-full overflow-x-scroll scrollbar-hide self-center bg-zinc-900 py-7 lg:py-10 px-3 sm:px-6 md:px-6 lg:px-10 gap-12 lg:gap-8 text-white select-none snap-x snap-mandatory"
+            className="grid grid-flow-col auto-cols-max align-middle justify-start lg:flex lg:flex-wrap lg:justify-center w-full h-full lg:h-130 overflow-x-scroll scrollbar-hide self-center bg-zinc-900 py-7 lg:py-3 px-3 sm:px-6 md:px-6 lg:px-28 gap-12 lg:gap-3 text-white select-none snap-x snap-mandatory"
             onScroll={() => checkInView(`container-list-project-${index}`)}
           >
             {/* Container List Project */}

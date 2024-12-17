@@ -91,7 +91,6 @@ const Footer = () => {
           </button> */}
         {/* </div> */}
       </div>
-      <hr />
       <div className="text-center">
         Copyright &copy; {thisYear} - Aldi Ramdani
       </div>

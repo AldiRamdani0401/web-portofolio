@@ -7,7 +7,7 @@ const ContainerListProject = (props) => {
         <div
           key={`project-${project.id}`}
           id={`project-${project.id}`}
-          className="project relative bg-blue-950 w-85 md:w-75 lg:w-fit h-fit rounded-lg shadow-lg lg:hover:shadow-black lg:hover:z-20 transition-transform transform lg:hover:scale-110 cursor-pointer snap-center"
+          className="relative bg-blue-950 w-85 md:w-75 lg:w-85 h-100 rounded-lg shadow-lg lg:hover:shadow-black lg:hover:z-20 transition-transform transform lg:hover:scale-110 cursor-pointer snap-center"
           onClick={() => onShowDetail(project)}
         >
           <h1 className="absolute bg-blue-950 px-1 top-3 lg:top-0 right-0 rounded-none lg:rounded-tr-md select-none">
@@ -30,7 +30,7 @@ const ContainerListProject = (props) => {
             alt="project-image"
             draggable="false"
           />
-          <div className="py-2 font-bold text-center select-none">
+          <div className="py-6 font-bold text-center select-none">
             <span>{project.name}</span>
           </div>
         </div>
