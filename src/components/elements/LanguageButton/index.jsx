@@ -16,9 +16,9 @@ const LanguageButton = () => {
   createEffect(() => {
     const fetchCountryCode = async () => {
       const info = await ipInfo();
-      if (info?.countryCode) {
-        setState(info.countryCode);
-        setLanguage(info.countryCode === 'ID' ? 'ID' : 'EN'); // Memperbarui global state language
+      if (info?.country_code) {
+        setState(info.country_code);
+        setLanguage(info.country_code === 'ID' ? 'ID' : 'EN'); // Memperbarui global state language
       }
     };
     fetchCountryCode();

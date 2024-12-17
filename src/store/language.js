@@ -62,7 +62,5 @@ export const [languageMap, setLanguageMap] = createSignal(languageData[language(
 // Membuat efek untuk memperbarui 'languageMap' setiap kali 'language' berubah
 createEffect(() => {
   setLanguageMap(languageData[language()]);
-  console.log('language: ', language());
-  console.log('languageMap: ', languageMap());
 });
 

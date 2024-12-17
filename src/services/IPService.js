@@ -11,7 +11,7 @@ export const getPublicIP = async () => {
 
 export const getIPInfo = async (ip) => {
   try {
-    const response = await fetch(`http://ip-api.com/json/${ip}`);
+    const response = await fetch(`https://get.geojs.io/v1/ip/geo/${ip}.json`);
     const data = await response.json();
     return data;
   } catch (error) {
