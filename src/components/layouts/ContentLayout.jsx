@@ -24,15 +24,15 @@ const ContentLayout = () => {
         <Carousel />
       </section>
       {/* ABOUT ME */}
-      <section id="about-me" className="h-fit w-full mt-10">
+      <section id="about-me" className="w-full">
         <div className="bg-indigo-950 text-white">
           <h1 className="text-center font-bold text-4xl py-5">{languageMap().content[0]} 👨🏻‍💼</h1>
         </div>
-        <div className="grid grid-row lg:grid-flow-col h-fit py-[30px] gap-0 lg:gap-5 sm:px-0 lg:px-10 bg-zinc-950">
-          <div className=" w-full h-fit self-center pt-4 bg-gray-950  hover:bg-indigo-950">
+        <div className="h-dvh grid grid-row lg:grid-flow-col py-5 gap-0 lg:gap-5 sm:px-0 lg:px-10 bg-zinc-950">
+          <div className=" w-full h-fit pt-4 bg-gray-950  hover:bg-indigo-950">
             <img src={profile} class="w-full lg:w-100" />
           </div>
-          <div className="flex flex-col justify-center align-middle h-full self-center py-10">
+          <div className="flex flex-col h-full">
             <div className="bg-black p-8 lg:p-5 text-white">
               <p className="mb-4 text-center lg:text-justify">
                 {languageMap()['sub-content'][0][0]}
@@ -98,16 +98,15 @@ const ContentLayout = () => {
         </div>
       </section>
       {/* MY EXPERTISE */}
-      <section id="my-expertise" className="h-fit w-full">
+      <section id="my-expertise" className="mt-[840px] lg:mt-0 w-full">
         <div className="bg-indigo-950 text-white">
           <h1 className="text-center font-bold text-4xl py-5">
-            {" "}
             {languageMap().content[1]} 👨🏻‍💻
           </h1>
         </div>
         <div className="grid grid-row lg:grid-flow-col lg:grid-cols-2 h-fit gap-5 lg:gap-10 lg:px-10 py-8 bg-zinc-950">
           <div className="flex flex-col gap-3 lg:gap-3">
-            <h4 className="text-white text-center font-bold text-2xl py-5">
+            <h4 className="text-white text-center font-bold text-2xl">
               Technologies :
             </h4>
             <div className="flex flex-wrap justify-center gap-2 px-2 lg:px-24">
@@ -235,37 +234,34 @@ const ContentLayout = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-center py-0 lg:py-8 align-middle h-full self-center">
+          <div className="flex flex-col justify-center py-0 align-middle h-full self-center">
             <div className="bg-black p-8 lg:p-5 text-white">
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                  I specialize in a wide range of cutting-edge
-                </span>{" "}
-                technologies across various fields, including{" "}
-                <span className="text-purple-600 font-bold text-lg"> Web</span>,{" "}
-                <span className="text-purple-600 font-bold text-lg">
-                  {" "}
-                  Mobile
+                {languageMap()['sub-content'][1][0]}
                 </span>
-                ,{" "}
-                <span className="text-purple-600 font-bold text-lg">
-                  {" "}
-                  Machine Learning
+                <span className="font-bold text-lg">{languageMap()['sub-content'][1][1]}
+                </span>,
+                <span className="font-bold text-lg">
+                {languageMap()['sub-content'][1][2]}
+                </span>,
+                <span className="font-bold text-lg">
+                {languageMap()['sub-content'][1][3]}
                 </span>
-                , and{" "}
-                <span className="text-purple-600 font-bold text-lg"> IoT</span>.
+                , {languageMap()['sub-content'][1][4]}
+                <span className="font-bold text-lg"> {languageMap()['sub-content'][1][5]}</span>.
               </p>
 
               <p className="mb-4 text-justify">
-                <span className="ml-8">With a strong foundation in</span>{" "}
-                <span className="text-purple-600 font-bold text-lg">PHP</span>{" "}
+                <span className="ml-8">{languageMap()['sub-content'][1][6]}</span>
+                <span className="font-bold text-lg">{languageMap()['sub-content'][1][7]}</span>
                 <span className="font-light">
                   (<i>Laravel, PHP Native, Composer</i>)
-                </span>{" "}
-                and{" "}
-                <span className="text-purple-600 font-bold text-lg">
-                  JavaScript
-                </span>{" "}
+                </span>
+                {languageMap()['sub-content'][1][8]}
+                <span className="font-bold text-lg">
+                {languageMap()['sub-content'][1][9]}
+                </span>
                 <span className="font-light">
                   (
                   <i>
@@ -274,39 +270,37 @@ const ContentLayout = () => {
                   </i>
                   )
                 </span>
-                . I am adept at building dynamic and scalable applications for
-                both{" "}
-                <span className="text-purple-600 font-bold text-lg">
-                  Front-End
-                </span>{" "}
-                and{" "}
-                <span className="text-purple-600 font-bold text-lg">
-                  Back-End
+                . {languageMap()['sub-content'][1][10]}
+                <span className="font-bold text-lg">
+                {languageMap()['sub-content'][1][11]}
+                </span>
+                {languageMap()['sub-content'][1][12]}
+                <span className="font-bold text-lg">
+                {languageMap()['sub-content'][1][13]}
                 </span>
                 .
               </p>
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                  My technical expertise also extends to
-                </span>{" "}
-                <span className="text-purple-600 font-bold text-lg">HTML</span>,{" "}
-                <span className="text-purple-600 font-bold text-lg">CSS</span>
+                {languageMap()['sub-content'][1][14]}
+                </span>
+                <span className="font-bold text-lg">{languageMap()['sub-content'][1][15]}</span>,
+                <span className="font-bold text-lg">{languageMap()['sub-content'][1][16]}</span>
                 <span className="font-light">
-                  {" "}
                   (<i>Tailwind, Bulma, Bootstrap</i>)
                 </span>
-                , and databases like{" "}
-                <span className="text-purple-600 font-bold text-lg">MySQL</span>
+                , {languageMap()['sub-content'][1][17]}
+                <span className="font-bold text-lg">MySQL</span>
                 ,{" "}
-                <span className="text-purple-600 font-bold text-lg">
+                <span className="font-bold text-lg">
                   PostgreSQL
                 </span>
                 ,{" "}
-                <span className="text-purple-600 font-bold text-lg">
+                <span className="font-bold text-lg">
                   MongoDB
                 </span>
-                , and{" "}
-                <span className="text-purple-600 font-bold text-lg">
+                , {languageMap()['sub-content'][1][18]}
+                <span className="font-bold text-lg">
                   SupaBase
                 </span>
                 .
@@ -314,39 +308,31 @@ const ContentLayout = () => {
 
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                  I am experienced in deploying and managing applications with
-                  tools such as
-                </span>{" "}
-                <span className="text-purple-600 font-bold text-lg">
+                {languageMap()['sub-content'][1][19]}
+                </span>
+                <span className="font-bold text-lg">
                   Google Cloud
                 </span>
                 ,{" "}
-                <span className="text-purple-600 font-bold text-lg">
+                <span className="font-bold text-lg">
                   Docker
-                </span>{" "}
-                and{" "}
-                <span className="text-purple-600 font-bold text-lg">
+                </span>{languageMap()['sub-content'][1][20]}
+                <span className="font-bold text-lg">
                   Kubernetes
                 </span>
-                . With a strong grasp of{" "}
-                <span className="text-purple-600 font-bold text-lg">OOP</span>,{" "}
-                <span className="text-purple-600 font-bold text-lg">
+                . {languageMap()['sub-content'][1][21]}
+                <span className="font-bold text-lg">OOP</span>,{" "}
+                <span className="font-bold text-lg">
                   REST-API
                 </span>
-                , and{" "}
-                <span className="text-purple-600 font-bold text-lg">MVC</span>{" "}
-                architecture. I ensure that the solutions I create are both
-                robust and maintainable.
+                ,
+                <span className="font-bold text-lg"> MVC, </span>
+                {languageMap()['sub-content'][1][22]}
+                <span className="font-bold text-lg"> Micro-Services </span>. {languageMap()['sub-content'][1][23]}
               </p>
 
               <p className="mb-4 text-justify">
-                <span className="ml-8">Whether it's leading</span>{" "}
-                <span className="text-purple-600 font-bold text-lg">
-                  Full-stack
-                </span>{" "}
-                development projects or contributing to innovative solutions, I
-                bring a wealth of knowledge and a commitment to delivering
-                high-quality results.
+                <span className="ml-8">{languageMap()['sub-content'][1][24]}</span>
               </p>
             </div>
           </div>
@@ -367,11 +353,11 @@ const ContentLayout = () => {
                 Junior Fullstack Developer
               </p>
               <p className="flex flex-col lg:flex-row mb-4 text-base font-normal lg:text-lg text-justify lg:font-light">
-                <span>( 27 September 2024 - <strong>Current</strong> )</span>
+                <span>( 27 September 2024 - <strong>{languageMap()['sub-content'][2][0]}</strong> )</span>
                 <span>- Heart Developer</span>
               </p>
               <p className="mb-4 text-base font-normal lg:text-lg lg:font-light text-justify">
-                Status : Freelance
+                Status : {languageMap()['sub-content'][2][1]}
               </p>
               <hr className="mt-1 mb-2 lg:mb-5" />
               <p className="mb-4 text-justify">

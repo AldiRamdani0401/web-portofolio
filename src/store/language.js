@@ -4,7 +4,7 @@ import { createEffect, createSignal } from "solid-js";
 const languageData = {
   'ID': {
     'menu': ['Tentang Saya', 'Keahlian', 'Pengalaman', 'Project', 'Unduh CV'],
-    'content' : ['Tentang Saya', 'Keahlian Saya', 'Pengalaman Saya', 'Project Saya'],
+    'content' : ['Tentang Saya', 'Keahlian', 'Pengalaman', 'Project'],
     'sub-content': [
       ['👋🏻 Hello, Nama saya ', ', dan saya berasal dari ', 'Karawang, Jawa Barat, Indonesia', 'Saat ini saya sedang menempuh pendidikan sarjana pada jurusan ',
       'Teknik Informatika', ' di ',
@@ -12,12 +12,20 @@ const languageData = {
       ', saya memiliki komitmen untuk menguasai seni dalam membangun aplikasi web yang efisien dan menarik.',
       'Selama beberapa tahun, saya telah mengasah keterampilan saya dalam menggunakan ',
       ' dan ', ' memungkinkan saya untuk merancang aplikasi dengan solusi yang dinamis, ramah bagi pengguna, dan mudah untuk dikembangkan. Saya sangat bangga dapat terlibat dalam pengembangan baik di sisi Front-end maupun Back-end, memastikan bahwa setiap proyek yang saya kerjakan terstruktur dan optimal dari berbagai aspek. ',
-      'Apa yang benar-benar membedakan saya adalah kemampuan saya untuk bekerja secara kolaboratif dalam tim, ',
+      'Apa yang membuat saya unggul adalah kemampuan saya untuk bekerja secara kolaboratif dalam tim, ',
       'kemampuan untuk beradaptasi dengan lingkungan yang serba cepat, dan keterampilan berpikir kritis yang memungkinkan saya dapat menyelesaikan masalah yang kompleks secara efektif.',
       'Saya selalu ', 'bersemangat untuk belajar ',
       'dan menyambut setiap kesempatan untuk memperluas pengetahuan serta keterampilan saya. Saya berharap dapat berkontribusi dalam ',
       'proyek-proyek inovatif ', 'yang memberikan tantangan dan membuat saya semakin berkembang.',
       'Dengan keahlian teknis dan kekuatan pribadi saya, saya yakin dapat menjadi aset berharga bagi tim pengembangan manapun.'
+      ],
+      [
+        'Saya memiliki keahlian di bidang', ' Web', ' Mobile', ' Machine Learning', 'dan ', 'IoT',
+        'Dengan penguasaan ', 'PHP ', ' dan ', 'JavaScript ', 'Saya mampu mengembangkan aplikasi yang dinamis, responsif, dan skalabel, baik di sisi ', 'Front-End ', 'maupun sisi ', 'Back-End', 'Keahlian saya juga mencakup pengelolaan UI/UX menggunakan ', 'HTML', ' CSS ', ' serta pengelolaan database menggunakan ', 'dan ', 'Saya berpengalaman dalam deployment dan manajemen aplikasi menggunakan ', ' dan ',
+        'Dengan pemahaman yang kuat tentang ', ' dan ', ' Saya selalu fokus pada pengembangan solusi yang andal, efisien, dan mudah dipelihara.', 'Saya siap berkontribusi dalam proyek inovatif dengan semangat kolaborasi dan terus berkembang.'
+      ],
+      [
+        'Sekarang', 'Pekerja Lepas'
       ]
     ]
   },
@@ -33,6 +41,13 @@ const languageData = {
       ' What truly sets me apart is my ability to work collaboratively within a team, ', 'my adaptability to fast-paced environments, and my critical thinking skillsthat enable me to solve complex problems effectively.', 'I am always ', 'eager to learn ', 'and embrace every opportunity to expand my knowledge and skills. I look forward to contributing to ',
       'innovative projects ', 'that present challenges and help me grow further.',
       'With my technical expertise and personal strengths, I am confident that I can be a valuable asset to any development team.'
+      ],
+      [
+        'I have expertise in ', ' Web', ' Mobile', ' Machine Learning', 'and ', 'IoT', 'With proficiency in ', 'PHP ', ' and ', 'JavaScript ', 'I am capable of building dynamic, responsive, and scalable applications for both ', 'Front-End', ' and ', 'Back-End',
+        'My technical expertise also extends to UI/UX development ', 'HTML', ' CSS ', 'database management with ', 'and ', 'I have experience in deploying and managing applications using ', ' and ', 'With a strong understanding of ', ' and ', ' I prioritize developing solutions that are reliable, efficient, and maintainable.', ' I am ready to contribute to innovative projects with a passion for collaboration and continuous growth.'
+      ],
+      [
+        'Current', 'Freelance'
       ]
     ]
   }

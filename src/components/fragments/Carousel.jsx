@@ -32,7 +32,7 @@ const Carousel = () => {
           </span>
         </div>
         <img
-          className="bg-slate-950 md:bg-gray-950 lg:bg-gray-950 z-10 h-full px-5 pt-36 mx-auto md:pt-[76px] lg:pt-[76px]"
+          className="bg-slate-950 md:bg-gray-950 lg:bg-gray-950 z-10 h-[692px] lg:h-full px-5 pt-5 mx-auto md:pt-[70px] lg:pt-[30px]"
           src={hero}
           alt="aldi-ramdani"
         />
