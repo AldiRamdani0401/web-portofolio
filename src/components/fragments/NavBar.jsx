@@ -1,4 +1,5 @@
 import { createSignal } from "solid-js";
+import { logoEnglish, logoIndonesian } from "../../assets/images/languages";
 
 // Store
 import { state } from "../../store/store";
@@ -18,16 +19,38 @@ const scrollToSection = (id) => {
 const NavBar = () => {
   const [hidden, setHidden] = createSignal(true);
   return (
-    <nav className={`${state.isVisible ? 'flex' : 'hidden'} flex-row sticky top-0 z-[999] justify-between gap-4 items-center bg-gray-950 py-4 px-2 lg:px-10 h-16 w-full text-white`}>
-      <button onclick={() => scrollToSection('hero')} className="cursor-pointer text-lg font-bold text-nowrap">
+    <nav
+      className={`${
+        state.isVisible ? "flex" : "hidden"
+      } flex-row sticky top-0 z-[999] justify-between gap-4 items-center bg-gray-950 py-4 px-2 lg:px-10 h-16 w-full text-white`}
+    >
+      <button
+        onclick={() => scrollToSection("hero")}
+        className="cursor-pointer text-lg font-bold text-nowrap"
+      >
         My Portfolio 🚀
       </button>
       {/* Mobile */}
       <div className="relative w-full">
-        <div className={`${hidden() ? "hidden" : "block"} absolute top-[31px] left-[-165px] z-[888] lg:static lg:block w-[393px] lg:w-full h-fit lg:bg-gray-950`}>
-            <ListMenu hidden={setHidden} />
+        <div
+          className={`${
+            hidden() ? "hidden" : "block"
+          } absolute top-[31px] left-[-165px] z-[888] lg:static lg:block w-[393px] lg:w-full h-fit lg:bg-gray-950`}
+        >
+          <ListMenu hidden={setHidden} />
         </div>
       </div>
+      {/* Language */}
+      <button
+        className="p-2 rounded-2xl hover:bg-blue-950"
+        onClick={() => {
+          setHidden((prev) => !prev);
+        }}
+      >
+        <img src={logoIndonesian} className="h-8 w-24 lg:w-10" alt="" />
+      </button>
+
+      {/* Menu */}
       <button
         className="block lg:hidden p-2 hover:bg-blue-950"
         onClick={() => {

@@ -15,7 +15,6 @@ const scrollToSection = (id) => {
 };
 
 const Footer = () => {
-  const [activeSection, setActiveSection] = createSignal(null);
 
   const handleScroll = () => {
     const content = document.getElementById("content");
@@ -33,7 +32,6 @@ const Footer = () => {
 
       if (element.id === "#") {
         if (elementTop < viewportTarget && elementBottom > viewportTarget) {
-          setActiveSection(null);
           sectionFound = true;
         }
       } else if (
@@ -41,7 +39,6 @@ const Footer = () => {
         elementBottom > viewportTarget &&
         !sectionFound
       ) {
-        setActiveSection(i);
       }
     });
   };
@@ -64,7 +61,7 @@ const Footer = () => {
         <div className="flex flex-col gap-4 justify-between w-full">
           <button
             onclick={() => scrollToSection("hero")}
-            className="cursor-pointer text-lg lg:text-4xl font-bold text-nowrap"
+            className="cursor-pointer text-lg lg:text-2xl font-bold text-nowrap"
           >
             My Portfolio 🚀
           </button>
