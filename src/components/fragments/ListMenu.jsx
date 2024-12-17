@@ -1,5 +1,6 @@
 import { createEffect, createSignal, onCleanup } from "solid-js";
 import { languageMap } from "../../store/language";
+import { cv } from "../../assets/files";
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -126,7 +127,7 @@ const ListMenu = (props) => {
       </div>
       <div class="flex justify-center items-center py-[20px] lg:py-0 h-fit lg:h-16 w-full lg:w-32">
         <a
-          href="/assets/files/CV-ALDI-RAMDANI.pdf"
+          href={cv}
           download
           class="hover:font-bold px-1 py-2 text-nowrap cursor-pointer"
         >
