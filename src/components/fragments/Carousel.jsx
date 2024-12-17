@@ -1,5 +1,4 @@
 import { SolidTyper } from "solid-typer";
-
 import hero from "../../assets/images/hero.png";
 
 const Carousel = () => {
@@ -11,10 +10,10 @@ const Carousel = () => {
             text={[
               "Hello, I'm Aldi Ramdani",
               "I am a Fullstack Developer",
-              "Let's collaborate..",
+              "Let's collaborate.."
             ]}
             loop={true}
-            startDelay={3000}
+            startDelay={3300}
             backspaceSpeed={100}
             typingSpeed={90}
             cursor={true}

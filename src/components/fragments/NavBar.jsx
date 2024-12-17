@@ -1,10 +1,10 @@
 import { createSignal } from "solid-js";
-import { logoEnglish, logoIndonesian } from "../../assets/images/languages";
 
 // Store
 import { state } from "../../store/store";
 
 import ListMenu from "./ListMenu";
+import LanguageButton from "../elements/LanguageButton";
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -41,14 +41,7 @@ const NavBar = () => {
         </div>
       </div>
       {/* Language */}
-      <button
-        className="p-2 rounded-2xl hover:bg-blue-950"
-        onClick={() => {
-          setHidden((prev) => !prev);
-        }}
-      >
-        <img src={logoIndonesian} className="h-8 w-24 lg:w-10" alt="" />
-      </button>
+      <LanguageButton/>
 
       {/* Menu */}
       <button

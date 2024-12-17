@@ -1,4 +1,5 @@
-import { createSignal, onCleanup } from "solid-js";
+import { createEffect, createSignal, onCleanup } from "solid-js";
+import { languageMap } from "../../store/language";
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -12,7 +13,6 @@ const scrollToSection = (id) => {
 
 const ListMenu = (props) => {
   const [activeSection, setActiveSection] = createSignal(null);
-
   const clickMenu = () => {
     props.hidden(true);
   };
@@ -73,7 +73,7 @@ const ListMenu = (props) => {
             }`}
           >
             <div className="flex justify-center align-middle gap-2">
-              <span>About Me</span>
+              <span>{languageMap().menu[0]}</span>
               <span class="block lg:hidden">👨🏻‍💼</span>
             </div>
           </button>
@@ -88,7 +88,7 @@ const ListMenu = (props) => {
             }`}
           >
             <div className="flex justify-center align-middle gap-2">
-              <span>Expertise</span>
+              <span>{languageMap().menu[1]}</span>
               <span class="block lg:hidden">👨🏻‍💻</span>
             </div>
           </button>
@@ -103,7 +103,7 @@ const ListMenu = (props) => {
             }`}
           >
             <div className="flex justify-center align-middle gap-2">
-              <span>Experience</span>
+              <span>{languageMap().menu[2]}</span>
               <span class="block lg:hidden">🚀</span>
             </div>
           </button>
@@ -118,7 +118,7 @@ const ListMenu = (props) => {
             }`}
           >
             <div className="flex justify-center align-middle gap-2">
-              <span>Projects</span>
+              <span>{languageMap().menu[3]}</span>
               <span class="block lg:hidden">📱📐</span>
             </div>
           </button>
@@ -130,7 +130,7 @@ const ListMenu = (props) => {
           download
           class="hover:font-bold px-1 py-2 text-nowrap cursor-pointer"
         >
-          Download CV
+          {languageMap().menu[4]}
         </a>
       </div>
     </div>

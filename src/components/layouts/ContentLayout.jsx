@@ -15,8 +15,9 @@ import {
   logoKubernetes, logoDocker, logoNgrok
 } from "../../assets/logos/index";
 import Projects from "../fragments/Projects";
+import { languageMap } from "../../store/language";
 
-const ContentLayout = ({setVisible}) => {
+const ContentLayout = () => {
   return (
     <div id="content" className="relative">
       <section id="hero" className="h-dvh">
@@ -25,7 +26,7 @@ const ContentLayout = ({setVisible}) => {
       {/* ABOUT ME */}
       <section id="about-me" className="h-fit w-full mt-10">
         <div className="bg-indigo-950 text-white">
-          <h1 className="text-center font-bold text-4xl py-5">About Me 👨🏻‍💼</h1>
+          <h1 className="text-center font-bold text-4xl py-5">{languageMap().content[0]} 👨🏻‍💼</h1>
         </div>
         <div className="grid grid-row lg:grid-flow-col h-fit py-[30px] gap-0 lg:gap-5 sm:px-0 lg:px-10 bg-zinc-950">
           <div className=" w-full h-fit self-center pt-4 bg-gray-950  hover:bg-indigo-950">
@@ -34,91 +35,63 @@ const ContentLayout = ({setVisible}) => {
           <div className="flex flex-col justify-center align-middle h-full self-center py-10">
             <div className="bg-black p-8 lg:p-5 text-white">
               <p className="mb-4 text-center lg:text-justify">
-                👋🏻 Hello, My name is{" "}
-                <span className="text-blue-600 font-bold text-xl">
+                {languageMap()['sub-content'][0][0]}
+                <span className="font-bold text-xl">
                   Aldi Ramdani
                 </span>
-                , and I proudly come from
-                <span className="text-indigo-600 font-bold text-lg">
-                  {" "}
-                  Karawang, West Java, Indonesia
+                {languageMap()['sub-content'][0][1]}
+                <span className="font-bold text-lg">
+                  {languageMap()['sub-content'][0][2]}
                 </span>
                 .
               </p>
 
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                  I am currently pursuing a degree in
+                {languageMap()['sub-content'][0][3]}
                 </span>
-                <span className="text-indigo-600 font-bold text-lg">
-                  {" "}
-                  Informatics Engineering
-                </span>{" "}
-                at <span className="font-bold">STTI Sony Sugema</span>, where my
-                passion for technology continues to grow every day. As an
-                aspiring{" "}
-                <span className="text-indigo-600 font-bold text-lg">
+                <span className="font-bold text-lg">
+                {languageMap()['sub-content'][0][4]}
+                </span>
+                {languageMap()['sub-content'][0][5]} <span className="font-bold">STTI Sony Sugema</span>,
+                {languageMap()['sub-content'][0][6]}
+                <span className=" font-bold text-lg">
                   Fullstack Developer
                 </span>
-                , I am fully committed to mastering the art of building seamless
-                and efficient web applications.
+                {languageMap()['sub-content'][0][7]}
               </p>
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                  Over the years, I have refined my skills in both
-                </span>{" "}
-                <span className="text-indigo-600 font-bold text-lg">
+                {languageMap()['sub-content'][0][8]}
+                </span>
+                <span className=" font-bold text-lg">
                   JavaScript
-                </span>{" "}
-                and
-                <span className="text-indigo-600 font-bold text-lg"> PHP</span>,
-                enabling me to craft dynamic, user-friendly, and scalable
-                solutions. I take great pride in diving into both the front-end
-                and back-end of development, ensuring that each project I work
-                on is
-                <span className="text-indigo-600 font-bold text-lg">
-                  {" "}
-                  polished and optimized
-                </span>{" "}
-                from every angle.
+                </span>
+                {languageMap()['sub-content'][0][9]}
+                <span className=" font-bold text-lg"> PHP</span>,
+                {languageMap()['sub-content'][0][10]}
               </p>
 
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                  What truly sets me apart is my ability to{" "}
+                {languageMap()['sub-content'][0][11]}
                 </span>
-                <span className="text-indigo-600 font-bold text-lg">
-                  work collaboratively
-                </span>{" "}
-                within a team, my{" "}
-                <span className="text-indigo-600 font-bold text-lg">
-                  adaptability
-                </span>{" "}
-                to fast-paced environments, and my{" "}
-                <span className="text-indigo-600 font-bold text-lg">
-                  critical thinking skills
-                </span>
-                that enable me to solve complex problems effectively.
+                {languageMap()['sub-content'][0][12]}
               </p>
 
               <p className="mb-4 text-justify">
-                <span className="ml-8">I am always</span>{" "}
-                <span className="text-indigo-600 font-bold text-lg">
-                  eager to learn
-                </span>{" "}
-                and embrace every opportunity to expand my knowledge and skills.
-                I look forward to contributing to{" "}
-                <span className="text-indigo-600 font-bold text-lg">
-                  innovative projects
-                </span>{" "}
-                that challenge the status quo and push the boundaries of
-                technology.
+                <span className="ml-8">{languageMap()['sub-content'][0][13]}</span>
+                <span className=" font-bold text-lg">
+                {languageMap()['sub-content'][0][14]}
+                </span>
+                {languageMap()['sub-content'][0][15]}
+                <span className=" font-bold text-lg">
+                {languageMap()['sub-content'][0][16]}
+                </span>{languageMap()['sub-content'][0][17]}
               </p>
 
               <p className="text-justify">
-                With my technical expertise and personal strengths, I am
-                confident that I can be a valuable asset to any development
-                team.
+              {languageMap()['sub-content'][0][18]}
               </p>
             </div>
           </div>
@@ -129,7 +102,7 @@ const ContentLayout = ({setVisible}) => {
         <div className="bg-indigo-950 text-white">
           <h1 className="text-center font-bold text-4xl py-5">
             {" "}
-            My Expertise 👨🏻‍💻
+            {languageMap().content[1]} 👨🏻‍💻
           </h1>
         </div>
         <div className="grid grid-row lg:grid-flow-col lg:grid-cols-2 h-fit gap-5 lg:gap-10 lg:px-10 py-8 bg-zinc-950">
@@ -383,7 +356,7 @@ const ContentLayout = ({setVisible}) => {
       <section id="my-experience" className="h-fit w-full">
         <div className="bg-indigo-950 text-white">
           <h1 className="text-center font-bold text-4xl py-5">
-            My Experience 🚀
+          {languageMap().content[2]} 🚀
           </h1>
         </div>
         {/* experience 1 */}
