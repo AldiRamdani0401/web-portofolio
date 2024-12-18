@@ -46,18 +46,18 @@ const ContentLayout = () => {
         <Carousel />
       </section>
       {/* ABOUT ME */}
-      <section id="about-me" className="w-full">
+      <section id="about-me" className="h-fit w-full">
         <div className="bg-indigo-950 text-white">
           <h1 className="text-center font-bold text-4xl py-5">
             {languageMap().content[0]} 👨🏻‍💼
           </h1>
         </div>
-        <div className="h-dvh grid grid-row lg:grid-flow-col py-5 gap-0 lg:gap-5 sm:px-0 lg:px-10 bg-zinc-950">
+        <div className="grid grid-row lg:grid-flow-col py-5 gap-0 lg:gap-5 sm:px-0 lg:px-10 bg-zinc-950">
           <div className=" w-full h-fit pt-4 bg-gray-950  hover:bg-indigo-950">
             <img src={profile} class="w-full lg:w-100" />
           </div>
           <div className="flex flex-col h-full">
-            <div className="bg-black p-8 lg:p-5 text-white">
+            <div className="bg-black p-8 lg:p-5 mb-0 lg:mb-10 text-white">
               <p className="mb-4 text-center lg:text-justify">
                 {languageMap()["sub-content"][0][0]}
                 <span className="font-bold text-xl">Aldi Ramdani</span>
