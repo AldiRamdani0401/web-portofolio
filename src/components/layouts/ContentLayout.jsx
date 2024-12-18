@@ -8,11 +8,33 @@ import bangkit from "../../assets/images/expriences/bangkit.png";
 
 // Logo
 import {
-  logoHTML, logoCSS, logoJS, logoPHP, logoWebPack, logoAstro,
-  logoLaravel, logoComposer, logoNPM, logoNodeJS, logoReact, logoReactNative,
-  logoSolidJS, logoReefJS, logoExpressJS, logoFastify, logoTailwind, logoBulma,
-  logoBootstrap, logoMySQL, logoPostgreSQL, logoMongoDB, logoSupaBase, logoGoogleCloud,
-  logoKubernetes, logoDocker, logoNgrok
+  logoHTML,
+  logoCSS,
+  logoJS,
+  logoPHP,
+  logoWebPack,
+  logoAstro,
+  logoLaravel,
+  logoComposer,
+  logoNPM,
+  logoNodeJS,
+  logoReact,
+  logoReactNative,
+  logoSolidJS,
+  logoReefJS,
+  logoExpressJS,
+  logoFastify,
+  logoTailwind,
+  logoBulma,
+  logoBootstrap,
+  logoMySQL,
+  logoPostgreSQL,
+  logoMongoDB,
+  logoSupaBase,
+  logoGoogleCloud,
+  logoKubernetes,
+  logoDocker,
+  logoNgrok,
 } from "../../assets/logos/index";
 import Projects from "../fragments/Projects";
 import { languageMap } from "../../store/language";
@@ -26,7 +48,9 @@ const ContentLayout = () => {
       {/* ABOUT ME */}
       <section id="about-me" className="w-full">
         <div className="bg-indigo-950 text-white">
-          <h1 className="text-center font-bold text-4xl py-5">{languageMap().content[0]} 👨🏻‍💼</h1>
+          <h1 className="text-center font-bold text-4xl py-5">
+            {languageMap().content[0]} 👨🏻‍💼
+          </h1>
         </div>
         <div className="h-dvh grid grid-row lg:grid-flow-col py-5 gap-0 lg:gap-5 sm:px-0 lg:px-10 bg-zinc-950">
           <div className=" w-full h-fit pt-4 bg-gray-950  hover:bg-indigo-950">
@@ -35,63 +59,61 @@ const ContentLayout = () => {
           <div className="flex flex-col h-full">
             <div className="bg-black p-8 lg:p-5 text-white">
               <p className="mb-4 text-center lg:text-justify">
-                {languageMap()['sub-content'][0][0]}
-                <span className="font-bold text-xl">
-                  Aldi Ramdani
-                </span>
-                {languageMap()['sub-content'][0][1]}
+                {languageMap()["sub-content"][0][0]}
+                <span className="font-bold text-xl">Aldi Ramdani</span>
+                {languageMap()["sub-content"][0][1]}
                 <span className="font-bold text-lg">
-                  {languageMap()['sub-content'][0][2]}
+                  {languageMap()["sub-content"][0][2]}
                 </span>
                 .
               </p>
 
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                {languageMap()['sub-content'][0][3]}
+                  {languageMap()["sub-content"][0][3]}
                 </span>
                 <span className="font-bold text-lg">
-                {languageMap()['sub-content'][0][4]}
+                  {languageMap()["sub-content"][0][4]}
                 </span>
-                {languageMap()['sub-content'][0][5]} <span className="font-bold">STTI Sony Sugema</span>,
-                {languageMap()['sub-content'][0][6]}
-                <span className=" font-bold text-lg">
-                  Fullstack Developer
-                </span>
-                {languageMap()['sub-content'][0][7]}
+                {languageMap()["sub-content"][0][5]}{" "}
+                <span className="font-bold">STTI Sony Sugema</span>,
+                {languageMap()["sub-content"][0][6]}
+                <span className=" font-bold text-lg">Fullstack Developer</span>
+                {languageMap()["sub-content"][0][7]}
               </p>
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                {languageMap()['sub-content'][0][8]}
+                  {languageMap()["sub-content"][0][8]}
                 </span>
-                <span className=" font-bold text-lg">
-                  JavaScript
-                </span>
-                {languageMap()['sub-content'][0][9]}
+                <span className=" font-bold text-lg">JavaScript</span>
+                {languageMap()["sub-content"][0][9]}
                 <span className=" font-bold text-lg"> PHP</span>,
-                {languageMap()['sub-content'][0][10]}
+                {languageMap()["sub-content"][0][10]}
               </p>
 
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                {languageMap()['sub-content'][0][11]}
+                  {languageMap()["sub-content"][0][11]}
                 </span>
-                {languageMap()['sub-content'][0][12]}
+                {languageMap()["sub-content"][0][12]}
               </p>
 
               <p className="mb-4 text-justify">
-                <span className="ml-8">{languageMap()['sub-content'][0][13]}</span>
-                <span className=" font-bold text-lg">
-                {languageMap()['sub-content'][0][14]}
+                <span className="ml-8">
+                  {languageMap()["sub-content"][0][13]}
                 </span>
-                {languageMap()['sub-content'][0][15]}
                 <span className=" font-bold text-lg">
-                {languageMap()['sub-content'][0][16]}
-                </span>{languageMap()['sub-content'][0][17]}
+                  {languageMap()["sub-content"][0][14]}
+                </span>
+                {languageMap()["sub-content"][0][15]}
+                <span className=" font-bold text-lg">
+                  {languageMap()["sub-content"][0][16]}
+                </span>
+                {languageMap()["sub-content"][0][17]}
               </p>
 
               <p className="text-justify">
-              {languageMap()['sub-content'][0][18]}
+                {languageMap()["sub-content"][0][18]}
               </p>
             </div>
           </div>
@@ -238,29 +260,40 @@ const ContentLayout = () => {
             <div className="bg-black p-8 lg:p-5 text-white">
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                {languageMap()['sub-content'][1][0]}
+                  {languageMap()["sub-content"][1][0]}
                 </span>
-                <span className="font-bold text-lg">{languageMap()['sub-content'][1][1]}
-                </span>,
                 <span className="font-bold text-lg">
-                {languageMap()['sub-content'][1][2]}
-                </span>,
-                <span className="font-bold text-lg">
-                {languageMap()['sub-content'][1][3]}
+                  {languageMap()["sub-content"][1][1]}
                 </span>
-                , {languageMap()['sub-content'][1][4]}
-                <span className="font-bold text-lg"> {languageMap()['sub-content'][1][5]}</span>.
+                ,
+                <span className="font-bold text-lg">
+                  {languageMap()["sub-content"][1][2]}
+                </span>
+                ,
+                <span className="font-bold text-lg">
+                  {languageMap()["sub-content"][1][3]}
+                </span>
+                , {languageMap()["sub-content"][1][4]}
+                <span className="font-bold text-lg">
+                  {" "}
+                  {languageMap()["sub-content"][1][5]}
+                </span>
+                .
               </p>
 
               <p className="mb-4 text-justify">
-                <span className="ml-8">{languageMap()['sub-content'][1][6]}</span>
-                <span className="font-bold text-lg">{languageMap()['sub-content'][1][7]}</span>
+                <span className="ml-8">
+                  {languageMap()["sub-content"][1][6]}
+                </span>
+                <span className="font-bold text-lg">
+                  {languageMap()["sub-content"][1][7]}
+                </span>
                 <span className="font-light">
                   (<i>Laravel, PHP Native, Composer</i>)
                 </span>
-                {languageMap()['sub-content'][1][8]}
+                {languageMap()["sub-content"][1][8]}
                 <span className="font-bold text-lg">
-                {languageMap()['sub-content'][1][9]}
+                  {languageMap()["sub-content"][1][9]}
                 </span>
                 <span className="font-light">
                   (
@@ -270,69 +303,61 @@ const ContentLayout = () => {
                   </i>
                   )
                 </span>
-                . {languageMap()['sub-content'][1][10]}
+                . {languageMap()["sub-content"][1][10]}
                 <span className="font-bold text-lg">
-                {languageMap()['sub-content'][1][11]}
+                  {languageMap()["sub-content"][1][11]}
                 </span>
-                {languageMap()['sub-content'][1][12]}
+                {languageMap()["sub-content"][1][12]}
                 <span className="font-bold text-lg">
-                {languageMap()['sub-content'][1][13]}
+                  {languageMap()["sub-content"][1][13]}
                 </span>
                 .
               </p>
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                {languageMap()['sub-content'][1][14]}
+                  {languageMap()["sub-content"][1][14]}
                 </span>
-                <span className="font-bold text-lg">{languageMap()['sub-content'][1][15]}</span>,
-                <span className="font-bold text-lg">{languageMap()['sub-content'][1][16]}</span>
+                <span className="font-bold text-lg">
+                  {languageMap()["sub-content"][1][15]}
+                </span>
+                ,
+                <span className="font-bold text-lg">
+                  {languageMap()["sub-content"][1][16]}
+                </span>
                 <span className="font-light">
                   (<i>Tailwind, Bulma, Bootstrap</i>)
                 </span>
-                , {languageMap()['sub-content'][1][17]}
-                <span className="font-bold text-lg">MySQL</span>
-                ,{" "}
-                <span className="font-bold text-lg">
-                  PostgreSQL
-                </span>
-                ,{" "}
-                <span className="font-bold text-lg">
-                  MongoDB
-                </span>
-                , {languageMap()['sub-content'][1][18]}
-                <span className="font-bold text-lg">
-                  SupaBase
-                </span>
-                .
+                , {languageMap()["sub-content"][1][17]}
+                <span className="font-bold text-lg">MySQL</span>,{" "}
+                <span className="font-bold text-lg">PostgreSQL</span>,{" "}
+                <span className="font-bold text-lg">MongoDB</span>,{" "}
+                {languageMap()["sub-content"][1][18]}
+                <span className="font-bold text-lg">SupaBase</span>.
               </p>
 
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                {languageMap()['sub-content'][1][19]}
+                  {languageMap()["sub-content"][1][19]}
                 </span>
-                <span className="font-bold text-lg">
-                  Google Cloud
-                </span>
-                ,{" "}
-                <span className="font-bold text-lg">
-                  Docker
-                </span>{languageMap()['sub-content'][1][20]}
-                <span className="font-bold text-lg">
-                  Kubernetes
-                </span>
-                . {languageMap()['sub-content'][1][21]}
+                <span className="font-bold text-lg">Google Cloud</span>,{" "}
+                <span className="font-bold text-lg">Docker</span>
+                {languageMap()["sub-content"][1][20]}
+                <span className="font-bold text-lg">Kubernetes</span>.{" "}
+                {languageMap()["sub-content"][1][21]}
                 <span className="font-bold text-lg">OOP</span>,{" "}
-                <span className="font-bold text-lg">
-                  REST-API
-                </span>
-                ,
+                <span className="font-bold text-lg">REST-API</span>,
                 <span className="font-bold text-lg"> MVC, </span>
-                {languageMap()['sub-content'][1][22]}
-                <span className="font-bold text-lg"> Micro-Services </span>. {languageMap()['sub-content'][1][23]}
+                {languageMap()["sub-content"][1][22]}
+                <span className="font-bold text-lg">
+                  {" "}
+                  Micro-Services{" "}
+                </span>. {languageMap()["sub-content"][1][23]}
               </p>
 
               <p className="mb-4 text-justify">
-                <span className="ml-8">{languageMap()['sub-content'][1][24]}</span>
+                <span className="ml-8">
+                  {languageMap()["sub-content"][1][24]}
+                </span>
               </p>
             </div>
           </div>
@@ -342,7 +367,7 @@ const ContentLayout = () => {
       <section id="my-experience" className="h-fit w-full">
         <div className="bg-indigo-950 text-white">
           <h1 className="text-center font-bold text-4xl py-5">
-          {languageMap().content[2]} 🚀
+            {languageMap().content[2]} 🚀
           </h1>
         </div>
         {/* experience 1 */}
@@ -353,101 +378,59 @@ const ContentLayout = () => {
                 Junior Fullstack Developer
               </p>
               <p className="flex flex-col lg:flex-row mb-4 text-base font-normal lg:text-lg text-justify lg:font-light">
-                <span>( 27 September 2024 - <strong>{languageMap()['sub-content'][2][0]}</strong> )</span>
+                <span>( 27 September - 04 November 2024 )</span>
                 <span>- Heart Developer</span>
               </p>
               <p className="mb-4 text-base font-normal lg:text-lg lg:font-light text-justify">
-                Status : {languageMap()['sub-content'][2][1]}
+                Status : {languageMap()["sub-content"][2][0]}
               </p>
               <hr className="mt-1 mb-2 lg:mb-5" />
               <p className="mb-4 text-justify">
-                <span className="ml-8">I am excited to join</span>{" "}
-                <span class="font-semibold text-blue-500">
-                  PT. Pilar Anugerah Digital Indonesia
+                <span className="ml-8">
+                  {languageMap()["sub-content"][2][1]}
                 </span>
-                , known as{" "}
-                <span class="font-semibold text-indigo-500">
-                  Heart Developer
+                <span class="font-semibold">
+                  PT. Pilar Anugerah Digital Indonesia {""}
                 </span>
-                , a leading creative industry in information technology in
-                Indonesia.
+                (Heart Developer), {languageMap()["sub-content"][2][2]}
               </p>
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                  Established in early 2024 in DKI Jakarta,
-                </span>{" "}
-                <span class="font-semibold text-indigo-500">
-                  Heart Developer
-                </span>{" "}
-                specializes in turnkey applications and IT consulting, backed by
-                a team of certified professionals with over nine years of
-                experience in impactful digital projects.
+                  {languageMap()["sub-content"][2][3]}
+                </span>
               </p>
-              <p className="mb-4 text-justify">
-                <span className="ml-8">As a Junior Fullstack Developer,</span> I
-                aim to significantly contribute by designing and developing
-                innovative applications using Node.js, Astro.js, React, React
-                Native, Solid.js, PostgreSQL, Express, and Fastify.
-              </p>
-
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                  I am committed to leveraging my abilities
-                </span>{" "}
-                to improve project outcomes and contribute to the company’s
-                mission while growing in a dynamic and supportive environment.
+                  {languageMap()["sub-content"][2][4]}
+                </span>
               </p>
             </div>
-          </div>
-          <div className="absolute hidden lg:block right-[0] lg:right-[240px]">
-            <div class="bg-green-500 py-2 w-[120px] absolute top-52  right-2 lg:right-0 rounded-tr-lg animate-pulse duration-[5000ms]"></div>
-            <div class="bg-green-500 px-2 h-[534px] absolute top-[224px] right-0 animate-pulse duration-[5000ms]"></div>
-            <div class="bg-green-500 py-2 w-[120px] absolute top-[758px] right-0 rounded-br-lg animate-pulse duration-[5000ms]"></div>
           </div>
         </div>
         {/* experience 2 */}
         <div className="flex flex-row justify-center h-fit py-10 relative bg-zinc-950">
-          <div className="absolute hidden lg:block left-[255px]">
-            <div class="bg-green-500 py-2 w-[120px] absolute top-52 left-0 rounded-tl-lg animate-pulse duration-[5000ms]"></div>
-            <div class="bg-green-500 px-2 h-[534px] absolute z-20 top-[224px] left-0 animate-pulse duration-[5000ms]"></div>
-            <div class="bg-green-500 py-2 w-[120px] absolute z-20 top-[758px] left-0 rounded-bl-lg animate-pulse duration-[5000ms]"></div>
-          </div>
           <div className="flex flex-col justify-center align-middle px-0 w-full lg:w-1/2 h-full self-center">
             <div className="bg-black py-3 px-5 lg:p-5 text-white rounded-lg">
               <p className="mb-4 text-2xl font-extrabold lg:font-semibold lg:text-4xl text-left bg-gradient-to-r from-slate-100 via-yellow-500 to-slate-100 bg-clip-text text-transparent animate-gradient-x">
                 Fullstack Developer Intern
               </p>
               <p className="mb-4 text-base font-normal lg:text-lg text-justify lg:font-light">
-                ( 3 June - 6 September 2024 ) - GetMedik
+                {languageMap()["sub-content"][3][0]} - GetMedik
               </p>
               <p className="mb-4 text-base font-normal lg:text-lg lg:font-light text-justify">
-                Status : Internship Program
+                Status : {languageMap()["sub-content"][3][1]}
               </p>
               <hr className="mt-1 mb-2 lg:mb-5" />
               <p className="mb-4 text-justify">
-                <span class="ml-8 font-semibold text-blue-500">
+                <span class="ml-8 font-semibold">
                   PT. Layanan Medik Indonesia
                 </span>
-                , through its platform{" "}
-                <span className="font-semibold text-indigo-500">GetMedik </span>
-                , established in <span className="font-semibold">2016</span>, is
-                a digital healthcare aggregator in Indonesia, connecting
-                verified healthcare providers with the public to ensure
-                accessible and efficient healthcare services.
+                , {languageMap()["sub-content"][3][2]}
               </p>
               <p className="mb-4 text-justify">
-                <span className="ml-8">During my 3-month internship as a</span>{" "}
-                <span class="font-semibold text-indigo-500">
-                  Fullstack Developer Intern
-                </span>{" "}
-                at <span class="font-semibold text-indigo-500">GetMedik</span>,
-                was responsible for developing the application using{" "}
-                <span class="font-semibold text-indigo-500">NodeJS</span>,{" "}
-                <span class="font-semibold text-indigo-500">TotalJS</span>, and{" "}
-                <span class="font-semibold text-indigo-500">PostgreSQL</span>.
-                In this role, I contributed to enchancing user efficiency and
-                convenience, while also strengthening my end-to-end application
-                development skills in the digital healthcare sector.
+                <span className="ml-8">
+                  {languageMap()["sub-content"][3][3]}
+                </span>
               </p>
             </div>
           </div>
@@ -457,65 +440,42 @@ const ContentLayout = () => {
           <div className="flex flex-col justify-center align-middle px-0 w-full lg:w-1/2 h-full self-center">
             <div className="bg-black py-3 px-5 lg:p-5 text-white rounded-lg">
               <p className="mb-4 text-2xl font-extrabold lg:font-semibold lg:text-4xl text-left bg-gradient-to-r from-slate-100 via-yellow-500 to-slate-100 bg-clip-text text-transparent animate-gradient-x">
-                Assistant Lecturer
+                {languageMap()["sub-content"][4][0]}
               </p>
               <p className="mb-4 text-[15px] lg:font-medium lg:text-2xl text-left">
                 on Basic Internet Programming
               </p>
               <p className="mb-4 text-[13px] text-left font-normal lg:text-lg lg:text-justify lg:font-light">
-                ( March - September 2024 ) - STTI Sony Sugema
+                {languageMap()["sub-content"][4][1]} - STTI Sony Sugema
               </p>
               <p className="mb-4 text-[15px] text-left font-light lg:text-lg lg:text-justify">
-                Status : Internship Program
+                Status : {languageMap()["sub-content"][4][2]}
               </p>
               <hr className="mt-1 mb-2 lg:mb-5" />
               <p className="mb-4 text-justify">
-                <span className="ml-8">The</span>{" "}
-                <span class="font-semibold text-blue-500">
-                  Sony Sugema Institute of Information Technology
+                <span className="ml-8 font-semibold">
+                  {languageMap()["sub-content"][4][3]}
                 </span>{" "}
-                (STTISS). is a higher education institution with a vision to
-                become a center of excellence in informatics education with
-                global competitiveness in{" "}
-                <span class="font-semibold text-indigo-500">Indonesia</span>.
+                (STTISS). {languageMap()["sub-content"][4][4]}
               </p>
               <p className="mb-4 text-justify">
-                <span className="ml-8">As a Teaching Assistant</span> for the
-                Advanced Internet Programming course in{" "}
-                <span class="font-semibold text-indigo-500">PHP</span>. sI was
-                responsible for supporting the course through lecture material
-                preparation, managing assignments and exams, and assisting
-                students in understanding the course content.
-              </p>
-              <p className="mb-4 text-justify">
-                <span className="ml-8">Additionally,</span> I contributed to
-                research, curriculum development, and the evaluation of the
-                learning process, committed to maintaining educational quality
-                and enhancing the student learning experience.
+                <span className="ml-8">
+                  {languageMap()["sub-content"][4][5]}
+                </span>
               </p>
             </div>
-          </div>
-          <div className="absolute hidden lg:block right-[255px]">
-            <div class="bg-green-500 py-2 w-[120px] absolute top-52 right-0 rounded-tr-lg animate-pulse duration-[5000ms]"></div>
-            <div class="bg-green-500 px-2 h-[534px] absolute top-[224px] right-0 animate-pulse duration-[5000ms]"></div>
-            <div class="bg-green-500 py-2 w-[120px] absolute top-[758px] right-0 rounded-br-lg animate-pulse duration-[5000ms]"></div>
           </div>
         </div>
         {/* experience 4 */}
         <div className="flex flex-row justify-center h-fit py-10 relative bg-zinc-950">
-          <div className="absolute hidden lg:block left-[255px]">
-            <div class="bg-green-500 py-2 w-[120px] absolute top-52 left-0 rounded-tl-lg animate-pulse duration-[5000ms]"></div>
-            <div class="bg-green-500 px-2 h-[534px] absolute z-20 top-[224px] left-0 animate-pulse duration-[5000ms]"></div>
-            <div class="bg-green-500 py-2 w-[120px] absolute z-20 top-[758px] left-0 rounded-bl-lg animate-pulse duration-[5000ms]"></div>
-          </div>
           <div className="flex flex-col justify-center align-middle px-0 w-full lg:w-1/2 h-full self-center">
             <div className="bg-black p-5 text-white rounded-lg">
               <p className="mb-4 text-2xl font-extrabold lg:font-semibold lg:text-4xl text-left bg-gradient-to-r from-slate-100 via-yellow-500 to-slate-100 bg-clip-text text-transparent animate-gradient-x">
-                Cloud Computing Trainee
+                {languageMap()["sub-content"][5][0]}
               </p>
               <div className="flex gap-1 flex-col lg:flex-wrap text-[13px] text-left font-normal mb-4 lg:text-lg lg:text-justify lg:font-light">
                 <p className="flex flex-col gap-1 lg:flex-row">
-                  ( August 2023 - January 2024 )
+                  {languageMap()["sub-content"][5][1]}
                   <span> - Bangkit International Program</span>
                 </p>
                 <span class="font-light">
@@ -523,45 +483,25 @@ const ContentLayout = () => {
                 </span>
               </div>
               <p className="mb-4 text-[13px] lg:text-lg font-light text-justify">
-                Status : Internship Program
+                Status : {languageMap()["sub-content"][5][2]}
               </p>
               <hr className="mt-1 mb-2 lg:mb-5" />
               <p className="mb-4 text-justify">
-                <span class="ml-8 font-semibold text-blue-500">
-                  Bangkit Academy
+                <span class="ml-8 font-semibold">
+                  {languageMap()["sub-content"][5][3]}
                 </span>
-                , is an intensive educational initiative designed to shape top
-                digital talent in collaboration with{" "}
-                <span class="font-semibold text-indigo-500">Google</span>,{" "}
-                <span class="font-semibold text-indigo-500">Gojek</span>,{" "}
-                <span class="font-semibold text-indigo-500">Tokopedia</span>,
-                and <span class="font-semibold text-indigo-500">Traveloka</span>
-                .
+                , {languageMap()["sub-content"][5][4]}
               </p>
               <p className="mb-4 text-justify">
-                <span className="ml-8">With a focus on</span>{" "}
-                <span class="font-semibold text-indigo-500">
-                  Machine Learning
+                <span className="ml-8">
+                  {languageMap()["sub-content"][5][5]}
                 </span>
-                ,{" "}
-                <span class="font-semibold text-indigo-500">
-                  Mobile Development
-                </span>
-                ,{" "}
-                <span class="font-semibold text-indigo-500">
-                  Cloud Computing
-                </span>
-                , this program empowers participants with industry-relevant
-                skills, preparing them to excel as future-ready professionals in
-                Indonesia’s growing digital landscape.
               </p>
 
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                  I am committed to leveraging my abilities
-                </span>{" "}
-                to improve project outcomes and contribute to the company’s
-                mission while growing in a dynamic and supportive environment.
+                  {languageMap()["sub-content"][5][6]}
+                </span>
               </p>
             </div>
           </div>
@@ -571,49 +511,34 @@ const ContentLayout = () => {
           <div className="flex flex-col justify-center align-middle px-0 w-full lg:w-1/2 h-full self-center">
             <div className="bg-black p-5 text-white rounded-lg">
               <p className="mb-4 text-2xl font-extrabold lg:font-semibold lg:text-4xl text-left bg-gradient-to-r from-slate-100 via-yellow-500 to-slate-100 bg-clip-text text-transparent animate-gradient-x">
-                Computer Science Student
+              {languageMap()["sub-content"][6][0]}
               </p>
               <p className="mb-4 text-[13px] text-left font-normal lg:text-lg lg:text-justify lg:font-light">
-                ( 2021 - Current ) - STTI Sony Sugema
+              {languageMap()["sub-content"][6][1]} - STTI Sony Sugema
               </p>
               <p className="mb-4 text-[15px] text-left font-light lg:text-lg lg:text-justify">
-                Status : College Student
+                Status : {languageMap()["sub-content"][6][2]}
               </p>
               <hr className="mt-1 mb-2 lg:mb-5" />
               <p className="mb-4 text-justify">
-                <span className="ml-8">As a student in the</span>{" "}
-                <span class="font-semibold text-blue-500">
-                  Informatics Engineering program
-                </span>
-                , known as at the Sony Sugema Institute of Information
-                Technology (STTISS), a leading creative industry in information
-                technology in Indonesia.
+                <span className="ml-8">{languageMap()["sub-content"][6][3]}</span>
+                <span class="font-semibold">
+                {languageMap()["sub-content"][6][4]}
+                </span> (STTISS), {languageMap()["sub-content"][6][5]}
               </p>
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                  {" "}
-                  I have developed a solid foundation in
-                </span>{" "}
-                <span class="font-semibold text-indigo-500">
-                  computer science
-                </span>{" "}
-                and{" "}
-                <span class="font-semibold text-indigo-500">programming</span>.
-                My studies have equipped me with the technical skills and
-                analytical mindset necessary to address complex challenges in
-                software development and digital technology.
+                {languageMap()["sub-content"][6][6]}</span>
               </p>
               <p className="mb-4 text-justify">
-                <span className="ml-8">This academic experience</span> has
-                strengthened my capabilities, preparing me to contribute
-                effectively in a professional tech environment.
+                <span className="ml-8">{languageMap()["sub-content"][6][7]}</span>
               </p>
             </div>
           </div>
         </div>
       </section>
       {/* PROJECTS */}
-      <Projects/>
+      <Projects />
     </div>
   );
 };
