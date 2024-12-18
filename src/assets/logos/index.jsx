@@ -27,6 +27,8 @@ import logoKubernetes from "./kubernetes-small.png";
 import logoDocker from "./docker-small.png";
 import logoNgrok from "./ngrok.png";
 import logoGitHub from "./github.png";
+import logoVercel from "./vercel-small.png";
+import logoHeroku from "./heroku-small.png";
 
 export {
   logoHTML,
@@ -57,5 +59,7 @@ export {
   logoKubernetes,
   logoDocker,
   logoNgrok,
-  logoGitHub
+  logoGitHub,
+  logoVercel,
+  logoHeroku
 };

@@ -36,6 +36,8 @@ import {
   logoDocker,
   logoNgrok,
   logoGitHub,
+  logoVercel,
+  logoHeroku,
 } from "../../assets/logos/index";
 import Projects from "../fragments/Projects";
 import { languageMap } from "../../store/language";
@@ -133,7 +135,7 @@ const ContentLayout = () => {
             <h4 className="text-white text-center font-bold text-2xl">
               Technologies :
             </h4>
-            {/* Container Logo 1 */}
+            {/* Container Logos */}
             <div className="flex flex-wrap justify-center gap-2">
               <div className="flex flex-row gap-2">
                 <img
@@ -273,6 +275,16 @@ const ContentLayout = () => {
                 <img
                   src={logoNgrok}
                   class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+              </div>
+              <div className="flex flex-row gap-2">
+                <img
+                  src={logoVercel}
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+                <img
+                  src={logoHeroku}
+                  class="bg-white h-16 w-16 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
               </div>
             </div>
