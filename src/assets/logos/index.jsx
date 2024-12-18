@@ -11,21 +11,22 @@ import logoNodeJS from "./nodejs.png";
 import logoReact from "./react.png";
 import logoReactNative from "./react-native.png";
 import logoSolidJS from "./solidjs.png";
-import logoReefJS from "./reefjs.png";
+import logoReefJS from "./reefjs-small.png";
 import logoSmallReefJS from "./reefjs-small.png";
-import logoExpressJS from "./express.png";
-import logoFastify from "./fastify.png";
+import logoExpressJS from "./express-small.png";
+import logoFastify from "./fastify-small.png";
 import logoTailwind from "./tailwind.png";
-import logoBulma from "./bulma.png";
+import logoBulma from "./bulma-small.png";
 import logoBootstrap from "./bootstrap.png";
-import logoMySQL from "./mysql.png";
-import logoPostgreSQL from "./postgresql.png";
-import logoMongoDB from "./mongodb.png";
-import logoSupaBase from "./supabase.png";
-import logoGoogleCloud from "./google-cloud.png";
-import logoKubernetes from "./kubernetes.png";
-import logoDocker from "./docker.png";
+import logoMySQL from "./mysql-small.png";
+import logoPostgreSQL from "./postgresql-small.png";
+import logoMongoDB from "./mongodb-small.png";
+import logoSupaBase from "./supabase-small.png";
+import logoGoogleCloud from "./google-cloud-small.png";
+import logoKubernetes from "./kubernetes-small.png";
+import logoDocker from "./docker-small.png";
 import logoNgrok from "./ngrok.png";
+import logoGitHub from "./github.png";
 
 export {
   logoHTML,
@@ -55,5 +56,6 @@ export {
   logoGoogleCloud,
   logoKubernetes,
   logoDocker,
-  logoNgrok
+  logoNgrok,
+  logoGitHub
 };

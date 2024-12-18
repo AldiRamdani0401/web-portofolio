@@ -35,6 +35,7 @@ import {
   logoKubernetes,
   logoDocker,
   logoNgrok,
+  logoGitHub,
 } from "../../assets/logos/index";
 import Projects from "../fragments/Projects";
 import { languageMap } from "../../store/language";
@@ -126,136 +127,157 @@ const ContentLayout = () => {
             {languageMap().content[1]} 👨🏻‍💻
           </h1>
         </div>
-        <div className="grid grid-row lg:grid-flow-col lg:grid-cols-2 h-fit gap-5 lg:gap-10 lg:px-10 py-8 bg-zinc-950">
+        <div className="grid grid-row lg:grid-flow-col lg:grid-cols-2 h-fit gap-5 lg:gap-10 lg:px-10 py-14 bg-zinc-950">
+          {/* Logo Technologies */}
           <div className="flex flex-col gap-3 lg:gap-3">
             <h4 className="text-white text-center font-bold text-2xl">
               Technologies :
             </h4>
-            <div className="flex flex-wrap justify-center gap-2 px-2 lg:px-24">
-              <img
-                src={logoHTML}
-                className="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoCSS}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoJS}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoPHP}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoWebPack}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoAstro}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoNodeJS}
-                class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoLaravel}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoComposer}
-                class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoNPM}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoReact}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoReactNative}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoSolidJS}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoBootstrap}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-              <img
-                src={logoTailwind}
-                class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
-              />
-            </div>
-            <div className="flex flex-wrap justify-center gap-2 lg:gap-2">
-              <div className="flex justify-center gap-1 w-full lg:w-1/3 px-5 lg:px-0">
+            {/* Container Logo 1 */}
+            <div className="flex flex-wrap justify-center gap-2">
+              <div className="flex flex-row gap-2">
+                <img
+                  src={logoHTML}
+                  className="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+                <img
+                  src={logoCSS}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+              </div>
+              <div className="flex flex-row gap-2">
+                <img
+                  src={logoJS}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+                <img
+                  src={logoPHP}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+              </div>
+              <div className="flex flex-row gap-2">
+                <img
+                  src={logoWebPack}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+                <img
+                  src={logoAstro}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+              </div>
+              <div className="flex flex-row gap-2">
+                <img
+                  src={logoNodeJS}
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+                <img
+                  src={logoLaravel}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+              </div>
+              <div className="flex flex-row gap-2">
+                <img
+                  src={logoComposer}
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+                <img
+                  src={logoNPM}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+              </div>
+              <div className="flex flex-row gap-2">
+                <img
+                  src={logoReact}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+                <img
+                  src={logoReactNative}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+              </div>
+              <div className="flex flex-row gap-2">
+                <img
+                  src={logoSolidJS}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+                <img
+                  src={logoBootstrap}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+              </div>
+              <div className="flex flex-row gap-2">
+                <img
+                  src={logoTailwind}
+                  class="bg-white h-16 w-16 p-2 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+                <img
+                  src={logoGitHub}
+                  class="bg-white h-16 w-16 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
+                />
+              </div>
+              <div className="flex flex-row gap-2">
                 <img
                   src={logoReefJS}
-                  class="bg-white h-16 p-1 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
                 <img
                   src={logoExpressJS}
-                  class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
               </div>
-              <div className="flex justify-center gap-1 w-full lg:w-1/3 px-5 lg:px-0">
+              <div className="flex flex-row gap-2">
                 <img
                   src={logoFastify}
-                  class="bg-white h-16 p-1 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
                 <img
                   src={logoBulma}
-                  class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
               </div>
-              <div className="flex justify-center gap-1 w-full lg:w-1/3 px-5 lg:px-0">
+              <div className="flex flex-row gap-2">
                 <img
                   src={logoMySQL}
-                  class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
                 <img
                   src={logoPostgreSQL}
-                  class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
               </div>
-              <div className="flex justify-center gap-1 w-full lg:w-1/3 px-5 lg:px-0">
+              <div className="flex flex-row gap-2">
                 <img
                   src={logoMongoDB}
-                  class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
                 <img
                   src={logoSupaBase}
-                  class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
               </div>
-              <div className="flex justify-center gap-1 w-full lg:w-1/3 px-5 lg:px-0">
+              <div className="flex flex-row gap-2">
                 <img
                   src={logoGoogleCloud}
-                  class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
                 <img
                   src={logoKubernetes}
-                  class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
               </div>
-              <div className="flex justify-center gap-1 w-full lg:w-1/3 px-5 lg:px-0">
+              <div className="flex flex-row gap-2">
                 <img
                   src={logoDocker}
-                  class="bg-white h-16 p-2 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
                 <img
                   src={logoNgrok}
-                  class="bg-white h-16 p-1 w-1/2 border border-1 border-slate-950 rounded-lg transform transition duration-500 ease-in-out hover:animate-bounce"
+                  class="bg-white h-16 w-16 p-1 rounded-lg transform transition duration-500 ease-in-out hover:rotate-[360deg]"
                 />
               </div>
             </div>
           </div>
+          {/* Description */}
           <div className="flex flex-col justify-center py-0 align-middle h-full self-center">
             <div className="bg-black p-8 lg:p-5 text-white">
               <p className="mb-4 text-justify">
@@ -511,27 +533,33 @@ const ContentLayout = () => {
           <div className="flex flex-col justify-center align-middle px-0 w-full lg:w-1/2 h-full self-center">
             <div className="bg-black p-5 text-white rounded-lg">
               <p className="mb-4 text-2xl font-extrabold lg:font-semibold lg:text-4xl text-left bg-gradient-to-r from-slate-100 via-yellow-500 to-slate-100 bg-clip-text text-transparent animate-gradient-x">
-              {languageMap()["sub-content"][6][0]}
+                {languageMap()["sub-content"][6][0]}
               </p>
               <p className="mb-4 text-[13px] text-left font-normal lg:text-lg lg:text-justify lg:font-light">
-              {languageMap()["sub-content"][6][1]} - STTI Sony Sugema
+                {languageMap()["sub-content"][6][1]} - STTI Sony Sugema
               </p>
               <p className="mb-4 text-[15px] text-left font-light lg:text-lg lg:text-justify">
                 Status : {languageMap()["sub-content"][6][2]}
               </p>
               <hr className="mt-1 mb-2 lg:mb-5" />
               <p className="mb-4 text-justify">
-                <span className="ml-8">{languageMap()["sub-content"][6][3]}</span>
+                <span className="ml-8">
+                  {languageMap()["sub-content"][6][3]}
+                </span>
                 <span class="font-semibold">
-                {languageMap()["sub-content"][6][4]}
-                </span> (STTISS), {languageMap()["sub-content"][6][5]}
+                  {languageMap()["sub-content"][6][4]}
+                </span>{" "}
+                (STTISS), {languageMap()["sub-content"][6][5]}
               </p>
               <p className="mb-4 text-justify">
                 <span className="ml-8">
-                {languageMap()["sub-content"][6][6]}</span>
+                  {languageMap()["sub-content"][6][6]}
+                </span>
               </p>
               <p className="mb-4 text-justify">
-                <span className="ml-8">{languageMap()["sub-content"][6][7]}</span>
+                <span className="ml-8">
+                  {languageMap()["sub-content"][6][7]}
+                </span>
               </p>
             </div>
           </div>
