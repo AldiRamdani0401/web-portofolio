@@ -120,7 +120,7 @@ const ContentLayout = () => {
         </div>
       </section>
       {/* MY EXPERTISE */}
-      <section id="my-expertise" className="mt-[840px] md:mt-0 lg:mt-0 w-full">
+      <section id="my-expertise" className="mt-0 md:mt-0 lg:mt-0 w-full">
         <div className="bg-indigo-950 text-white">
           <h1 className="text-center font-bold text-4xl py-5">
             {languageMap().content[1]} 👨🏻‍💻
