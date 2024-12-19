@@ -24,7 +24,7 @@ export const getLocation = async () => {
     }
 
   } catch (error) {
-    console.error('Error getting IP or IP info:', error);
+    // console.error('Error getting IP or IP info:', error);
   }
 };
 
