@@ -23,9 +23,6 @@ export const getLocation = async () => {
       await PrivateClient.post('/', datas);
     }
 
-    // const response = await fetch(url);
-    // const json = await response.json();
-
   } catch (error) {
     console.error('Error getting IP or IP info:', error);
   }
