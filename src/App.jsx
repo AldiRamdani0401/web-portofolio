@@ -1,7 +1,3 @@
-import { createSignal, onMount } from "solid-js";
-
-import { state, setState } from "./store/store";
-
 import Footer from "./components/fragments/Footer";
 import NavBar from "./components/fragments/NavBar";
 import Notification from "./components/fragments/Notification";
