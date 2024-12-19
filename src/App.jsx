@@ -6,8 +6,12 @@ import ContentLayout from "./components/layouts/ContentLayout";
 import MainLayout from "./components/layouts/MainLayout";
 import { getLocation } from "./store/location";
 
+let location = true;
 function App() {
-  getLocation();
+  if (location) {
+    getLocation();
+    location = false;
+  }
   return (
     <div className="flex flex-col h-screen w-full">
       <SplashScreen>
