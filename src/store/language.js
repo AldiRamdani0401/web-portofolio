@@ -61,7 +61,7 @@ const languageData = {
     ]
   },
   'EN': {
-    'menu': ['About Me', 'Expertise', 'Experience', 'Projects', 'Download CV'],
+    'menu': ['About Me', 'Expertise', 'Experience', 'Projects', 'Download Resume'],
     'content' : ['About Me', 'Expertise', 'Experience', 'Projects'],
     'sub-content': [
       ['👋🏻 Hello, My name is ', ', and I proudly come from ', 'Karawang, West Java, Indonesia', 'I am currently pursuing a degree in ',
