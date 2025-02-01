@@ -6,8 +6,13 @@ module.exports = {
   theme: {
     extend: {
       animation: {
+        pulseGrow: "pulseGrow 8s infinite",
         fadeIn: 'fadeIn 3s ease-in-out forwards',
         'pulse-long': 'pulse 5s infinite',
+        'pulse-4': 'pulse 4s infinite',
+        'pulse-3': 'pulse 3s infinite',
+        'pulse-2': 'pulse 2s infinite',
+        'pulse-1': 'pulse 1s infinite',
       },
       transitionDuration: {
         '2000': '2000ms',
@@ -21,6 +26,10 @@ module.exports = {
         '10000': '10000ms',
       },
       keyframes: {
+        pulseGrow: {
+          "0%, 100%": { transform: "scale(1.2)", opacity: "1" },
+          "50%": { transform: "scale(0.6)", opacity: "0.6" },
+        },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },

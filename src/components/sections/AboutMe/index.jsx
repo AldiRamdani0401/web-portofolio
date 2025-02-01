@@ -4,18 +4,24 @@ import { languageMap } from "../../../store/language";
 
 const AboutMe = () => {
   return (
-    <section id="about-me" className="h-fit w-full">
-      <div className="bg-indigo-950 text-white">
-        <h1 className="text-center font-bold text-4xl py-5">
+    <section id="about-me" className="h-dvh w-full py-5 bg-slate-950 snap-center animate-fadeIn">
+      {/* <div className="text-white">
+        <h1 className="text-center font-bold text-3xl py-5">
           {languageMap().content[0]} 👨🏻‍💼
         </h1>
-      </div>
-      <div className="grid grid-row lg:grid-flow-col py-5 lg:py-16 gap-0 lg:gap-5 sm:px-0 lg:px-10 bg-zinc-950">
-        <div className=" w-full h-fit pt-4 bg-gray-950  hover:bg-indigo-950">
-          <img src={profile} class="w-full lg:w-100" />
+      </div> */}
+      <div className="flex lg:flex-row justify-center gap-0 lg:gap-5 sm:px-0 lg:px-10 h-full">
+        <div className="w-1/2 mt-[5%]">
+          <div className="flex flex-col w-fit h-96 mx-auto mt-16 bg-gray-800 rounded-full overflow-hidden">
+            <img src={profile} class="object-cover w-96" />
+          </div>
         </div>
-        <div className="flex flex-col h-full">
-          <div className="bg-black p-8 lg:p-5 mb-0 lg:mb-10 text-white">
+        <div className="w-full mt-5">
+          <h1 className="font-bold text-3xl py-5 text-slate-300">
+            {languageMap().content[0]}
+          </h1>
+          <div className="border-2 py-[0.8px] rounded-sm bg-gradient-to-r from-slate-100 via-yellow-600 to-slate-100 bg-clip-border border-transparent animate-gradient-x"></div>
+          <div className="py-5 mb-0 text-slate-300 w-fit h-fit">
             <p className="mb-4 text-center lg:text-justify">
               {languageMap()["sub-content"][0][0]}
               <span className="font-bold text-xl">Aldi Ramdani</span>

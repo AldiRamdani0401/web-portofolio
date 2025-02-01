@@ -2,7 +2,7 @@ import { languageMap } from "../../../store/language";
 
 const MyExperience = () => {
   return (
-    <section id="my-experience" className="h-fit w-full">
+    <section id="my-experience" className="h-fit w-full snap-center">
     <div className="bg-indigo-950 text-white">
       <h1 className="text-center font-bold text-4xl py-5">
         {languageMap().content[2]} 🚀

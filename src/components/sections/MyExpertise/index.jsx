@@ -35,13 +35,13 @@ import { languageMap } from "../../../store/language";
 
 const MyExpertise = () => {
   return (
-    <section id="my-expertise" className="mt-0 md:mt-0 lg:mt-0 w-full">
-      <div className="bg-indigo-950 text-white">
+    <section id="my-expertise" className="bg-gray-950 h-dvh snap-center w-full">
+      <div className="text-white">
         <h1 className="text-center font-bold text-4xl py-5">
           {languageMap().content[1]} 👨🏻‍💻
         </h1>
       </div>
-      <div className="grid grid-row lg:grid-flow-col lg:grid-cols-2 h-fit gap-5 lg:gap-10 lg:px-10 py-14 bg-zinc-950">
+      <div className="grid grid-row lg:grid-flow-col lg:grid-cols-2 h-fit gap-5 lg:gap-10 lg:px-10 py-14">
         {/* Logo Technologies */}
         <div className="flex flex-col gap-3 lg:gap-3">
           <h4 className="text-white text-center font-bold text-2xl">
@@ -203,7 +203,7 @@ const MyExpertise = () => {
         </div>
         {/* Description */}
         <div className="flex flex-col justify-center py-0 align-middle h-full self-center">
-          <div className="bg-black p-8 lg:p-5 text-white">
+          <div className="p-8 lg:p-5 text-white">
             <p className="mb-4 text-justify">
               <span className="ml-8">{languageMap()["sub-content"][1][0]}</span>
               <span className="font-bold text-lg">
