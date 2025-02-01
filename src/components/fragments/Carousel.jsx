@@ -49,7 +49,7 @@ const Carousel = () => {
             />
           </span>
           <div className="flex flex-col gap-2 w-full">
-            <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">Saya seorang Fullstack Developer dengan keahlian JavaScript, TypeScript, PHP, Go, dan terus mengembangkan keterampilan saya di bidang software development.</p>
+            <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">Saya seorang Fullstack Developer dengan keahlian JavaScript, TypeScript, PHP, Go, dan berkomitmen untuk terus mengembangkan keterampilan saya di bidang software development.</p>
             {/* Buttons */}
             <div className="mt-3 flex gap-8 flex-row justify-normal w-full">
               {/* About Me */}
@@ -59,8 +59,8 @@ const Carousel = () => {
               {/* Resume */}
               <div className="w-fit">
                 <button type="button" onClick={() => scrollToSection("about-me")} className="flex flex-row gap-2 items-center border border-indigo-500 text-indigo-100 hover:bg-indigo-900 text-xl lg:text-lg px-2 py-1 rounded-md text-nowrap">
-                  <IconDownLoad/>
                   <span>Resume</span>
+                  <IconDownLoad/>
                 </button>
               </div>
             </div>
