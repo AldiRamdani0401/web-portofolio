@@ -15,9 +15,9 @@ const scrollToSection = (id) => {
 
 const Carousel = () => {
   return (
-    <section id="hero" className="h-dvh bg-gray-950 border">
-      <div className="px-0 lg:px-10 w-full h-fit flex gap-0 flex-col-reverse md:flex-row lg:flex-row xl:flex-row justify-normal lg:justify-between mt-0 lg:mt-[10%]">
-        <div className="flex flex-col items-start lg:items-center justify-normal lg:justify-center mx-auto px-5 gap-3 animate-fadeIn w-full h-fit lg:w-full lg:h-full lg:px-8 border">
+    <section id="hero" className="h-dvh bg-gray-950 xl:py-[10%]">
+      <div className="px-0 lg:px-10 w-full h-fit flex gap-0 flex-col-reverse md:flex-row lg:flex-row xl:flex-row justify-normal lg:justify-between mt-0">
+        <div className="flex flex-col items-start lg:items-center justify-normal lg:justify-center mx-auto px-5 gap-3 animate-fadeIn w-full h-fit lg:w-full lg:h-full lg:px-8 ">
           {/* SUB CONTAINER 1 */}
           <div className="flex flex-col gap-2 w-full">
             <h1 className="font-normal text-xl text-slate-100">Hello, Iam </h1>
@@ -30,7 +30,7 @@ const Carousel = () => {
             <img src={logoHTML} class="h-10 animate-pulse-long" alt="github" />
             <img src={logoCSS} class="h-10 animate-pulse-4" alt="github" />
           </div> */}
-          <span className="flex flex-row gap-2 text-indigo-300 text-center font-bold text-2xl md:text-5xl lg:text-4xl w-full h-fit">
+          <span className="flex flex-row gap-2 text-indigo-300 text-center font-bold text-2xl md:text-5xl lg:text-2xl w-full h-fit">
             <span className="text-white font-normal">A</span>
             <SolidTyper
               text={[
