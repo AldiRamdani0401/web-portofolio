@@ -29,6 +29,10 @@ import logoNgrok from "./ngrok.png";
 import logoGitHub from "./github.png";
 import logoVercel from "./vercel-small.png";
 import logoHeroku from "./heroku-small.png";
+import logoGolang from "./golang.png";
+import logoTypeScript from "./typescript.png";
+import logoGin from "./gin.png";
+import logoNestJS from "./nestjs.svg";
 
 export {
   logoHTML,
@@ -61,5 +65,9 @@ export {
   logoNgrok,
   logoGitHub,
   logoVercel,
-  logoHeroku
+  logoHeroku,
+  logoGolang,
+  logoTypeScript,
+  logoGin,
+  logoNestJS
 };

@@ -2,6 +2,7 @@ import { SolidTyper } from "solid-typer";
 import hero from "../../assets/images/hero.png";
 
 import { logoCSS, logoGitHub, logoHTML } from "../../assets/logos";
+import IconDownLoad from "../../assets/icons/download";
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -15,7 +16,7 @@ const scrollToSection = (id) => {
 
 const Carousel = () => {
   return (
-    <section id="hero" className="h-dvh bg-gray-950 xl:py-[10%]">
+    <section id="hero" className="h-dvh bg-gray-950 py-10 xl:py-[10%]">
       <div className="px-0 lg:px-10 w-full h-fit flex gap-0 flex-col-reverse md:flex-row lg:flex-row xl:flex-row justify-normal lg:justify-between mt-0">
         <div className="flex flex-col items-start lg:items-center justify-normal lg:justify-center mx-auto px-5 gap-3 animate-fadeIn w-full h-fit lg:w-full lg:h-full lg:px-8 ">
           {/* SUB CONTAINER 1 */}
@@ -48,16 +49,19 @@ const Carousel = () => {
             />
           </span>
           <div className="flex flex-col gap-2 w-full">
-            <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">Saya seorang Fullstack Developer dengan keahlian JavaScript, TypeScript, PHP, dan Go, serta terus mengembangkan keterampilan di bidang software development.</p>
-            <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">Berpengalaman dalam membangun aplikasi yang mengutamakan efisien, scalable, dan user-friendly, saya juga mampu bekerja dalam kolaborasi, cepat beradaptasi, dan berpikir kritis dalam pemecahan masalah kompleks. Dengan semangat kerja dan belajar yang tinggi, saya siap berkontribusi dalam proyek inovatif.</p>
-            <div className="mt-3 flex flex-row gap-8 justify-between lg:justify-normal w-full">
+            <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">Saya seorang Fullstack Developer dengan keahlian JavaScript, TypeScript, PHP, Go, dan terus mengembangkan keterampilan saya di bidang software development.</p>
+            {/* Buttons */}
+            <div className="mt-3 flex gap-8 flex-row justify-normal w-full">
               {/* About Me */}
-              <div className="w-[20%]">
-                <button type="button" onClick={() => scrollToSection("about-me")} className="border border-indigo-500 text-indigo-100 hover:bg-indigo-600 text-3xl lg:text-lg px-2 rounded-md">About Me</button>
+              <div className="w-fit lg:w-[20%]">
+                <button type="button" onClick={() => scrollToSection("about-me")} className="border border-indigo-500 text-indigo-100 hover:bg-indigo-900 text-xl lg:text-lg px-2 py-1 rounded-md text-nowrap">About Me</button>
               </div>
               {/* Resume */}
-              <div className="w-full">
-                <button type="button" onClick={() => scrollToSection("about-me")} className="bg-indigo-900 hover:bg-indigo-700 text-white text-3xl lg:text-lg px-2 rounded-md">Resume</button>
+              <div className="w-fit">
+                <button type="button" onClick={() => scrollToSection("about-me")} className="flex flex-row gap-2 items-center border border-indigo-500 text-indigo-100 hover:bg-indigo-900 text-xl lg:text-lg px-2 py-1 rounded-md text-nowrap">
+                  <IconDownLoad/>
+                  <span>Resume</span>
+                </button>
               </div>
             </div>
           </div>
