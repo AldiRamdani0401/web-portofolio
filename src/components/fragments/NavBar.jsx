@@ -22,7 +22,7 @@ const NavBar = () => {
     <nav
       className={`${
         state.isVisible ? "flex" : "hidden"
-      } flex-row sticky top-0 z-[999] justify-between gap-4 items-center bg-gray-950 py-4 px-2 lg:px-10 h-16 w-full text-white select-none`}
+      } flex-row sticky top-0 z-[999] justify-between gap-4 items-center bg-gray-950 py-4 px-2 lg:px-10 h-16 w-full text-slate-100 select-none`}
     >
       <button
         onclick={() => scrollToSection("hero")}
