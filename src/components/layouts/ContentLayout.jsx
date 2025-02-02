@@ -22,7 +22,7 @@ const ContentLayout = () => {
       {/* MY EXPERIENCE */}
         <MyExperience/>
       {/* PROJECTS */}
-        {/* <Projects /> */}
+        <Projects />
     </div>
   );
 };

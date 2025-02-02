@@ -113,7 +113,7 @@ const languageData = {
 }
 
 // Membuat state global untuk bahasa
-export const [language, setLanguage] = createSignal('ID'); // Default 'ID'
+export const [language, setLanguage] = createSignal('EN'); // Default 'ID'
 
 // Membuat state untuk languageMap dengan nilai awal dari 'languageData' berdasarkan 'language'
 export const [languageMap, setLanguageMap] = createSignal(languageData[language()]);

@@ -96,11 +96,35 @@ const projects = [
         status: "On Progress",
         stack: [logoPHP, logoHTML, logoCSS, logoJS],
       },
+      {
+        id: 13,
+        name: "Pembayaran SPP",
+        status: "On Progress",
+        stack: [logoPHP, logoHTML, logoCSS, logoJS],
+      },
+      {
+        id: 14,
+        name: "Pembayaran SPP",
+        status: "On Progress",
+        stack: [logoPHP, logoHTML, logoCSS, logoJS],
+      },
+      {
+        id: 15,
+        name: "Pembayaran SPP",
+        status: "On Progress",
+        stack: [logoPHP, logoHTML, logoCSS, logoJS],
+      },
+      {
+        id: 16,
+        name: "Pembayaran SPP",
+        status: "On Progress",
+        stack: [logoPHP, logoHTML, logoCSS, logoJS],
+      },
     ],
   },
   {
-    label: "NodeJS",
-    logo: logoNodeJS,
+    label: "JavaScript",
+    logo: logoJS,
     projects: [
       {
         id: 1,
@@ -165,8 +189,8 @@ const projects = [
     ],
   },
   {
-    label: "React",
-    logo: logoReact,
+    label: "NodeJS",
+    logo: logoNodeJS,
     projects: [
       {
         id: 1,
@@ -364,13 +388,10 @@ const projects = [
   },
 ];
 
-const logos = [logoPHP, logoNodeJS, logoReact, logoSolidJS, logoSmallReefJS];
-
 const getWindowWidth = window.innerWidth;
 
-const ProjectsList = () => {
+const ProjectsList = (props) => {
   return projects.map((category, index) => {
-    const [activeProject, setActiveProject] = createSignal(null);
     const [count, setCount] = createSignal(1); // Sinyal lokal untuk setiap kategori
     const tempArray = [];
 
@@ -381,11 +402,7 @@ const ProjectsList = () => {
     };
 
     // Fungsi untuk menutup detail
-    const closeDetail = () => {
-      setActiveProject(null);
-      setState("isVisible", true);
-    };
-
+    const closeDetail = () => {};
     const checkInView = (id) => {
       const container = document.getElementById(id);
       const elements = container.querySelectorAll(".project");
@@ -406,27 +423,12 @@ const ProjectsList = () => {
     return (
       <div
         id={`container-${index}`}
-        className="w-full lg:shrink-0 px-0 lg:px-5 snap-center "
+        className="relative w-full h-full lg:shrink-0 px-0 snap-center"
         key={index}
       >
         <div className="flex flex-col justify-center w-full">
-          <div className="flex justify-center py-2 gap-2 w-full bg-black">
-            {logos.map((logo, i) => (
-              <figure key={i}>
-                <a href={`#container-${i}`}>
-                  <img
-                    src={logo}
-                    className={`h-10 w-10 p-1 rounded-full bg-white ${
-                      logo !== category.logo ? "opacity-50 grayscale" : ""
-                    } cursor-pointer object-cover`}
-                    alt={category.label}
-                    draggable="false"
-                  />
-                </a>
-              </figure>
-            ))}
-          </div>
-          <div className="relative flex justify-center align-middle gap-8 bg-black text-white py-2 select-none">
+          {/* Project Count */}
+          <div className="bg-gray-900 flex justify-center align-middle gap-8 text-white py-2 select-none sticky top-0 z-[777]">
             <h1 className="text-2xl lg:text-xl self-center font-bold">
               {category.label}
             </h1>
@@ -441,21 +443,24 @@ const ProjectsList = () => {
           </div>
 
           {/* Snap Scroll Container */}
-          <div
-            id={`container-list-project-${index}`}
-            className="grid grid-flow-col auto-cols-max align-middle justify-start lg:grid lg:grid-flow-col lg:justify-start w-full h-full lg:h-full lg:w-full overflow-x-scroll scrollbar-hide self-center bg-zinc-900 py-7 lg:py-10 px-3 sm:px-6 md:px-6 lg:px-10 gap-12 lg:gap-8 text-white select-none snap-x snap-mandatory"
-            onScroll={() => checkInView(`container-list-project-${index}`)}
-          >
-            {/* Container List Project */}
-            <ContainerListProject datas={category.projects} onShowDetail={showDetail} />
+            <div
+              id={`container-list-project-${index}`}
+              className="grid grid-flow-col auto-cols-max align-middle justify-start lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-7 px-3 sm:px-6 md:px-6 lg:px-10 lg:pt-20 lg:pb-36 gap-12 lg:gap-8 text-slate-200 overflow-auto select-none snap-y snap-mandatory"
+              onScroll={() => checkInView(`container-list-project-${index}`)}
+            >
+              {/* Container List Project */}
+              <ContainerListProject
+                datas={category.projects}
+                onShowDetail={showDetail}
+              />
+            </div>
           </div>
-        </div>
         {/* Show detail di induk */}
-        <Show when={activeProject()}>
+        {/* <Show when={activeProject()}>
           <div className="absolute top-[-1px] left-0 z-50 border">
             <CardDetail project={activeProject()} onClose={closeDetail} />
           </div>
-        </Show>
+        </Show> */}
       </div>
     );
   });

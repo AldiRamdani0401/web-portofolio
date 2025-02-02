@@ -66,3 +66,28 @@ html {
 .scrollbar-hide::-webkit-scrollbar-thumb:active {
   cursor: grabbing; /* Kursor berubah saat di-drag */
 }
+
+/* scroll bar x hidden */
+.scrollbar-x-hide {
+  overflow-x: hidden; /* Memungkinkan scroll horizontal */
+  overflow-y: scroll; /* Scrollbar vertikal tetap muncul */
+  white-space: nowrap; /* Hindari wrap konten */
+
+  /* Untuk Chrome, Safari, dan Edge */
+  &::-webkit-scrollbar {
+    height: 0px; /* Sembunyikan scrollbar horizontal */
+    width: 8px;  /* Atur lebar scrollbar vertikal */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3); /* Warna thumb scrollbar */
+    border-radius: 4px; /* Membuat scrollbar lebih halus */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Warna background scrollbar */
+  }
+
+  /* Untuk Firefox */
+  scrollbar-width: thin; /* Atur ukuran scrollbar */
+}

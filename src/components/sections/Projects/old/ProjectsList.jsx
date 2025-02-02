@@ -99,8 +99,8 @@ const projects = [
     ],
   },
   {
-    label: "NodeJS",
-    logo: logoNodeJS,
+    label: "JavaScript",
+    logo: logoJS,
     projects: [
       {
         id: 1,
@@ -165,8 +165,8 @@ const projects = [
     ],
   },
   {
-    label: "React",
-    logo: logoReact,
+    label: "NodeJS",
+    logo: logoNodeJS,
     projects: [
       {
         id: 1,
@@ -364,7 +364,7 @@ const projects = [
   },
 ];
 
-const logos = [logoPHP, logoNodeJS, logoReact, logoSolidJS, logoSmallReefJS];
+const logos = [logoPHP, logoJS, logoNodeJS, logoSolidJS, logoSmallReefJS];
 
 const getWindowWidth = window.innerWidth;
 
@@ -406,11 +406,12 @@ const ProjectsList = () => {
     return (
       <div
         id={`container-${index}`}
-        className="w-full lg:shrink-0 px-0 lg:px-5 snap-center "
+        className="w-full lg:shrink-0 px-0 snap-center"
         key={index}
       >
         <div className="flex flex-col justify-center w-full">
-          <div className="flex justify-center py-2 gap-2 w-full bg-black">
+          <div className="flex justify-center py-2 items-center gap-2 w-full">
+            <h1 className="text-xl">Languages :</h1>
             {logos.map((logo, i) => (
               <figure key={i}>
                 <a href={`#container-${i}`}>
@@ -418,7 +419,7 @@ const ProjectsList = () => {
                     src={logo}
                     className={`h-10 w-10 p-1 rounded-full bg-white ${
                       logo !== category.logo ? "opacity-50 grayscale" : ""
-                    } cursor-pointer object-cover`}
+                    } cursor-pointer object-fill`}
                     alt={category.label}
                     draggable="false"
                   />
@@ -426,7 +427,7 @@ const ProjectsList = () => {
               </figure>
             ))}
           </div>
-          <div className="relative flex justify-center align-middle gap-8 bg-black text-white py-2 select-none">
+          <div className="relative flex justify-center align-middle gap-8 text-white py-2 select-none">
             <h1 className="text-2xl lg:text-xl self-center font-bold">
               {category.label}
             </h1>
@@ -443,7 +444,7 @@ const ProjectsList = () => {
           {/* Snap Scroll Container */}
           <div
             id={`container-list-project-${index}`}
-            className="grid grid-flow-col auto-cols-max align-middle justify-start lg:flex lg:flex-wrap lg:justify-center w-full h-full lg:h-130 overflow-x-scroll scrollbar-hide self-center bg-zinc-900 py-7 lg:py-3 px-3 sm:px-6 md:px-6 lg:px-28 gap-12 lg:gap-3 text-white select-none snap-x snap-mandatory"
+            className="grid grid-flow-col auto-cols-max align-middle justify-start lg:grid lg:grid-flow-col lg:justify-start w-full h-full lg:h-full lg:w-full overflow-x-scroll scrollbar-hide self-center bg-zinc-900 py-7 lg:py-10 px-3 sm:px-6 md:px-6 lg:px-10 gap-12 lg:gap-8 text-white select-none snap-x snap-mandatory"
             onScroll={() => checkInView(`container-list-project-${index}`)}
           >
             {/* Container List Project */}
@@ -451,11 +452,11 @@ const ProjectsList = () => {
           </div>
         </div>
         {/* Show detail di induk */}
-        <Show when={activeProject()}>
+        {/* <Show when={activeProject()}>
           <div className="absolute top-[-1px] left-0 z-50 border">
             <CardDetail project={activeProject()} onClose={closeDetail} />
           </div>
-        </Show>
+        </Show> */}
       </div>
     );
   });

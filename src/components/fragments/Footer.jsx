@@ -56,7 +56,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="mt-20 flex flex-col lg:flex-col gap-4 justify-between bg-gray-950 p-4 w-full text-white">
+    <footer className="mt-56 flex flex-col lg:flex-col gap-4 justify-between bg-zinc-950 px-4 py-20 w-full text-white">
       <div className="flex flex-row">
         <div className="flex flex-col gap-4 justify-between w-full">
           <button
