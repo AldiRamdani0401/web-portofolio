@@ -3,8 +3,8 @@ import { createEffect, createSignal } from "solid-js";
 // Data bahasa
 const languageData = {
   'ID': {
-    'menu': ['Tentang Saya', 'Keahlian', 'Pengalaman', 'Project', 'Unduh CV'],
-    'content' : ['Tentang Saya', 'Keahlian', 'Pengalaman', 'Project'],
+    'menu': ['Tentang Saya', 'Keahlian', 'Pengalaman', 'Project', 'Blog', 'Unduh CV'],
+    'content' : ['Tentang Saya', 'Keahlian', 'Pengalaman', 'Project', 'Blog'],
     'sub-content': [
       ['👋🏻 Hello, Nama saya ', ', dan saya berasal dari ', 'Karawang, Jawa Barat, Indonesia', 'Saat ini saya sedang menempuh pendidikan sarjana pada jurusan ',
       'Teknik Informatika', ' di ',
@@ -61,8 +61,8 @@ const languageData = {
     ]
   },
   'EN': {
-    'menu': ['About Me', 'Expertise', 'Experience', 'Projects', 'Download Resume'],
-    'content' : ['About Me', 'Expertise', 'Experience', 'Projects'],
+    'menu': ['About Me', 'Expertise', 'Experience', 'Projects', 'Blog', 'Download Resume'],
+    'content' : ['About Me', 'Expertise', 'Experience', 'Projects', 'Blog'],
     'sub-content': [
       ['👋🏻 Hello, My name is ', ', and I proudly come from ', 'Karawang, West Java, Indonesia', 'I am currently pursuing a degree in ',
       'Informatics Engineering', ' at ',

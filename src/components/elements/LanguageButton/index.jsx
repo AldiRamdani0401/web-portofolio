@@ -26,7 +26,7 @@ const LanguageButton = () => {
 
   return (
     <button
-      className="flex items-center p-1 lg:p-2 rounded-full w-36 lg:w-14 hover:bg-blue-950"
+      className="flex items-center justify-end p-1 lg:p-2 rounded-full h-10 w-10 hover:bg-blue-950"
       onClick={() => {
         // Logika untuk mengubah bahasa
         const newLanguage = state() === 'ID' ? 'EN' : 'ID'; // Toggle antara 'ID' dan 'EN'
@@ -36,7 +36,7 @@ const LanguageButton = () => {
     >
       <img
         src={logoMap[state()] ?? logoMap['EN']}  // Jika state() tidak ditemukan, fallback ke EN
-        className="object-cover"
+        className="object-cover h-full w-full"
         alt={state() === 'ID' ? 'Bahasa Indonesia' : 'English'}
       />
     </button>
