@@ -49,7 +49,9 @@ const Carousel = () => {
             />
           </span>
           <div className="flex flex-col gap-2 w-full">
-            <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">Saya seorang Fullstack Developer dengan keahlian JavaScript, TypeScript, PHP, Go, dan berkomitmen untuk terus mengembangkan keterampilan saya di bidang software development.</p>
+            <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">I am a Fullstack Developer with expertise in JavaScript, TypeScript, PHP, and Go, committed to continuously enhancing my skills in software development.</p>
+            {/* Indonesian */}
+            {/* <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">Saya seorang Fullstack Developer dengan keahlian JavaScript, TypeScript, PHP, Go, dan berkomitmen untuk terus mengembangkan keterampilan saya di bidang software development.</p> */}
             {/* Buttons */}
             <div className="mt-3 flex gap-8 flex-row justify-normal w-full">
               {/* About Me */}

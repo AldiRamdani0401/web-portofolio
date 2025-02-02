@@ -42,22 +42,32 @@ const AboutMe = () => {
                 Aldi Ramdani
               </p>
               <p className="mb-4 text-justify">
+                <span className="ml-5 lg:ml-8">I am a Fullstack Developer</span>{" "}
+                with expertise in JavaScript, TypeScript, PHP, and Go, committed
+                to continuously enhancing my skills in software development.
+              </p>
+              {/* Indonesian */}
+              {/* <p className="mb-4 text-justify">
                 <span className="ml-5 lg:ml-8">
                   Saya seorang Fullstack Developer
                 </span>{" "}
                 dengan keahlian JavaScript, TypeScript, PHP, Go, dan berkomitmen
                 untuk terus mengembangkan keterampilan saya di bidang software
                 development.
-              </p>
+              </p> */}
 
               <p className="mb-4 text-justify">
+                <span className="ml-5 lg:ml-8">I have experience in building</span> efficient, scalable, and user-friendly applications. I excel in collaboration, adaptability, and critical thinking for solving complex problems. With a strong work ethic and eagerness to learn, I am ready to contribute to innovative projects.
+              </p>
+              {/* Indonesian */}
+              {/* <p className="mb-4 text-justify">
                 <span className="ml-5 lg:ml-8">Saya berpengalaman</span> dalam
                 membangun aplikasi yang efisien, scalable, dan user-friendly,
                 saya juga mampu bekerja dalam kolaborasi, cepat beradaptasi, dan
                 berpikir kritis dalam pemecahan masalah kompleks. Dengan
                 semangat kerja dan belajar yang tinggi, saya siap berkontribusi
                 dalam proyek inovatif.
-              </p>
+              </p> */}
               <div className="flex flex-col lg:flex-row gap-1 lg:gap-5">
                 <div className="flex flex-col gap-1">
                   <p className="flex flex-row gap-2 lg:gap-3">
@@ -110,7 +120,7 @@ const AboutMe = () => {
             </div>
           </div>
         </div>
-        {/* Qualification */}
+        {/* === Qualification === */}
         <div className="w-full text-center px-2 lg:px-10 lg:text-left mt-5">
           {/* MD - XL */}
           <h1 className="hidden lg:block font-bold text-3xl py-5 text-slate-300">
@@ -122,34 +132,64 @@ const AboutMe = () => {
             My Qualification
           </h1>
           <div className="block lg:hidden w-70 mx-auto border-2 py-[0.8px] px-2 lg:px-0 rounded-sm bg-gradient-to-r from-slate-100 via-yellow-600 to-slate-100 bg-clip-border border-transparent animate-gradient-x"></div>
-          {/* Qualification 1 */}
-          <div className="py-5 px-2 lg:px-0 mb-0 text-slate-300 w-full h-fit">
-            <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg">
-              <h1 className="font-semibold text-xl text-yellow-500">Bachelor's Degree in Informatics Engineering</h1>
-              <h1 className="self-end font-medium text-lg">2021 - 2025</h1>
-              <p className="text-justify font-light">As an Informatics Engineering student at STTI Sony Sugema, I have developed a strong understanding of software and hardware. This program has equipped me with relevant hard and soft skills to tackle challenges in technology development. This academic experience has strengthened my abilities, preparing me to contribute effectively to both industry and society.</p>
+          {/* === Container Wrapper === */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full h-fit py-5">
+            {/* Qualification 1 */}
+            <div className="px-2 lg:px-0 mb-0 text-slate-300 w-full h-full">
+              <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg">
+                <h1 className="font-semibold text-xl text-yellow-500">
+                  Bachelor's Degree in Informatics Engineering
+                </h1>
+                <h1 className="self-end font-medium text-lg">2021 - 2025</h1>
+                <p className="text-justify font-light">
+                  As an Informatics Engineering student at STTI Sony Sugema, I
+                  have developed a strong understanding of software and hardware.
+                  This program has equipped me with relevant hard and soft skills
+                  to tackle challenges in technology development. This academic
+                  experience has strengthened my abilities, preparing me to
+                  contribute effectively to both industry and society.
+                </p>
+              </div>
+              {/* Indonesian */}
+              {/* <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-950 border">
+                <h1 className="font-semibold text-xl text-yellow-500">Bachelor's Degree in Informatics Engineering</h1>
+                <h1 className="self-end font-medium text-lg">2021 - 2025</h1>
+                <p className="text-justify">Sebagai mahasiswa Teknik Informatika di STTI Sony Sugema, saya telah membangun pemahaman yang kuat dalam software dan hardware. Program studi ini membekali saya dengan hard-skill dan soft-skill yang relevan untuk menghadapi tantangan dalam pengembangan teknologi. Pengalaman akademis ini memperkuat kemampuan saya, mempersiapkan saya untuk berkontribusi secara efektif di dunia industri dan masyarakat.</p>
+              </div> */}
             </div>
-            {/* Indonesian */}
-            {/* <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-950 border">
-              <h1 className="font-semibold text-xl text-yellow-500">Bachelor's Degree in Informatics Engineering</h1>
-              <h1 className="self-end font-medium text-lg">2021 - 2025</h1>
-              <p className="text-justify">Sebagai mahasiswa Teknik Informatika di STTI Sony Sugema, saya telah membangun pemahaman yang kuat dalam software dan hardware. Program studi ini membekali saya dengan hard-skill dan soft-skill yang relevan untuk menghadapi tantangan dalam pengembangan teknologi. Pengalaman akademis ini memperkuat kemampuan saya, mempersiapkan saya untuk berkontribusi secara efektif di dunia industri dan masyarakat.</p>
-            </div> */}
-          </div>
-          {/* Qualification 2 */}
-          <div className="py-5 px-2 lg:px-0 mb-0 text-slate-300 w-full h-fit">
-            <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg">
-              <h1 className="font-semibold text-xl text-yellow-500">Cloud Computing Participant</h1>
-              <h1 className="self-end font-medium text-lg">2024</h1>
-              <p className="text-justify font-light">Bangkit Academy is an intensive educational program in collaboration with Google, Gojek, Tokopedia, and Traveloka to develop outstanding digital talent in Machine Learning, Mobile Development, and Cloud Computing. This program equips participants with industry-relevant skills, preparing them to become future professionals in the digital era.</p>
+            {/* Qualification 2 */}
+            <div className="px-2 lg:px-0 mb-0 text-slate-300 w-full h-full">
+              <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg">
+                <h1 className="font-semibold text-xl text-yellow-500">
+                  Cloud Computing Participant
+                </h1>
+                <h1 className="self-end font-medium text-lg">2024</h1>
+                <p className="text-justify font-light">
+                  Bangkit Academy is an intensive educational program in
+                  collaboration with Google, Gojek, Tokopedia, and Traveloka to
+                  develop outstanding digital talent in Machine Learning, Mobile
+                  Development, and Cloud Computing. This program equips
+                  participants with industry-relevant skills, preparing them to
+                  become future professionals in the digital era.
+                </p>
+              </div>
             </div>
-          </div>
-          {/* Qualification 3 */}
-          <div className="py-5 px-2 lg:px-0 mb-0 text-slate-300 w-full h-fit">
-            <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg">
-              <h1 className="font-semibold text-xl text-yellow-500">Chairman of HIMATI</h1>
-              <h1 className="self-end font-medium text-lg">2023 - 2024</h1>
-              <p className="text-justify font-light">As Chairman of HIMATI STTI Sony Sugema, I gained leadership experience in managing a study program-level organization. I focused on enhancing soft and hard skills to improve academic quality by designing work and research programs aligned with technology trends and job market demands, ensuring students remain competent and competitive.</p>
+            {/* Qualification 3 */}
+            <div className="px-2 lg:px-0 mb-0 text-slate-300 w-full h-full">
+              <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg">
+                <h1 className="font-semibold text-xl text-yellow-500">
+                  Chairman of HIMATI
+                </h1>
+                <h1 className="self-end font-medium text-lg">2023 - 2024</h1>
+                <p className="text-justify font-light">
+                  As Chairman of HIMATI STTI Sony Sugema, I gained leadership
+                  experience in managing a study program-level organization. I
+                  focused on enhancing soft and hard skills to improve academic
+                  quality by designing work and research programs aligned with
+                  technology trends and job market demands, ensuring students
+                  remain competent and competitive.
+                </p>
+              </div>
             </div>
           </div>
           {/* Indonesian */}
