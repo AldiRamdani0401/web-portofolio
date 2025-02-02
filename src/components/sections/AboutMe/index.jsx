@@ -133,10 +133,10 @@ const AboutMe = () => {
           </h1>
           <div className="block lg:hidden w-70 mx-auto border-2 py-[0.8px] px-2 lg:px-0 rounded-sm bg-gradient-to-r from-slate-100 via-yellow-600 to-slate-100 bg-clip-border border-transparent animate-gradient-x"></div>
           {/* === Container Wrapper === */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full h-fit py-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full h-full py-5">
             {/* Qualification 1 */}
             <div className="px-2 lg:px-0 mb-0 text-slate-300 w-full h-full">
-              <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg">
+              <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg h-full">
                 <h1 className="font-semibold text-xl text-yellow-500">
                   Bachelor's Degree in Informatics Engineering
                 </h1>
@@ -159,7 +159,7 @@ const AboutMe = () => {
             </div>
             {/* Qualification 2 */}
             <div className="px-2 lg:px-0 mb-0 text-slate-300 w-full h-full">
-              <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg">
+              <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg h-full">
                 <h1 className="font-semibold text-xl text-yellow-500">
                   Cloud Computing Participant
                 </h1>
@@ -176,7 +176,7 @@ const AboutMe = () => {
             </div>
             {/* Qualification 3 */}
             <div className="px-2 lg:px-0 mb-0 text-slate-300 w-full h-full">
-              <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg">
+              <div className="flex flex-col gap-2 w-fit p-4 rounded-xl bg-gray-900 text-slate-200 shadow-lg h-full">
                 <h1 className="font-semibold text-xl text-yellow-500">
                   Chairman of HIMATI
                 </h1>
