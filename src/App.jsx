@@ -22,7 +22,7 @@ function App() {
         <div className={isScrolled() ? 'hidden' : ''}>
           <NavBar />
         </div>
-        {/* <Notification /> */}
+        <Notification />
         <MainLayout setScroll={setIsScrolled}>
           <ContentLayout />
           <Footer />
