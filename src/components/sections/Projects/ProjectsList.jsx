@@ -426,7 +426,7 @@ const ProjectsList = (props) => {
         className="relative w-full h-full lg:shrink-0 px-0 snap-center"
         key={index}
       >
-        <div className="flex flex-col justify-center w-full">
+        <div className="flex flex-col justify-center w-full h-full">
           {/* Project Count */}
           <div className="bg-gray-900 flex justify-center align-middle gap-8 text-white py-2 select-none sticky top-0 z-[777]">
             <h1 className="text-2xl lg:text-xl self-center font-bold">
@@ -445,7 +445,7 @@ const ProjectsList = (props) => {
           {/* Snap Scroll Container */}
             <div
               id={`container-list-project-${index}`}
-              className="grid grid-flow-col auto-cols-max align-middle justify-start lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-7 px-3 sm:px-6 md:px-6 lg:px-10 lg:pt-20 lg:pb-36 gap-12 lg:gap-8 text-slate-200 overflow-auto select-none snap-y snap-mandatory"
+              className="grid grid-flow-col auto-cols-max align-middle justify-around lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-[15%] px-7 md:px-6 lg:px-10 lg:pt-20 lg:pb-36 gap-12 lg:gap-8 text-slate-200 overflow-auto select-none snap-x lg:snap-y snap-mandatory"
               onScroll={() => checkInView(`container-list-project-${index}`)}
             >
               {/* Container List Project */}

@@ -26,7 +26,7 @@ const Projects = () => {
         {languageMap().content[3]}
       </h1>
       {/* Sub Container 1 */}
-      <div className="flex flex-row">
+      <div className="flex flex-col lg:flex-row">
         {/* === Languages === */}
         <div className="flex justify-center py-2 items-center gap-2 w-full">
           <h1 className="text-xl font-medium">Languages :</h1>
@@ -47,7 +47,7 @@ const Projects = () => {
         </div>
         {/* === end of Languages === */}
         {/* === Frameworks === */}
-        <div className="flex justify-center py-2 items-center gap-2 w-full">
+        <div className="hidden lg:flex justify-center py-2 items-center gap-2 w-full">
           <h1 className="text-xl font-medium">Frameworks :</h1>
           {logos.map((logo, i) => (
             <figure key={i}>
