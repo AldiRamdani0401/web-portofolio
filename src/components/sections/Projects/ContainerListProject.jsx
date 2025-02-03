@@ -7,7 +7,7 @@ const ContainerListProject = (props) => {
         <div
           key={`project-${project.id}`}
           id={`project-${project.id}`}
-          className="relative bg-blue-950 w-85 md:w-75 lg:w-56 h-56 rounded-lg shadow-lg hover:shadow-black hover:z-20 transition-transform transform hover:scale-110 cursor-pointer snap-center"
+          className="project-item relative bg-blue-950 w-85 md:w-75 lg:w-56 h-56 rounded-lg shadow-lg hover:shadow-black hover:z-20 transition-transform transform hover:scale-105 lg:hover:scale-110 cursor-pointer snap-center animate-fadeIn"
           onClick={() => onShowDetail(project)}
         >
           <h1 className="absolute bg-blue-950 px-1 top-3 lg:top-1 right-1 rounded-none lg:rounded-md select-none">

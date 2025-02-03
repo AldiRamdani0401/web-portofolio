@@ -33,6 +33,7 @@ import logoGolang from "./golang.png";
 import logoTypeScript from "./typescript.png";
 import logoGin from "./gin.png";
 import logoNestJS from "./nestjs.svg";
+import logoNative from "./native.svg";
 
 export {
   logoHTML,
@@ -69,5 +70,6 @@ export {
   logoGolang,
   logoTypeScript,
   logoGin,
-  logoNestJS
+  logoNestJS,
+  logoNative
 };

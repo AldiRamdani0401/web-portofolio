@@ -16,7 +16,7 @@ const scrollToSection = (id) => {
 
 const Carousel = () => {
   return (
-    <section id="hero" className="h-dvh bg-gray-950 py-[%5] xl:py-[10%]">
+    <section id="hero" className="h-dvh bg-gray-950 py-[%5] lg:py-[15%] xl:py-[10%]">
       <div className="px-0 lg:px-10 w-full h-fit flex gap-0 flex-col-reverse md:flex-row lg:flex-row xl:flex-row justify-normal lg:justify-between mt-0">
         <div className="flex flex-col items-start lg:items-center justify-normal lg:justify-center mx-auto px-5 gap-3 animate-fadeIn w-full h-fit lg:w-full lg:h-full lg:px-8 ">
           {/* SUB CONTAINER 1 */}

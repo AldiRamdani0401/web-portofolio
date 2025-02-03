@@ -18,10 +18,10 @@ const MyExperience = () => {
         {/* === experience 1 === */}
         <div className="py-3 px-5 bg-gray-900 lg:p-5 text-slate-200 rounded-xl">
           {/* Header Experience 1 */}
-          <div className="flex flex-col h-36 border-b-2">
+          <div className="flex flex-col h-fit pb-2 lg:py-0 lg:h-36 gap-2 lg:gap-0 border-b-2">
             {/* Label */}
-            <div className="h-full">
-              <p className="text-xl font-extrabold lg:font-semibold lg:text-4xl text-left bg-gradient-to-r from-slate-100 via-yellow-500 to-slate-100 bg-clip-text text-transparent animate-gradient-x">
+            <div className="h-fit lg:h-full">
+              <p className="text-xl font-extrabold lg:font-semibold lg:text-3xl xl:text-4xl text-left bg-gradient-to-r from-slate-100 via-yellow-500 to-slate-100 bg-clip-text text-transparent animate-gradient-x">
                 Fullstack Developer Intern
               </p>
             </div>
@@ -54,7 +54,7 @@ const MyExperience = () => {
           <div className="flex flex-col h-36 border-b-2">
             {/* Label */}
             <div className="h-full">
-              <p className="text-xl font-extrabold lg:font-semibold lg:text-4xl text-left bg-gradient-to-r from-slate-100 via-yellow-500 to-slate-100 bg-clip-text text-transparent animate-gradient-x">
+              <p className="text-xl font-extrabold lg:font-semibold lg:text-2xl xl:text-4xl text-left bg-gradient-to-r from-slate-100 via-yellow-500 to-slate-100 bg-clip-text text-transparent animate-gradient-x">
                 {languageMap()["sub-content"][4][0]}
               </p>
               <p className="text-md font-medium lg:text-lg text-left">
