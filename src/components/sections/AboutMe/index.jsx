@@ -82,7 +82,7 @@ const AboutMe = () => {
                       Phone
                     </span>{" "}
                     <span className="text-yellow-300">:</span>{" "}
-                    <span className="w-full text-left">+625891361804</span>
+                    <span className="w-full text-left">+6285891361804</span>
                   </p>
                 </div>
                 <div className="flex flex-col gap-1">
