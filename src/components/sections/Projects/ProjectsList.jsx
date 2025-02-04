@@ -347,7 +347,7 @@ const ProjectsList = (props) => {
             {/* Snap Scroll Container */}
             <div
               id={`container-list-project-${index}`}
-              className="grid grid-flow-col auto-cols-max align-middle justify-around lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-[15%] px-10 md:px-6 lg:px-10 lg:pt-20 xl:pt-12 lg:pb-36 gap-12 lg:gap-8 text-slate-200 overflow-auto select-none snap-x lg:snap-y snap-mandatory"
+              className="grid grid-flow-col auto-cols-max align-middle justify-around lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-[10%] px-10 md:px-6 lg:px-10 lg:pt-20 xl:pt-12 lg:pb-36 gap-12 lg:gap-8 text-slate-200 overflow-auto select-none snap-x lg:snap-y snap-mandatory"
               onScroll={handleScroll}
             >
               {/* Container List Project */}
