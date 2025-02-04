@@ -13,7 +13,7 @@ import {
   logoSmallReefJS,
 } from "../../../assets/logos/index";
 import ContainerListProject from "./ContainerListProject";
-import CardDetail from "./CardDetail";
+import CardDetail from "./ProjectDetail";
 import { setState } from "../../../store/store";
 
 // === SAMPLE : Project Datas === //
@@ -21,11 +21,11 @@ const projects = [
   // *** PHP *** //
   {
     core: "PHP",
-    logo: logoPHP,
     listProjects: [
       {
         id: 1,
         name: "Project PHP 1",
+        logo: logoPHP,
         type: "Web",
         category: "E-Commerce",
         backend: "Express",
@@ -36,6 +36,7 @@ const projects = [
         id: 2,
         name: "Project PHP 2",
         type: "Web",
+        logo: logoPHP,
         category: "E-Commerce",
         backend: "NestJS",
         frontend: ["Tailwind", "Laravel"],
@@ -45,6 +46,7 @@ const projects = [
         id: 3,
         name: "Project PHP 3",
         type: "Web",
+        logo: logoPHP,
         category: "E-Commerce",
         backend: "Laravel",
         frontend: ["Tailwind", "Laravel"],
@@ -54,6 +56,7 @@ const projects = [
         id: 4,
         name: "Project PHP 4",
         type: "Web",
+        logo: logoPHP,
         category: "E-Commerce",
         backend: "Gin",
         frontend: ["Bootstrap", "Native"],
@@ -63,6 +66,7 @@ const projects = [
         id: 5,
         name: "Project PHP 5",
         type: "Web",
+        logo: logoPHP,
         category: "E-Commerce",
         backend: "Fastify",
         frontend: ["Bulma", "Laravel"],
@@ -72,6 +76,7 @@ const projects = [
         id: 6,
         name: "Project PHP 6",
         type: "Web",
+        logo: logoPHP,
         category: "E-Commerce",
         backend: "Gin",
         frontend: ["Bulma", "Laravel"],
@@ -81,6 +86,7 @@ const projects = [
         id: 7,
         name: "Project PHP 7",
         type: "Web",
+        logo: logoPHP,
         category: "E-Commerce",
         backend: "Express",
         frontend: ["Bulma", "Laravel"],
@@ -90,6 +96,7 @@ const projects = [
         id: 8,
         name: "Project PHP 8",
         type: "Web",
+        logo: logoPHP,
         category: "E-Commerce",
         backend: "NestJS",
         frontend: ["Bulma", "Laravel"],
@@ -99,6 +106,7 @@ const projects = [
         id: 9,
         name: "Project PHP 9",
         type: "Web",
+        logo: logoPHP,
         category: "E-Commerce",
         backend: "Fastify",
         frontend: ["Tailwind", "Laravel"],
@@ -108,6 +116,7 @@ const projects = [
         id: 10,
         name: "Project PHP 10",
         type: "Web",
+        logo: logoPHP,
         category: "E-Commerce",
         backend: "Native",
         frontend: ["Bulma", "Native"],
@@ -118,12 +127,12 @@ const projects = [
   // *** JavaScript *** //
   {
     core: "JavaScript",
-    logo: logoPHP,
     listProjects: [
       {
         id: 1,
         name: "Project JavaScript 1",
-        type: "Web",
+        logo: logoJS,
+        type: "Mobile",
         category: "E-Commerce",
         backend: "Express",
         frontend: ["Tailwind", "ReefJS"],
@@ -132,16 +141,18 @@ const projects = [
       {
         id: 2,
         name: "Project JavaScript 2",
-        type: "Web",
+        logo: logoJS,
+        type: "Server",
         category: "E-Commerce",
         backend: "NestJS",
         frontend: ["Tailwind", "ReefJS"],
-        status: "On Progress",
+        status: "Completed",
       },
       {
         id: 3,
         name: "Project JavaScript 3",
-        type: "Web",
+        logo: logoJS,
+        type: "Hybrid",
         category: "E-Commerce",
         backend: "Laravel",
         frontend: ["Tailwind", "ReefJS"],
@@ -150,15 +161,17 @@ const projects = [
       {
         id: 4,
         name: "Project JavaScript 4",
+        logo: logoJS,
         type: "Web",
         category: "E-Commerce",
         backend: "Gin",
         frontend: ["Bootstrap", "Native"],
-        status: "On Progress",
+        status: "Completed",
       },
       {
         id: 5,
         name: "Project JavaScript 5",
+        logo: logoJS,
         type: "Web",
         category: "E-Commerce",
         backend: "Fastify",
@@ -168,15 +181,17 @@ const projects = [
       {
         id: 6,
         name: "Project JavaScript 6",
+        logo: logoJS,
         type: "Web",
         category: "E-Commerce",
         backend: "Gin",
         frontend: ["Bulma", "ReefJS"],
-        status: "On Progress",
+        status: "Completed",
       },
       {
         id: 7,
         name: "Project JavaScript 7",
+        logo: logoJS,
         type: "Web",
         category: "E-Commerce",
         backend: "Express",
@@ -186,15 +201,17 @@ const projects = [
       {
         id: 8,
         name: "Project JavaScript 8",
+        logo: logoJS,
         type: "Web",
         category: "E-Commerce",
         backend: "NestJS",
         frontend: ["Bulma", "ReefJS"],
-        status: "On Progress",
+        status: "Completed",
       },
       {
         id: 9,
         name: "Project JavaScript 9",
+        logo: logoJS,
         type: "Web",
         category: "E-Commerce",
         backend: "Fastify",
@@ -204,11 +221,12 @@ const projects = [
       {
         id: 10,
         name: "Project JavaScript 10",
+        logo: logoJS,
         type: "Web",
         category: "E-Commerce",
         backend: "Express",
         frontend: ["Bulma", "Native"],
-        status: "On Progress",
+        status: "Completed",
       },
     ],
   },
@@ -219,30 +237,44 @@ const ProjectsList = (props) => {
   const [filtered, setFiltered] = createSignal([]);
   const [count, setCount] = createSignal(1);
 
+  // === EFFECT ===
   createEffect(() => {
-    if (props.filter?.language) {
+    const filter = props.filter || {};
+    if (filter.language || filter.type) {
       const filteredProjects = projects
-        .filter((project) => project.core === props.filter.language)
+        .filter((project) => {
+          if (filter.language) {
+            return project.core === filter.language;
+          } else {
+            return true;
+          }
+        })
         .map((project) => ({
           ...project,
-          listProjects: props.filter.backend
-            ? project.listProjects.filter(
-                (p) => p.backend === props.filter.backend
-              )
-            : project.listProjects,
+          listProjects: project.listProjects.filter((p) => {
+            return (
+              (!filter.type || p.type === filter.type) &&
+              (!filter.backend || p.backend === filter.backend)
+            );
+          }),
         }))
-        .filter((project) => project.listProjects.length > 0);
+        .filter((project) => project.listProjects.length > 0)
+        .reduce((acc, project) => acc.concat(project.listProjects), []);
 
       setFiltered(filteredProjects);
     } else {
-      setFiltered([]);
+      let defaultProject = projects.reduce((acc, project) => {
+        return acc.concat(project.listProjects);
+      }, []);
+      console.log("DEFAULT", defaultProject);
+      setFiltered(defaultProject);
     }
 
-    console.log("FILTER: ", props.filter);
-    console.log("FILTER PROJECT: ", filtered());
+    // console.log("FILTER: ", props.filter);
+    // console.log("FILTER PROJECT: ", filtered());
   });
 
-  // Menghitung elemen yang berada di tengah viewport saat scroll
+  // === HANDLERS ===
   const handleScroll = (event) => {
     const container = event.target;
     const projectItems = container.querySelectorAll(".project-item");
@@ -282,6 +314,7 @@ const ProjectsList = (props) => {
     <Show
       when={filtered().length > 0}
       fallback={
+        // === NOT FOUND === //
         <p className="flex flex-col items-center mx-auto mt-[50%] lg:mt-[15%] xl:mt-[10%] gap-5 text-4xl text-gray-400 animate-fadeIn">
           <span className="font-bold text-8xl animate-bounce">?</span>
           <span>No Projects Found</span>{" "}
@@ -298,10 +331,10 @@ const ProjectsList = (props) => {
             {/* Project Count */}
             <div className="bg-gray-900 flex justify-center gap-8 text-white py-2 select-none sticky top-0 z-[777]">
               <h1 className="text-xl lg:text-xl self-center font-bold">
-                {project.core}
+                {props.filter.language || "All"}
               </h1>
               <div className="hidden lg:flex justify-center gap-2 lg:text-xl self-center">
-                <h3>Projects: {project.listProjects?.length || 0}</h3>
+                <h3>Projects: {filtered()?.length || 0}</h3>
               </div>
               {/* === MOBILE === */}
               <div className="flex lg:hidden justify-center gap-2 text-xl self-center">
@@ -314,11 +347,11 @@ const ProjectsList = (props) => {
             {/* Snap Scroll Container */}
             <div
               id={`container-list-project-${index}`}
-              className="grid grid-flow-col auto-cols-max align-middle justify-around lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-[15%] px-7 md:px-6 lg:px-10 lg:pt-20 xl:pt-12 lg:pb-36 gap-12 lg:gap-8 text-slate-200 overflow-auto select-none snap-x lg:snap-y snap-mandatory"
+              className="grid grid-flow-col auto-cols-max align-middle justify-around lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-[15%] px-10 md:px-6 lg:px-10 lg:pt-20 xl:pt-12 lg:pb-36 gap-12 lg:gap-8 text-slate-200 overflow-auto select-none snap-x lg:snap-y snap-mandatory"
               onScroll={handleScroll}
             >
               {/* Container List Project */}
-              <ContainerListProject datas={project.listProjects || []} />
+              <ContainerListProject datas={filtered()} />
             </div>
           </div>
         </div>

@@ -41,13 +41,16 @@ const MyExpertise = () => {
   return (
     <section
       id="my-expertise"
-      className="bg-gray-950 h-fit lg:h-dvh lg:py-10 snap-center w-full"
+      className="bg-gray-950 h-fit lg:h-dvh lg:py-10 xl:pt-2 snap-center w-full"
     >
-      <div className="text-slate-200">
+      {/* === SECTION HEADER === */}
+      <div className="flex flex-row justify-center text-slate-200">
         <h1 className="text-center font-bold text-4xl py-5">
           {languageMap().content[1]}
         </h1>
+        <span className="bg-yellow-200 rounded-sm text-slate-900 text-xs self-start mt-5 ml-1 px-1">Dev</span>
       </div>
+      {/* === end of SECTION HEADER === */}
       <div className="flex flex-wrap justify-between h-fit w-full gap-5 lg:px-10 py-14">
         {/* Container 1 : Languages */}
         <div className="flex flex-col gap-3 lg:gap-3 mb-2">

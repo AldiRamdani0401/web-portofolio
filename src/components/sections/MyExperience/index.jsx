@@ -4,7 +4,7 @@ const MyExperience = () => {
   return (
     <section
       id="my-experience"
-      className="h-fit w-full py-2 md:px-5 lg:px-10 lg:py-32 xl:px-14 xl:py-32 bg-slate-950 snap-start animate-fadeIn"
+      className="h-fit w-full py-2 md:px-5 lg:px-10 lg:py-32 xl:px-14 xl:pt-16 xl:pb-40 bg-slate-950 snap-start animate-fadeIn"
     >
       {/* Header Section */}
       <div className="text-slate-200">
