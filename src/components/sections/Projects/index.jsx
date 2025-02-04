@@ -128,8 +128,8 @@ const Projects = () => {
       className="bg-gray-950 h-dvh w-full py-10 xl:py-10 text-slate-200 animate-fadeIn"
     >
       {/* === SECTION HEADER === */}
-      <div className="flex flex-row justify-center">
-        <h1 className="flex flex-col gap-1 text-center font-bold text-2xl lg:text-4xl xl:text-3xl py-2 lg:pt-5 xl:pt-2 mb-1 snap-start snap-mandatory">
+      <div className="flex flex-row justify-center snap-start">
+        <h1 className="flex flex-col gap-1 text-center font-bold text-2xl lg:text-4xl xl:text-3xl py-2 lg:pt-5 xl:pt-2 mb-1">
           {languageMap()?.content?.[3] || "Projects"}
         </h1>
         <span className="bg-yellow-200 rounded-sm text-slate-900 text-xs self-start mt-2 ml-1 px-1">
@@ -272,7 +272,7 @@ const Projects = () => {
       </div>
       {/* ==== end of SUB CONTAINER 1 === */}
       {/* ==== SUB CONTAINER 2 === */}
-      <div className="h-[80%] lg:h-[88%] flex flex-row align-middle justify-start lg:flex-row lg:w-full gap-5 overflow-x-hidden scroll-smooth snap-x snap-mandatory lg:scrollbar-x-hide xl:scrollbar-x-hide">
+      <div className="h-[80%] lg:h-[88%] flex flex-row align-middle justify-start lg:flex-row lg:w-full gap-5 overflow-x-hidden scroll-smooth snap-x snap-mandatory xl:snap-none lg:scrollbar-x-hide xl:scrollbar-x-hide">
         <ProjectsList
           filter={{ type: type(), language: language(), backend: backend() }}
         />

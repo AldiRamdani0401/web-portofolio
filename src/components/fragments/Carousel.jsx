@@ -3,6 +3,7 @@ import hero from "../../assets/images/hero.png";
 
 import { logoCSS, logoGitHub, logoHTML } from "../../assets/logos";
 import IconDownLoad from "../../assets/icons/download";
+import { cv } from "../../assets/files";
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -16,7 +17,10 @@ const scrollToSection = (id) => {
 
 const Carousel = () => {
   return (
-    <section id="hero" className="h-dvh bg-gray-950 py-[%5] lg:py-[15%] xl:py-[10%]">
+    <section
+      id="hero"
+      className="h-dvh bg-gray-950 py-[%5] lg:py-[15%] xl:py-[10%]"
+    >
       <div className="px-0 lg:px-10 w-full h-fit flex gap-0 flex-col-reverse md:flex-row lg:flex-row xl:flex-row justify-normal lg:justify-between mt-0">
         <div className="flex flex-col items-start lg:items-center justify-normal lg:justify-center mx-auto px-5 gap-3 animate-fadeIn w-full h-fit lg:w-full lg:h-full lg:px-8 ">
           {/* SUB CONTAINER 1 */}
@@ -49,21 +53,35 @@ const Carousel = () => {
             />
           </span>
           <div className="flex flex-col gap-2 w-full">
-            <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">I am a Fullstack Developer with expertise in JavaScript, TypeScript, PHP, and Go, committed to continuously enhancing my skills in software development.</p>
+            <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">
+              I am a Fullstack Developer with expertise in JavaScript,
+              TypeScript, PHP, and Go, committed to continuously enhancing my
+              skills in software development.
+            </p>
             {/* Indonesian */}
             {/* <p className="text-slate-200 font-normal text-base lg:text-lg text-justify lg:text-justify">Saya seorang Fullstack Developer dengan keahlian JavaScript, TypeScript, PHP, Go, dan berkomitmen untuk terus mengembangkan keterampilan saya di bidang software development.</p> */}
             {/* Buttons */}
             <div className="mt-3 flex gap-8 flex-row justify-normal w-full">
               {/* About Me */}
               <div className="w-fit lg:w-[20%]">
-                <button type="button" onClick={() => scrollToSection("about-me")} className="border border-indigo-500 text-indigo-100 hover:bg-indigo-900 text-xl lg:text-lg px-2 py-1 rounded-md text-nowrap">About Me</button>
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("about-me")}
+                  className="border border-indigo-500 text-indigo-100 hover:bg-indigo-900 text-xl lg:text-lg px-2 py-1 rounded-md text-nowrap"
+                >
+                  About Me
+                </button>
               </div>
               {/* Resume */}
               <div className="w-fit">
-                <button type="button" onClick={() => scrollToSection("about-me")} className="flex flex-row gap-2 items-center border border-indigo-500 text-indigo-100 hover:bg-indigo-900 text-xl lg:text-lg px-2 py-1 rounded-md text-nowrap">
+                <a
+                  href={cv}
+                  download
+                  className="flex flex-row gap-2 items-center border border-indigo-500 text-indigo-100 hover:bg-indigo-900 text-xl lg:text-lg px-2 py-1 rounded-md text-nowrap"
+                >
                   <span>Resume</span>
-                  <IconDownLoad/>
-                </button>
+                  <IconDownLoad />
+                </a>
               </div>
             </div>
           </div>

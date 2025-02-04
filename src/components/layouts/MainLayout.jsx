@@ -14,7 +14,7 @@ const MainLayout = ({ children, setScroll }) => {
   return (
     <main
       id="main-layout"
-      className="flex-1 overflow-auto flex flex-col snap-y select-none scrollbar-hide bg-gray-950"
+      className="flex-1 overflow-auto flex flex-col snap-y select-none scrollbar-hide bg-[#0b0b0c]"
       onScroll={handleScroll}
     >
       {children}

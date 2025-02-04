@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
+    "solid-icons": "^1.1.0",
     "solid-js": "^1.8.11",
     "solid-typer": "^0.0.3"
   }
