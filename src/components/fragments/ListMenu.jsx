@@ -152,7 +152,7 @@ const ListMenu = (props) => {
         {/* === Masking === */}
         <div className="h-screen w-screen bg-black opacity-60 z-10"></div>
         {/* === end of Masking === */}
-        <div className="absolute bg-zinc-950 flex flex-col justify-between w-[70%] self-end h-screen py-6 z-20">
+        <div className="absolute bg-zinc-950 flex flex-col justify-between w-[75%] self-end h-screen py-6 z-20">
           {/* === Sub Container 1 ===*/}
           <div className="flex flex-col gap-5">
             {/* === Close Button === */}
@@ -270,7 +270,7 @@ const ListMenu = (props) => {
           </div>
           {/* === end of Sub Container 1 ===*/}
           {/* === Footer === */}
-          <div className="">
+          <div className="flex flex-col text-sm">
             <h1 className="text-white px-2">&copy 2025 Copyright, Aldi Ramdani</h1>
             <h1 className="text-white px-2 ml-4">All Rights Reserved</h1>
           </div>
