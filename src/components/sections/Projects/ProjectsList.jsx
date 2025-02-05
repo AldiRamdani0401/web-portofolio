@@ -31,6 +31,7 @@ const projects = [
         backend: "Express",
         frontend: ["Tailwind", "Laravel"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 2,
@@ -41,6 +42,7 @@ const projects = [
         backend: "NestJS",
         frontend: ["Tailwind", "Laravel"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 3,
@@ -51,6 +53,7 @@ const projects = [
         backend: "Laravel",
         frontend: ["Tailwind", "Laravel"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 4,
@@ -61,6 +64,7 @@ const projects = [
         backend: "Gin",
         frontend: ["Bootstrap", "Native"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 5,
@@ -71,6 +75,7 @@ const projects = [
         backend: "Fastify",
         frontend: ["Bulma", "Laravel"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 6,
@@ -81,6 +86,7 @@ const projects = [
         backend: "Gin",
         frontend: ["Bulma", "Laravel"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 7,
@@ -91,6 +97,7 @@ const projects = [
         backend: "Express",
         frontend: ["Bulma", "Laravel"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 8,
@@ -101,6 +108,7 @@ const projects = [
         backend: "NestJS",
         frontend: ["Bulma", "Laravel"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 9,
@@ -111,6 +119,7 @@ const projects = [
         backend: "Fastify",
         frontend: ["Tailwind", "Laravel"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 10,
@@ -121,6 +130,7 @@ const projects = [
         backend: "Native",
         frontend: ["Bulma", "Native"],
         status: "On Progress",
+        maintenance: 1,
       },
     ],
   },
@@ -130,13 +140,15 @@ const projects = [
     listProjects: [
       {
         id: 1,
-        name: "Project JavaScript 1",
+        name: "My Blog",
         logo: logoJS,
-        type: "Mobile",
-        category: "E-Commerce",
+        type: "Web",
+        category: "Blog",
         backend: "Express",
         frontend: ["Tailwind", "ReefJS"],
         status: "On Progress",
+        link: "https://blog-astro-delta.vercel.app/",
+        maintenance: 0,
       },
       {
         id: 2,
@@ -147,6 +159,7 @@ const projects = [
         backend: "NestJS",
         frontend: ["Tailwind", "ReefJS"],
         status: "Completed",
+        maintenance: 1,
       },
       {
         id: 3,
@@ -157,6 +170,7 @@ const projects = [
         backend: "Laravel",
         frontend: ["Tailwind", "ReefJS"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 4,
@@ -167,6 +181,7 @@ const projects = [
         backend: "Gin",
         frontend: ["Bootstrap", "Native"],
         status: "Completed",
+        maintenance: 1,
       },
       {
         id: 5,
@@ -177,6 +192,7 @@ const projects = [
         backend: "Fastify",
         frontend: ["Bulma", "ReefJS"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 6,
@@ -187,6 +203,7 @@ const projects = [
         backend: "Gin",
         frontend: ["Bulma", "ReefJS"],
         status: "Completed",
+        maintenance: 1,
       },
       {
         id: 7,
@@ -197,6 +214,7 @@ const projects = [
         backend: "Express",
         frontend: ["Bulma", "ReefJS"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 8,
@@ -207,6 +225,7 @@ const projects = [
         backend: "NestJS",
         frontend: ["Bulma", "ReefJS"],
         status: "Completed",
+        maintenance: 1,
       },
       {
         id: 9,
@@ -217,6 +236,7 @@ const projects = [
         backend: "Fastify",
         frontend: ["Tailwind", "ReefJS"],
         status: "On Progress",
+        maintenance: 1,
       },
       {
         id: 10,
@@ -227,6 +247,7 @@ const projects = [
         backend: "Express",
         frontend: ["Bulma", "Native"],
         status: "Completed",
+        maintenance: 1,
       },
     ],
   },
