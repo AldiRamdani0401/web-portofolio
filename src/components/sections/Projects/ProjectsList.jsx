@@ -15,6 +15,7 @@ import {
 import ContainerListProject from "./ContainerListProject";
 import CardDetail from "./ProjectDetail";
 import { setState } from "../../../store/store";
+import { myBlog } from "../../../assets/projects";
 
 // === SAMPLE : Project Datas === //
 const projects = [
@@ -148,6 +149,7 @@ const projects = [
         frontend: ["Tailwind", "ReefJS"],
         status: "On Progress",
         link: "https://blog-astro-delta.vercel.app/",
+        cover: myBlog,
         maintenance: 0,
       },
       {
@@ -261,38 +263,30 @@ const ProjectsList = (props) => {
   // === EFFECT ===
   createEffect(() => {
     const filter = props.filter || {};
-    if (filter.language || filter.type) {
-      const filteredProjects = projects
-        .filter((project) => {
-          if (filter.language) {
-            return project.core === filter.language;
-          } else {
-            return true;
-          }
-        })
-        .map((project) => ({
-          ...project,
-          listProjects: project.listProjects.filter((p) => {
-            return (
-              (!filter.type || p.type === filter.type) &&
-              (!filter.backend || p.backend === filter.backend)
-            );
-          }),
-        }))
-        .filter((project) => project.listProjects.length > 0)
-        .reduce((acc, project) => acc.concat(project.listProjects), []);
+    let filteredProjects = projects;
 
-      setFiltered(filteredProjects);
-    } else {
-      let defaultProject = projects.reduce((acc, project) => {
-        return acc.concat(project.listProjects);
-      }, []);
-      console.log("DEFAULT", defaultProject);
-      setFiltered(defaultProject);
+    if (filter.language) {
+      filteredProjects = filteredProjects.filter(
+        (project) => project.core === filter.language
+      );
     }
 
-    // console.log("FILTER: ", props.filter);
-    // console.log("FILTER PROJECT: ", filtered());
+    filteredProjects = filteredProjects
+      .map((project) => ({
+        ...project,
+        listProjects: project.listProjects.filter((p) => {
+          return (
+            (!filter.type || p.type === filter.type) &&
+            (!filter.backend || p.backend === filter.backend)
+          );
+        }),
+      }))
+      .filter((project) => project.listProjects.length > 0)
+      .reduce((acc, project) => acc.concat(project.listProjects), []);
+
+    filteredProjects.sort((a, b) => a.maintenance - b.maintenance);
+
+    setFiltered(filteredProjects);
   });
 
   // === HANDLERS ===

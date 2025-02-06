@@ -83,12 +83,14 @@ const Project = (props) => {
         {props.project.name}
       </div>
       {/* Project Cover */}
-      <img
-        src="https://placehold.co/200x200"
-        className="object-cover h-fit w-full rounded-lg"
-        alt="project-image"
-        draggable="false"
-      />
+      {props.project && (
+        <img
+          src={props.project.cover || "https://placehold.co/200x200"}
+          className="object-cover h-[80%] w-full rounded-lg"
+          alt="project-image"
+          draggable="false"
+        />
+      )}
     </div>
   );
 };
