@@ -14,14 +14,15 @@ const Project = (props) => {
         (parseInt(props.project?.maintenance) === 1
           ? ""
           : "hover:shadow-black hover:z-20 transition-transform transform hover:scale-105 lg:hover:scale-110 cursor-pointer ") +
-        "project-item bg-blue-950 w-85 md:w-75 lg:w-56 h-56 rounded-lg shadow-lg snap-center animate-fadeIn"
+        "project-item bg-blue-950 w-[85%] md:w-75 lg:w-56 h-96 xl:h-56 rounded-lg shadow-lg snap-center animate-fadeIn"
       }
       {...(parseInt(props.project?.maintenance) !== 1
         ? { onClick: () => toProject(props.project?.link) }
         : {})}
+        title={props.project.name}
     >
+      {/* === Maintenance (MUTED) === */}
       {parseInt(props.project?.maintenance) === 1 && (
-        // === Maintenance (MUTED) === //
         <div className="absolute h-full w-full z-50">
           <div className="h-full w-full bg-black opacity-40 z-50"></div>
           <div className="absolute flex flex-row items-center py-1 justify-center gap-2 top-[40%] w-full text-center bg-yellow-500 ">
@@ -32,6 +33,8 @@ const Project = (props) => {
           </div>
         </div>
       )}
+      {/* === end of Maintenance (MUTED) === */}
+
       {/* === Container 1 : Project Type & Status === */}
       <div className="absolute flex flex-row justify-between text-base xl:text-sm w-full px-2 top-3 lg:top-2">
         {/* === Project Type === */}
@@ -59,7 +62,7 @@ const Project = (props) => {
       </div>
       {/* === end of Container 1 : Project Type & Status === */}
       {/* === Container 2 : Active === */}
-      <div className="absolute flex flex-row justify-between text-base xl:text-sm w-full px-2 top-3 lg:top-10">
+      <div className="absolute flex flex-row justify-between text-base xl:text-sm w-full px-2 top-12 lg:top-10">
         {/* === Project Type === */}
         <h1
           className={`${
@@ -73,7 +76,7 @@ const Project = (props) => {
       </div>
       {/* === end of Container 2 : Active === */}
       {/* === Project === */}
-      <div className="absolute flex flex-row justify-center gap-2 bg-slate-800 w-full py-2 bottom-[-35%] md:bottom-[-25%] lg:bottom-2 select-none">
+      <div className="absolute flex flex-row justify-center gap-2 bg-slate-800 w-full py-2 bottom-3 md:bottom-[-25%] lg:bottom-2 select-none">
         <img
           src={props.project.logo}
           className="object-cover h-8 w-8 p-[1px] bg-white lg:h-6 lg:w-6 rounded-full"
@@ -86,7 +89,7 @@ const Project = (props) => {
       {props.project && (
         <img
           src={props.project.cover || "https://placehold.co/200x200"}
-          className="object-cover h-[80%] w-full rounded-lg"
+          className="object-cover h-full w-85 xl:w-full rounded-lg"
           alt="project-image"
           draggable="false"
         />

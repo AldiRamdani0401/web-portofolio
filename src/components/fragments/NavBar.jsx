@@ -22,11 +22,11 @@ const NavBar = () => {
     <nav
       className={`${
         state.isVisible ? "flex" : "hidden"
-      } flex-row sticky top-0 z-[999] justify-between gap-4 items-center bg-gray-950 py-4 px-2 lg:px-10 h-16 w-full text-slate-200 select-none`}
+      } flex-row sticky top-0 z-[999] justify-between gap-0 xl:gap-4 items-center bg-gray-950 py-4 px-0 lg:px-10 h-16 w-full text-slate-200 select-none`}
     >
       <button
         onclick={() => scrollToSection("hero")}
-        className="cursor-pointer text-lg font-bold text-nowrap"
+        className="cursor-pointer text-lg font-bold w-full xl:w-fit px-2 xl:px-0 text-nowrap"
       >
         My Portfolio 🚀
       </button>
@@ -48,6 +48,7 @@ const NavBar = () => {
       {/* Menu */}
       <div className="lg:hidden flex flex-row justify-end w-full">
         <LanguageButton />
+        {/* Side Bar Button */}
         <button
           className="block lg:hidden p-2 hover:bg-blue-950"
           onClick={() => {
@@ -70,7 +71,7 @@ const NavBar = () => {
           </svg>
         </button>
       </div>
-      {/* Mobile */}
+      {/* === MOBILE === */}
       <div className="block lg:hidden">
         <div
           className={`${

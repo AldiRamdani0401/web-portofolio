@@ -70,7 +70,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="mt-[80%] xl:mt-[30%] flex flex-col lg:flex-col gap-4 justify-between bg-zinc-900 px-4 py-5 w-full text-slate-200 font-light">
+    <footer id="footer" className="mt-[80%] xl:mt-[30%] flex flex-col lg:flex-col gap-4 justify-between bg-zinc-900 px-4 xl:px-8 py-8 w-full text-slate-200 font-light">
       {/* === CONTAINER 1 === */}
       <div className="flex flex-row flex-wrap justify-between gap-3">
         {/* === Back To Hero === */}
@@ -83,80 +83,82 @@ const Footer = () => {
             🚀
           </span>
         </button>
-        {/* === Navigation === */}
-        <div className="flex flex-col justify-start gap-1 w-full xl:w-1/4">
-          {/* Label */}
-          <h3 className="font-medium text-center w-full xl:w-fit pr-2 border-b-2 border-slate-300">
-            Navigation
-          </h3>
-          {/* Naviagation Contents */}
-          <div className="flex flex-row justify-center xl:flex-col gap-5 xl:gap-1">
-            {/* About Me */}
-            <button
-              onClick={() => scrollToSection("about-me")}
-              className="text-nowrap text-sm text-left hover:font-medium"
-            >
-              About Me
-            </button>
-            {/* Expertise */}
-            <button
-              onClick={() => scrollToSection("my-expertise")}
-              className="text-nowrap text-sm text-left hover:font-medium"
-            >
-              My Expertise
-            </button>
-            {/* Experience */}
-            <button
-              onClick={() => scrollToSection("my-experience")}
-              className="text-nowrap text-sm text-left hover:font-medium"
-            >
-              My Experience
-            </button>
-            {/* Projects */}
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-nowrap text-sm text-left hover:font-medium"
-            >
-              My Projects
-            </button>
+        <div className="flex flex-col xl:flex-row gap-2 xl:gap-0 w-full xl:w-1/2 px-0 xl:px-10">
+          {/* === Navigation === */}
+          <div className="flex flex-col text-slate-300 justify-start gap-1 w-full xl:w-1/4">
+            {/* Label */}
+            <h3 className="font-medium text-center w-full xl:w-fit pr-2 border-b-2 border-slate-400">
+              Navigation
+            </h3>
+            {/* Naviagation Contents */}
+            <div className="flex flex-row flex-wrap justify-center xl:flex-col gap-2 xl:gap-1">
+              {/* About Me */}
+              <button
+                onClick={() => scrollToSection("about-me")}
+                className="text-nowrap text-sm text-left hover:font-medium"
+              >
+                About Me
+              </button>
+              {/* Expertise */}
+              <button
+                onClick={() => scrollToSection("my-expertise")}
+                className="text-nowrap text-sm text-left hover:font-medium"
+              >
+                My Expertise
+              </button>
+              {/* Experience */}
+              <button
+                onClick={() => scrollToSection("my-experience")}
+                className="text-nowrap text-sm text-left hover:font-medium"
+              >
+                My Experience
+              </button>
+              {/* Projects */}
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="text-nowrap text-sm text-left hover:font-medium"
+              >
+                My Projects
+              </button>
+            </div>
           </div>
+          {/* === end of Navigation === */}
+          {/* === Others === */}
+          <div className="flex flex-col text-slate-300 justify-start gap-1 w-full xl:w-1/4">
+            <h3 className="font-medium text-center w-full xl:w-fit pr-2 border-b-2 border-slate-400">
+              Others
+            </h3>
+            <div className="flex flex-row xl:flex-col justify-center gap-1">
+              {/* Blog */}
+              <button
+                onClick={() => scrollToSection("about-me")}
+                className="text-nowrap text-sm text-left hover:font-medium"
+              >
+                My Blog
+              </button>
+            </div>
+          </div>
+          {/* === end of Others === */}
+          {/* === Contact === */}
+          <div className="flex flex-col gap-1">
+            <h3 className="font-medium w-full border-b-2 border-slate-300">
+              Contact
+            </h3>
+            {/* Phone */}
+            <div className="flex flex-row gap-1">
+              <AiOutlinePhone />
+              <spa className="text-sm items-center">+6285891361804</spa>
+            </div>
+            {/* Email */}
+            <div className="flex flex-row gap-1 items-center">
+              <AiOutlineMail />
+              <span className="text-sm"> ramdanialdi889@gmail.com</span>
+            </div>
+          </div>
+          {/* === end of Contact === */}
         </div>
-        {/* === end of Navigation === */}
-        {/* === Others === */}
-        <div className="flex flex-col justify-start gap-1 w-full xl:w-1/4">
-          <h3 className="font-medium text-center w-full xl:w-fit pr-2 border-b-2 border-slate-300">
-            Others
-          </h3>
-          <div className="flex flex-row xl:flex-col justify-center gap-1">
-            {/* Blog */}
-            <button
-              onClick={() => scrollToSection("about-me")}
-              className="text-nowrap text-sm text-left hover:font-medium"
-            >
-              My Blog
-            </button>
-          </div>
-        </div>
-        {/* === end of Others === */}
-        {/* === Contact === */}
-        <div className="flex flex-col gap-1">
-          <h3 className="font-medium w-full xl:w-fit pr-2 border-b-2 border-slate-300">
-            Contact
-          </h3>
-          {/* Phone */}
-          <div className="flex flex-row gap-1">
-            <AiOutlinePhone />
-            <spa className="text-sm items-center">+6285891361804</spa>
-          </div>
-          {/* Email */}
-          <div className="flex flex-row gap-1 items-center">
-            <AiOutlineMail />
-            <span className="text-sm"> ramdanialdi889@gmail.com</span>
-          </div>
-        </div>
-        {/* === end of Contact === */}
         {/* === Social Media === */}
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col mx-auto xl:mx-0 gap-1">
           <h3 className="font-medium text-center w-full xl:w-fit border-b-2 border-slate-300">
             Social Media
           </h3>

@@ -36,7 +36,7 @@ const MyExperience = () => {
             </div>
           </div>
           {/* Description */}
-          <div className="py-3 text-sm">
+          <div className="py-3 text-sm text-justify">
             <p className="font-light">
               <span class="ml-8 font-semibold">
                 PT. Layanan Medik Indonesia

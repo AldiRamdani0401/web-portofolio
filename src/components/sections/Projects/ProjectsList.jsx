@@ -258,7 +258,6 @@ const projects = [
 
 const ProjectsList = (props) => {
   const [filtered, setFiltered] = createSignal([]);
-  const [count, setCount] = createSignal(1);
 
   // === EFFECT ===
   createEffect(() => {
@@ -321,7 +320,7 @@ const ProjectsList = (props) => {
     }
 
     if (closestItem !== null) {
-      setCount(closestItem);
+      props.count.set(closestItem);
     }
   };
 
@@ -344,7 +343,18 @@ const ProjectsList = (props) => {
         >
           <div className="flex flex-col justify-center w-full h-full">
             {/* Project Count */}
-            <div className="bg-gray-900 flex justify-center gap-8 text-white py-2 select-none sticky top-0 z-[777]">
+            <div
+              className={`
+              ${
+                (props.filter.language === "PHP" && "bg-blue-900") ||
+                (props.filter.language === "JavaScript" && "bg-yellow-600") ||
+                (props.filter.language === "NodeJS" && "bg-green-800") ||
+                (props.filter.language === "TypeScript" && "bg-blue-700") ||
+                (props.filter.language === "Golang" && "bg-blue-500") ||
+                (props.filter.language === "" && "bg-indigo-950")
+              } flex justify-center gap-8 text-white py-2 select-none sticky top-0 z-[777]
+              `}
+            >
               <h1 className="text-xl lg:text-xl self-center font-bold">
                 {props.filter.language || "All"}
               </h1>
@@ -353,8 +363,8 @@ const ProjectsList = (props) => {
               </div>
               {/* === MOBILE === */}
               <div className="flex lg:hidden justify-center gap-2 text-xl self-center">
-                <h3>{count()}</h3> of
-                <h3>{project.listProjects?.length || 0}</h3>
+                <h3>{props.count.number}</h3> of
+                <h3>{filtered()?.length || 0}</h3>
               </div>
               {/* === end of MOBILE === */}
             </div>

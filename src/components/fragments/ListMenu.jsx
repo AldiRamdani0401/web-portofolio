@@ -147,7 +147,7 @@ const ListMenu = (props) => {
           </a>
         </div>
       </div>
-      {/* Mobile */}
+      {/* === MOBILE === */}
       <div className="flex lg:hidden flex-col py-0 gap-2 w-full top-0 relative">
         {/* === Masking === */}
         <div className="h-screen w-screen bg-black opacity-60 z-10"></div>
@@ -276,6 +276,7 @@ const ListMenu = (props) => {
           </div>
         </div>
       </div>
+      {/* === end of MOBILE === */}
     </>
   );
 };
