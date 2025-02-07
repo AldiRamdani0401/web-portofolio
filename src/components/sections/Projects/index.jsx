@@ -143,7 +143,7 @@ const Projects = () => {
       {/* === end of SECTION HEADER === */}
       {/* ==== SUB CONTAINER 1 === */}
       {/* DESKTOP */}
-      <div className="hidden flex-col lg:flex-row justify-center xl:justify-between xl:w-full gap-0 xl:gap-5 p-0 xl:py-2 lg:px-20 xl:px-10">
+      <div className="hidden xl:flex flex-row justify-center xl:justify-between xl:w-full gap-0 xl:gap-5 p-0 xl:py-2 lg:px-20 xl:px-10">
         {/* === PROJECT TYPE === */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-normal gap-0 xl:gap-2 w-full lg:w-1/2 xl:w-full">
           {/* Label */}
@@ -284,7 +284,7 @@ const Projects = () => {
       </div>
       {/* DESKTOP */}
       {/* MOBILE : Filter Project */}
-      <button type="button" className="text-xs ml-2 mb-2 px-2 py-1 bg-indigo-700 hover:bg-indigo-900 rounded-md" onClick={() => setOpenFilter(prev => !prev)}>{openFilter() ? "close filter" : "open filter"}</button>
+      <button type="button" className="block xl:hidden text-xs ml-2 mb-2 px-2 py-1 bg-indigo-700 hover:bg-indigo-900 rounded-md" onClick={() => setOpenFilter(prev => !prev)}>{openFilter() ? "close filter" : "open filter"}</button>
       <div className={`${openFilter() ? "flex" : "hidden"} flex-col lg:flex-row justify-center xl:justify-between xl:w-full gap-0 xl:gap-5 py-1 xl:py-2 lg:px-20 xl:px-10 bg-slate-950`}>
         {/* === PROJECT TYPE === */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-normal gap-0 xl:gap-2 w-full lg:w-1/2 xl:w-full">
