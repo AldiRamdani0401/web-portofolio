@@ -1,7 +1,9 @@
 import { createSignal } from "solid-js";
-import LanguageButton from "../../../elements/LanguageButton";
-import ListMenu from "../../ListMenu";
 import { state } from "../../../../store/store";
+
+// Components
+import LanguageButton from "../../../elements/LanguageButton";
+import MobileSideMenu from "./SideMenu";
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -66,14 +68,14 @@ const MobileNavBar = () => {
           </svg>
         </button>
       </div>
-      {/* === MOBILE === */}
+      {/* === SIDEBAR === */}
       <div className="block">
         <div
           className={`${
             hidden() ? "hidden" : "block"
           } absolute top-0 left-0 z-[888] lg:static lg:block w-screen h-screen lg:bg-gray-950`}
         >
-          <ListMenu hidden={setHidden} />
+          <MobileSideMenu hidden={setHidden} />
         </div>
       </div>
     </nav>
