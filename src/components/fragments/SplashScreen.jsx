@@ -10,25 +10,21 @@ const SplashScreen = ({ children }) => {
   }, 3200);
 
   return (
-    <>
-      {visible() ? (  // Call the signal to get its value
-        <div className={`fixed inset-0 bg-gray-800 flex md:items-center justify-center`}>
-          <h1 className="text-white font-bold sm:text-xl mt-70 md:mt-0 lg:text-4xl xl:text-4xl">
+    visible() && (
+      <div
+        className={`fixed inset-0 bg-gray-800 flex md:items-center justify-center`}
+      >
+        <h1 className="text-white font-bold sm:text-xl mt-70 md:mt-0 lg:text-4xl xl:text-4xl">
           <SolidTyper
-              text={[
-                "Welcome to My Portfolio Web",
-              ]}
-              backspaceSpeed={50}
-              cursorClassName="cursor"
-              cursor={true}
-              typingSpeed={50}
-            />
-          </h1>
-        </div>
-      ) : (
-        children
-      )}
-    </>
+            text={["Welcome to My Portfolio Web"]}
+            backspaceSpeed={50}
+            cursorClassName="cursor"
+            cursor={true}
+            typingSpeed={50}
+          />
+        </h1>
+      </div>
+    )
   );
 };
 
