@@ -61,17 +61,21 @@ const ListMenu = (props) => {
 
   return (
     <>
-      {/* Desktop */}
-      <div className="hidden lg:flex flex-row justify-center align-middle py-0 gap-2 w-full bg-gray-950 top-0 relative">
+      {/*=== DESKTOP === */}
+      <div
+        className="
+        hidden lg:flex flex-row justify-center align-middle py-0 gap-2 w-full top-0 relative
+        bg-gray-950"
+      >
         <div className="flex flex-col justify-center w-full h-16 pt-0 bg-black lg:bg-gray-950">
           <div className="flex flex-row gap-5 justify-center text-base">
-            {/* About Me */}
+            {/* === About Me === */}
             <button
               onClick={() => {
                 scrollToSection("about-me");
                 clickMenu();
               }}
-              class={`hover:font-bold hover:text-lg cursor-pointer ${
+              class={`hover:font-bold hover:text-lg cursor-pointer text-nowrap ${
                 activeSection() === 1 ? "font-bold text-lg" : ""
               }`}
             >
@@ -79,6 +83,7 @@ const ListMenu = (props) => {
                 <span>{languageMap().menu[0]}</span>
               </div>
             </button>
+            {/* === enf of About Me === */}
             {/* My Expertise */}
             <button
               onClick={() => {
@@ -137,6 +142,7 @@ const ListMenu = (props) => {
             </button>
           </div>
         </div>
+        {/* === Download Resume === */}
         <div class="flex justify-center items-center py-[20px] lg:py-0 h-fit lg:h-16 w-full lg:w-32">
           <a
             href={cv}
@@ -146,6 +152,7 @@ const ListMenu = (props) => {
             {languageMap().menu[5]}
           </a>
         </div>
+        {/* === end of Download Resume === */}
       </div>
       {/* === MOBILE === */}
       <div className="flex lg:hidden flex-col py-0 gap-2 w-full top-0 relative">
@@ -156,8 +163,13 @@ const ListMenu = (props) => {
           {/* === Sub Container 1 ===*/}
           <div className="flex flex-col gap-5">
             {/* === Close Button === */}
-            <button type="button" className="text-red-400 font-bold px-2  w-fit"
-            onClick={() => {props.hidden(true)}}>
+            <button
+              type="button"
+              className="text-red-400 font-bold px-2  w-fit"
+              onClick={() => {
+                props.hidden(true);
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -271,7 +283,9 @@ const ListMenu = (props) => {
           {/* === end of Sub Container 1 ===*/}
           {/* === Footer === */}
           <div className="flex flex-col text-sm">
-            <h1 className="text-white px-2">&copy 2025 Copyright, Aldi Ramdani</h1>
+            <h1 className="text-white px-2">
+              &copy 2025 Copyright, Aldi Ramdani
+            </h1>
             <h1 className="text-white px-2 ml-4">All Rights Reserved</h1>
           </div>
         </div>

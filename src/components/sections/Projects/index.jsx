@@ -118,7 +118,7 @@ const labels = [
 
 const Projects = () => {
   // === SIGNALS === //
-  const [language, setLanguage] = createSignal("");
+  const [core, setCore] = createSignal("");
   const [backend, setBackend] = createSignal("");
   const [type, setType] = createSignal("");
   const [count, setCount] = createSignal(1);
@@ -129,7 +129,10 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="bg-gray-950 h-dvh w-full py-10 xl:py-10 text-slate-200 animate-fadeIn"
+      className="
+      py-10 xl:py-10 h-dvh w-full
+    bg-gray-950 text-slate-200
+      animate-fadeIn"
     >
       {/* === SECTION HEADER === */}
       <div className="flex flex-row justify-center pt-2 xl:pt-0 snap-start">
@@ -143,7 +146,11 @@ const Projects = () => {
       {/* === end of SECTION HEADER === */}
       {/* ==== SUB CONTAINER 1 === */}
       {/* DESKTOP */}
-      <div className="hidden xl:flex flex-row justify-center xl:justify-between xl:w-full gap-0 xl:gap-5 p-0 xl:py-2 lg:px-20 xl:px-10">
+      <div
+        className="
+        hidden xl:flex flex-row justify-center xl:justify-between gap-0 xl:gap-5 p-0 xl:py-2 lg:px-20 xl:px-10
+        xl:w-full"
+      >
         {/* === PROJECT TYPE === */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-normal gap-0 xl:gap-2 w-full lg:w-1/2 xl:w-full">
           {/* Label */}
@@ -215,10 +222,10 @@ const Projects = () => {
           </div>
         </div>
         {/* === end of PROJECT TYPE === */}
-        {/* === LANGUAGES === */}
+        {/* === CORE === */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-normal xl:justify-center gap-2 w-full lg:w-1/2 xl:w-full">
           <h1 className="flex text-base self-center lg:self-start xl:[&&]:justify-end px-10 lg:p-0 xl:p-0 font-medium h-fit xl:w-fit lg:h-full xl:h-fit mt-2 text-nowrap">
-            Languages :
+            Core :
           </h1>
           <div className="flex flex-wrap justify-center gap-2 lg:gap-1 lg:justify-normal w-full xl:w-[50%] px-10 lg:p-0">
             {labels.map((label, i) => (
@@ -226,7 +233,7 @@ const Projects = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    setLanguage(label.name === language() ? "" : label.name);
+                    setCore(label.name === core() ? "" : label.name);
                     setBackend("");
                     setType("");
                     setCount(1);
@@ -235,7 +242,7 @@ const Projects = () => {
                   <img
                     src={label.logo}
                     className={`h-8 w-8 lg:h-10 lg:w-10 p-[1px] xl:p-[2px] rounded-full bg-white ${
-                      language() !== label.name ? "opacity-50 grayscale" : ""
+                      core() !== label.name ? "opacity-50 grayscale" : ""
                     } cursor-pointer object-fill`}
                     draggable="false"
                   />
@@ -244,7 +251,7 @@ const Projects = () => {
             ))}
           </div>
         </div>
-        {/* === end of LANGUAGES === */}
+        {/* === end of CORE === */}
         {/* === BACKEND === */}
         <div className="hidden lg:flex flex-row justify-center gap-2 w-1/2 xl:w-full text-nowrap">
           <h1 className="flex self-start text-base lg:p-0 font-medium mt-2 h-fit w-fit lg:h-full">
@@ -252,10 +259,9 @@ const Projects = () => {
           </h1>
           <div className="flex flex-wrap justify-center gap-1 lg:justify-normal w-full">
             {
-              labels.find((label) => label.name === language())?.backend
-                .length > 0
+              labels.find((label) => label.name === core())?.backend.length > 0
                 ? labels
-                    .find((label) => label.name === language())
+                    .find((label) => label.name === core())
                     ?.backend.map((backendItem, i) => (
                       <figure key={i}>
                         <button
@@ -284,8 +290,18 @@ const Projects = () => {
       </div>
       {/* DESKTOP */}
       {/* MOBILE : Filter Project */}
-      <button type="button" className="block xl:hidden text-xs ml-2 mb-2 px-2 py-1 bg-indigo-700 hover:bg-indigo-900 rounded-md" onClick={() => setOpenFilter(prev => !prev)}>{openFilter() ? "close filter" : "open filter"}</button>
-      <div className={`${openFilter() ? "flex" : "hidden"} flex-col lg:flex-row justify-center xl:justify-between xl:w-full gap-0 xl:gap-5 py-1 xl:py-2 lg:px-20 xl:px-10 bg-slate-950`}>
+      <button
+        type="button"
+        className="block xl:hidden text-xs ml-2 mb-2 px-2 py-1 bg-indigo-700 hover:bg-indigo-900 rounded-md"
+        onClick={() => setOpenFilter((prev) => !prev)}
+      >
+        {openFilter() ? "close filter" : "open filter"}
+      </button>
+      <div
+        className={`${
+          openFilter() ? "flex" : "hidden"
+        } flex-col lg:flex-row justify-center xl:justify-between xl:w-full gap-0 xl:gap-5 py-1 xl:py-2 lg:px-20 xl:px-10 bg-slate-950`}
+      >
         {/* === PROJECT TYPE === */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-normal gap-0 xl:gap-2 w-full lg:w-1/2 xl:w-full">
           {/* Label */}
@@ -357,10 +373,10 @@ const Projects = () => {
           </div>
         </div>
         {/* === end of PROJECT TYPE === */}
-        {/* === LANGUAGES === */}
+        {/* === CORE === */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-normal xl:justify-center gap-2 w-full lg:w-1/2 xl:w-full">
           <h1 className="flex text-base self-center lg:self-start xl:[&&]:justify-end px-10 lg:p-0 xl:p-0 font-medium h-fit xl:w-fit lg:h-full xl:h-fit mt-2 text-nowrap">
-            Languages :
+            Core :
           </h1>
           <div className="flex flex-wrap justify-center gap-2 lg:gap-1 lg:justify-normal w-full xl:w-[50%] px-10 lg:p-0">
             {labels.map((label, i) => (
@@ -368,7 +384,7 @@ const Projects = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    setLanguage(label.name === language() ? "" : label.name);
+                    setCore(label.name === core() ? "" : label.name);
                     setBackend("");
                     setType("");
                     setCount(1);
@@ -377,7 +393,7 @@ const Projects = () => {
                   <img
                     src={label.logo}
                     className={`h-8 w-8 lg:h-10 lg:w-10 p-[1px] xl:p-[2px] rounded-full bg-white ${
-                      language() !== label.name ? "opacity-50 grayscale" : ""
+                      core() !== label.name ? "opacity-50 grayscale" : ""
                     } cursor-pointer object-fill`}
                     draggable="false"
                   />
@@ -386,7 +402,7 @@ const Projects = () => {
             ))}
           </div>
         </div>
-        {/* === end of LANGUAGES === */}
+        {/* === end of CORE === */}
         {/* === BACKEND === */}
         <div className="flex flex-col justify-center gap-2 w-full text-nowrap">
           <h1 className="flex self-center text-base lg:p-0 font-medium mt-2 h-fit w-fit lg:h-full">
@@ -394,10 +410,9 @@ const Projects = () => {
           </h1>
           <div className="flex flex-wrap justify-center gap-1 lg:justify-normal w-full">
             {
-              labels.find((label) => label.name === language())?.backend
-                .length > 0
+              labels.find((label) => label.name === core())?.backend.length > 0
                 ? labels
-                    .find((label) => label.name === language())
+                    .find((label) => label.name === core())
                     ?.backend.map((backendItem, i) => (
                       <figure key={i}>
                         <button
@@ -427,9 +442,13 @@ const Projects = () => {
       {/* MOBILE */}
       {/* ==== end of SUB CONTAINER 1 === */}
       {/* ==== SUB CONTAINER 2 === */}
-      <div className="h-[80%] lg:h-[88%] flex flex-row align-middle justify-start lg:flex-row lg:w-full gap-5 overflow-x-hidden scroll-smooth snap-x snap-mandatory xl:snap-none lg:scrollbar-x-hide xl:scrollbar-x-hide">
+      <div
+        className="
+        flex flex-row align-middle justify-start lg:flex-row lg:w-full gap-5 h-[80%] lg:h-[88%] overflow-x-hidden border
+        scroll-smooth snap-x snap-mandatory xl:snap-none lg:scrollbar-x-hide xl:scrollbar-x-hide"
+      >
         <ProjectsList
-          filter={{ type: type(), language: language(), backend: backend() }}
+          filter={{ type: type(), core: core(), backend: backend() }}
           count={{ number: count(), set: setCount }}
         />
       </div>

@@ -1,10 +1,7 @@
 import { createSignal } from "solid-js";
-
-// Store
-import { state } from "../../store/store";
-
-import ListMenu from "./ListMenu";
-import LanguageButton from "../elements/LanguageButton";
+import LanguageButton from "../../../elements/LanguageButton";
+import ListMenu from "../../ListMenu";
+import { state } from "../../../../store/store";
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -16,32 +13,30 @@ const scrollToSection = (id) => {
   }
 };
 
-const NavBar = () => {
+const MobileNavBar = () => {
   const [hidden, setHidden] = createSignal(true);
+
   return (
     <nav
       className={`${
         state.isVisible ? "flex" : "hidden"
-      } flex-row sticky top-0 z-[999] justify-between gap-0 xl:gap-4 items-center bg-gray-950 py-4 px-0 lg:px-10 h-16 w-full text-slate-200 select-none`}
+      } flex-row sticky top-0 z-[999] justify-between gap-0 md:gap-2 lg:gap-2 xl:gap-4 py-4 px-0 md:px-3 lg:px-10 h-16 w-full items-center
+    bg-gray-950 text-slate-200
+    select-none`}
     >
+      {/* === LOGO === */}
       <button
         onclick={() => scrollToSection("hero")}
-        className="cursor-pointer text-lg font-bold w-full xl:w-fit px-2 xl:px-0 text-nowrap"
+        className="
+        w-full md:w-fit lg:w-fit xl:w-fit px-2 xl:px-0
+        text-lg font-bold
+        text-nowrap cursor-pointer"
       >
         My Portfolio 🚀
       </button>
-      {/* Desktop */}
-      <div className="hidden lg:block relative w-full">
-        <div
-          className={`${
-            hidden() ? "hidden" : "block"
-          } absolute top-[31px] left-[-165px] z-[888] lg:static lg:block w-[393px] lg:w-full h-fit lg:bg-gray-950`}
-        >
-          <ListMenu hidden={setHidden} />
-        </div>
-      </div>
+      {/* === end of LOGO === */}
       {/* Language */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block ml-3">
         <LanguageButton />
       </div>
 
@@ -72,7 +67,7 @@ const NavBar = () => {
         </button>
       </div>
       {/* === MOBILE === */}
-      <div className="block lg:hidden">
+      <div className="block">
         <div
           className={`${
             hidden() ? "hidden" : "block"
@@ -84,4 +79,5 @@ const NavBar = () => {
     </nav>
   );
 };
-export default NavBar;
+
+export default MobileNavBar;
