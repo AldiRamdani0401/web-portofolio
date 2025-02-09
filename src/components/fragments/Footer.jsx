@@ -70,7 +70,10 @@ const Footer = () => {
   );
 
   return (
-    <footer id="footer" className="mt-[80%] xl:mt-[30%] flex flex-col lg:flex-col gap-4 justify-between bg-zinc-900 px-4 xl:px-8 py-8 w-full text-slate-200 font-light">
+    <footer
+      id="footer"
+      className="flex flex-col lg:flex-col gap-4 justify-between bg-zinc-900 px-4 xl:px-8 py-8 w-full text-slate-200 font-light "
+    >
       {/* === CONTAINER 1 === */}
       <div className="flex flex-row flex-wrap justify-between gap-3">
         {/* === Back To Hero === */}
