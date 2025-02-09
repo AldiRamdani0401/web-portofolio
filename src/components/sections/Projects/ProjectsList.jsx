@@ -151,6 +151,7 @@ const projects = [
         link: "https://blog-astro-delta.vercel.app/",
         cover: myBlog,
         maintenance: 0,
+        maintenance: 0,
       },
       {
         id: 2,
@@ -163,7 +164,7 @@ const projects = [
         link: "https://go-beef.vercel.app/",
         cover: goBeef,
         status: "On Progress",
-        maintenance: 1,
+        maintenance: 0,
       },
       {
         id: 3,
@@ -263,27 +264,18 @@ const ProjectsList = (props) => {
 
   // === EFFECT ===
   createEffect(() => {
-    const filter = props.filter || {};
-    let filteredProjects = projects;
+    const { core, type, backend } = props.filter || {};
+    let filteredProjects = projects.flatMap((project) =>
+      project.core === core || !core ? project.listProjects : []
+    );
 
-    if (filter.language) {
-      filteredProjects = filteredProjects.filter(
-        (project) => project.core === filter.language
-      );
+    if (type) {
+      filteredProjects = filteredProjects.filter((p) => p.type === type);
     }
 
-    filteredProjects = filteredProjects
-      .map((project) => ({
-        ...project,
-        listProjects: project.listProjects.filter((p) => {
-          return (
-            (!filter.type || p.type === filter.type) &&
-            (!filter.backend || p.backend === filter.backend)
-          );
-        }),
-      }))
-      .filter((project) => project.listProjects.length > 0)
-      .reduce((acc, project) => acc.concat(project.listProjects), []);
+    if (backend) {
+      filteredProjects = filteredProjects.filter((p) => p.backend === backend);
+    }
 
     filteredProjects.sort((a, b) => a.maintenance - b.maintenance);
 
@@ -340,7 +332,7 @@ const ProjectsList = (props) => {
       {filtered().map((project, index) => (
         <div
           id={`container-${index}`}
-          className="relative w-full h-full lg:shrink-0 px-0 snap-center"
+          className="relative w-full h-full lg:shrink-0 px-0 snap-center border border-red-600"
           key={index}
         >
           <div className="flex flex-col justify-center w-full h-full">
@@ -348,17 +340,17 @@ const ProjectsList = (props) => {
             <div
               className={`
               ${
-                (props.filter.language === "PHP" && "bg-blue-900") ||
-                (props.filter.language === "JavaScript" && "bg-yellow-600") ||
-                (props.filter.language === "NodeJS" && "bg-green-800") ||
-                (props.filter.language === "TypeScript" && "bg-blue-700") ||
-                (props.filter.language === "Golang" && "bg-blue-500") ||
-                (props.filter.language === "" && "bg-indigo-950")
+                (props.filter.core === "PHP" && "bg-blue-900") ||
+                (props.filter.core === "JavaScript" && "bg-yellow-600") ||
+                (props.filter.core === "NodeJS" && "bg-green-800") ||
+                (props.filter.core === "TypeScript" && "bg-blue-700") ||
+                (props.filter.core === "Golang" && "bg-blue-500") ||
+                (props.filter.core === "" && "bg-indigo-950")
               } flex justify-center gap-8 text-white py-2 select-none sticky top-0 z-[777]
               `}
             >
               <h1 className="text-xl lg:text-xl self-center font-bold">
-                {props.filter.language || "All"}
+                {props.filter.core || "All"}
               </h1>
               <div className="hidden lg:flex justify-center gap-2 lg:text-xl self-center">
                 <h3>Projects: {filtered()?.length || 0}</h3>
@@ -374,7 +366,7 @@ const ProjectsList = (props) => {
             {/* Snap Scroll Container */}
             <div
               id={`container-list-project-${index}`}
-              className="grid grid-flow-col auto-cols-max align-middle justify-around lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-[10%] px-10 md:px-6 lg:px-10 lg:pt-20 xl:pt-12 lg:pb-36 gap-12 lg:gap-8 text-slate-200 overflow-auto select-none snap-x lg:snap-y snap-mandatory"
+              className="grid grid-flow-col auto-cols-max align-middle justify-start lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-[10%] px-10 sm:px-16 md:px-6 lg:px-10 lg:pt-20 xl:pt-12 lg:pb-36 gap-12 lg:gap-8 text-slate-200 overflow-auto select-none snap-x lg:snap-y snap-mandatory"
               onScroll={handleScroll}
             >
               {/* Container List Project */}

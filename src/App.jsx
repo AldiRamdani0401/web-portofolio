@@ -1,6 +1,6 @@
 import { createSignal } from "solid-js";
 import Footer from "./components/fragments/Footer";
-import NavBar from "./components/fragments/NavBar";
+import MainNavBar from "./components/fragments/MainNavBar";
 import Notification from "./components/fragments/Notification";
 import SplashScreen from "./components/fragments/SplashScreen";
 import ContentLayout from "./components/layouts/ContentLayout";
@@ -20,7 +20,7 @@ function App() {
     <div className="flex flex-col h-screen w-full">
       <SplashScreen>
         <div className={isScrolled() ? 'hidden' : ''}>
-          <NavBar />
+          <MainNavBar />
         </div>
         <Notification />
         <MainLayout setScroll={setIsScrolled}>
