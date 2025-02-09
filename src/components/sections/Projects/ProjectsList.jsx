@@ -15,7 +15,7 @@ import {
 import ContainerListProject from "./ContainerListProject";
 import CardDetail from "./ProjectDetail";
 import { setState } from "../../../store/store";
-import { myBlog } from "../../../assets/projects";
+import { goBeef, myBlog } from "../../../assets/projects";
 
 // === SAMPLE : Project Datas === //
 const projects = [
@@ -146,7 +146,7 @@ const projects = [
         type: "Web",
         category: "Blog",
         backend: "Express",
-        frontend: ["Tailwind", "ReefJS"],
+        frontend: ["Tailwind", "Astro"],
         status: "On Progress",
         link: "https://blog-astro-delta.vercel.app/",
         cover: myBlog,
@@ -154,13 +154,15 @@ const projects = [
       },
       {
         id: 2,
-        name: "Project JavaScript 2",
+        name: "GoBeef : E-Commerce",
         logo: logoJS,
-        type: "Server",
+        type: "Hybrid",
         category: "E-Commerce",
         backend: "NestJS",
-        frontend: ["Tailwind", "ReefJS"],
-        status: "Completed",
+        frontend: ["Tailwind", "Next"],
+        link: "https://go-beef.vercel.app/",
+        cover: goBeef,
+        status: "On Progress",
         maintenance: 1,
       },
       {
@@ -182,7 +184,7 @@ const projects = [
         category: "E-Commerce",
         backend: "Gin",
         frontend: ["Bootstrap", "Native"],
-        status: "Completed",
+        status: "On Progress",
         maintenance: 1,
       },
       {
@@ -204,7 +206,7 @@ const projects = [
         category: "E-Commerce",
         backend: "Gin",
         frontend: ["Bulma", "ReefJS"],
-        status: "Completed",
+        status: "On Progress",
         maintenance: 1,
       },
       {
@@ -226,7 +228,7 @@ const projects = [
         category: "E-Commerce",
         backend: "NestJS",
         frontend: ["Bulma", "ReefJS"],
-        status: "Completed",
+        status: "On Progress",
         maintenance: 1,
       },
       {
@@ -248,7 +250,7 @@ const projects = [
         category: "E-Commerce",
         backend: "Express",
         frontend: ["Bulma", "Native"],
-        status: "Completed",
+        status: "On Progress",
         maintenance: 1,
       },
     ],
