@@ -20,66 +20,11 @@ import ContainerListProject from "./ContainerListProject";
 // Sample datas
 import { projects } from "../../../samples/projects.json";
 
-// === HELPERS === //
-const HEF_Format_Projects = (projects, url) => {
-  const RULES = {
-    "my-blog": myBlog,
-    "go-beef": goBeef,
-    "logo-php": logoPHP,
-    "logo-js": logoJS,
-  };
-
-  return projects.map((project) => ({
-    ...project,
-    listProjects: project.listProjects.map((listProjectItem) => ({
-      ...listProjectItem,
-      cover: RULES[listProjectItem.cover]
-        ? url + RULES[listProjectItem.cover]
-        : listProjectItem.cover,
-      logo: RULES[listProjectItem.logo]
-        ? url + RULES[listProjectItem.logo]
-        : listProjectItem.logo,
-    })),
-  }));
-};
-
-// === end of HELPERS === //
-
 // === HANDLERS === //
-const HAF_Filtered_Projects = (
-  { properties, datas },
-  { signal, set_signal },
-  callback
-) => {
-  const { core, type, backend } = properties?.filter || {};
-  let filteredProjects = datas.flatMap((project) =>
-    !core || project.core === core ? project.listProjects : []
-  );
+import HAF_Filtered_Projects from "../../../utils/handlers/FilterHandler";
 
-  if (signal.max !== filteredProjects.length) {
-    set_signal((prev) => ({ ...prev, max: filteredProjects.length }));
-  }
-
-  if (signal.totalPage === 1) {
-    set_signal((prev) => ({
-      ...prev,
-      totalPage: Math.ceil(filteredProjects.length / prev.limit),
-    }));
-  }
-
-  if (type) {
-    filteredProjects = filteredProjects.filter((p) => p.type === type);
-  }
-
-  if (backend) {
-    filteredProjects = filteredProjects.filter((p) => p.backend === backend);
-  }
-
-  // Ascending
-  filteredProjects.sort((a, b) => a.maintenance - b.maintenance);
-
-  callback(filteredProjects.slice(signal.start, signal.end));
-};
+// === HELPERS === //
+import HEF_Format_Projects from "../../../utils/helpers/FormatProjectsHelper";
 
 // === HANDLERS ===
 const handleScroll = (event) => {
@@ -121,7 +66,6 @@ const handleScroll = (event) => {
 // ==== RENDER COMPONENT ==== //
 const ProjectsList = (props) => {
   const [filtered, setFiltered] = createSignal([]);
-
   const [projectIndex, setProjectIndex] = createSignal({
     start: 0,
     end: 10,
@@ -133,9 +77,30 @@ const ProjectsList = (props) => {
   });
 
   // === MAIN DATAS === //
-  const projectDatas = HEF_Format_Projects(projects, "http://localhost:5173");
+  const rules = {
+    "go-beef": goBeef,
+    "my-blog": myBlog,
+    "logo-js": logoJS,
+    "logo-php": logoPHP,
+  };
 
-  // === EFFECT === //
+  const projectDatas = HEF_Format_Projects(
+    projects,
+    "http://localhost:5173",
+    rules
+  );
+
+  // === EFFECT (Running when Filter Button on click) === //
+  // Rerender Project Lists
+  createEffect(() => {
+    HAF_Filtered_Projects(
+      { properties: props, datas: projectDatas },
+      { signal: projectIndex(), set_signal: setProjectIndex },
+      setFiltered
+    );
+  });
+
+  //  === MOUNT ===  //
   onMount(() => {
     HAF_Filtered_Projects(
       { properties: props, datas: projectDatas },
@@ -147,7 +112,7 @@ const ProjectsList = (props) => {
   // PAGINATE PROJECT
   const HAF_Paginate_Project = (mode, value, setValue, callback) => {
     if (mode === "next") {
-      if (value.end >= value.max) return; // Cegah melebihi batas maksimal
+      if (value.end >= value.max) return;
 
       setValue((prev) => ({
         ...prev,
@@ -169,7 +134,6 @@ const ProjectsList = (props) => {
         currentPage: prev.currentPage - 1,
       }));
     }
-
     callback();
   };
 
@@ -187,7 +151,7 @@ const ProjectsList = (props) => {
       {filtered().map((project, index) => (
         <div
           id={`container-${index}`}
-          className="relative w-full h-full lg:shrink-0 px-0 snap-center border"
+          className="relative w-full h-full lg:shrink-0 px-0 snap-center"
           key={index}
         >
           <div className="flex flex-col justify-center w-full h-full">
@@ -208,7 +172,9 @@ const ProjectsList = (props) => {
                 {props.filter.core || "All"}
               </h1>
               <div className="hidden lg:flex justify-center gap-2 lg:text-xl self-center">
-                <h3>Projects: {projectIndex().count || 0} of {projectIndex().max}</h3>
+                <h3>
+                  Projects: {projectIndex().count || 0} of {projectIndex().max}
+                </h3>
               </div>
               {/* === MOBILE === */}
               <div className="flex lg:hidden justify-center gap-2 text-xl self-center">
@@ -229,7 +195,7 @@ const ProjectsList = (props) => {
               {/* Container List Project */}
               <ContainerListProject datas={filtered()} index={projectIndex()} />
               {/* === BUTTON PAGES === */}
-              <div className="absolute top-[45%] flex flex-row justify-between px-3 border w-full">
+              <div className="absolute top-[45%] flex flex-row justify-between px-3 w-full">
                 {/* === BACK BUTTON === */}
                 <button
                   className="text-5xl font-bold"
@@ -294,24 +260,25 @@ const ProjectsList = (props) => {
                     );
                   }}
                 >
-                  {projectIndex().currentPage < projectIndex().totalPage && (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 50 50"
-                      width="1em"
-                      height="1em"
-                      className="animate-shakeRightSlow"
-                    >
-                      <path
-                        fill="#7E5CAD"
-                        stroke="#2A004E"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="m35.417 25l-25 18.75V6.25z"
-                      />
-                    </svg>
-                  )}
+                  {projectIndex().currentPage < projectIndex().totalPage &&
+                    projectIndex().limit < projectIndex().max && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 50 50"
+                        width="1em"
+                        height="1em"
+                        className="animate-shakeRightSlow"
+                      >
+                        <path
+                          fill="#7E5CAD"
+                          stroke="#2A004E"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="m35.417 25l-25 18.75V6.25z"
+                        />
+                      </svg>
+                    )}
                 </button>
                 {/* === end of NEXT BUTTON === */}
               </div>
