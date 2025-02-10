@@ -2,7 +2,7 @@ const HEF_Format_Projects = (projects, url, rules) => {
   const RULES = rules;
   return projects.map((project) => ({
     ...project,
-    listProjects: project.listProjects.map((listProjectItem) => ({
+    list_projects: project.list_projects.map((listProjectItem) => ({
       ...listProjectItem,
       cover: RULES[listProjectItem.cover]
         ? url + RULES[listProjectItem.cover]
@@ -22,7 +22,7 @@ export default HEF_Format_Projects;
 //   console.log(rules);
 //   return projects.map((project) => ({
 //     ...project,
-//     listProjects: project.listProjects.map((listProjectItem) => ({
+//     list_projects: project.list_projects.map((listProjectItem) => ({
 //       ...listProjectItem,
 //       cover: RULES[listProjectItem.cover]
 //         ? url + RULES[listProjectItem.cover]

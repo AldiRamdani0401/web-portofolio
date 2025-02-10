@@ -14,9 +14,9 @@ const scrollToSection = (id) => {
 
 const DesktopListMenu = (props) => {
   const [activeSection, setActiveSection] = createSignal(null);
-  const clickMenu = () => {
-    props.hidden(true);
-  };
+  // const clickMenu = () => {
+  //   props.hidden(true);
+  // };
 
   const handleScroll = () => {
     const content = document.getElementById("content");
@@ -71,7 +71,7 @@ const DesktopListMenu = (props) => {
           <button
             onClick={() => {
               scrollToSection("about-me");
-              clickMenu();
+              // clickMenu();
             }}
             class={`hover:font-bold hover:text-lg cursor-pointer text-nowrap ${
               activeSection() === 1 ? "font-bold text-lg" : ""
@@ -86,7 +86,7 @@ const DesktopListMenu = (props) => {
           <button
             onClick={() => {
               scrollToSection("my-expertise");
-              clickMenu();
+              // clickMenu();
             }}
             class={`hover:font-bold hover:text-lg cursor-pointer ${
               activeSection() === 2 ? "font-bold text-lg" : ""
@@ -100,7 +100,7 @@ const DesktopListMenu = (props) => {
           <button
             onClick={() => {
               scrollToSection("my-experience");
-              clickMenu();
+              // clickMenu();
             }}
             class={`hover:font-bold hover:text-lg cursor-pointer ${
               activeSection() === 3 ? "font-bold text-lg" : ""
@@ -114,7 +114,7 @@ const DesktopListMenu = (props) => {
           <button
             onClick={() => {
               scrollToSection("projects");
-              clickMenu();
+              // clickMenu();
             }}
             class={`hover:font-bold hover:text-lg cursor-pointer ${
               activeSection() === 4 ? "font-bold text-lg" : ""
@@ -128,7 +128,7 @@ const DesktopListMenu = (props) => {
           <button
             onClick={() => {
               scrollToSection("projects");
-              clickMenu();
+              // clickMenu();
             }}
             class={`hover:font-bold hover:text-lg cursor-pointer ${
               activeSection() === 4 ? "font-bold text-lg" : ""

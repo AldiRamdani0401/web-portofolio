@@ -144,7 +144,18 @@ const Projects = () => {
   const [type, setType] = createSignal("");
   const [count, setCount] = createSignal(1);
 
+  const [render, setRender] = createSignal(false);
   const [resetState, setResetState] = createSignal(false);
+
+  const [projectState, setProjectState] = createSignal({
+    start: 0,
+    end: 10,
+    limit: 10,
+    max: 0,
+    count: 0,
+    currentPage: 1,
+    totalPage: 1,
+  });
 
   // MOBILE
   const [openFilter, setOpenFilter] = createSignal(false);
@@ -172,11 +183,11 @@ const Projects = () => {
         {/* DESKTOP */}
         <div
           className="
-          hidden xl:flex flex-row gap-2
+          hidden xl:flex flex-row gap-5 pt-2
           xl:w-full"
         >
           {/* === WRAPPER 1 : PROJECT TYPES & PROJECT CORE */}
-          <div className="flex flex-col py-1 gap-1 w-fit">
+          <div className="flex flex-col xl:py-1 gap-1 w-fit">
             {/* === PROJECT TYPE === */}
             <div className="flex flex-col lg:flex-row justify-center lg:justify-normal gap-0 py-1 xl:gap-2 w-full lg:w-1/2 xl:w-full">
               {/* Label */}
@@ -196,6 +207,8 @@ const Projects = () => {
                   onclick={() => {
                     setType((prev) => (prev === "Web" ? "" : "Web"));
                     setCount(1);
+                    setRender(true);
+                    setReset(true);
                   }}
                 >
                   Web
@@ -211,6 +224,8 @@ const Projects = () => {
                   onclick={() => {
                     setType((prev) => (prev === "Mobile" ? "" : "Mobile"));
                     setCount(1);
+                    setRender(true);
+                    setReset(true);
                   }}
                 >
                   Mobile
@@ -226,6 +241,8 @@ const Projects = () => {
                   onclick={() => {
                     setType((prev) => (prev === "Hybrid" ? "" : "Hybrid"));
                     setCount(1);
+                    setRender(true);
+                    setReset(true);
                   }}
                 >
                   Hybrid
@@ -241,6 +258,8 @@ const Projects = () => {
                   onclick={() => {
                     setType((prev) => (prev === "Server" ? "" : "Server"));
                     setCount(1);
+                    setRender(true);
+                    setReset(true);
                   }}
                 >
                   Server
@@ -261,7 +280,8 @@ const Projects = () => {
                       onClick={() => {
                         setCore(label.name === core() ? "" : label.name);
                         setCount(1);
-                        setResetState(true);
+                        setRender(true);
+                        setReset(true);
                       }}
                     >
                       <img
@@ -280,7 +300,7 @@ const Projects = () => {
           </div>
           {/* === end of WRAPPER 1 : PROJECT TYPES & PROJECT CORE */}
           {/* === WRAPPER 2 : BACKEND & FRAMEWORK */}
-          <div className="flex flex-col py-1">
+          <div className="flex flex-col xl:py-[9.3px]">
             {/* === BACKEND === */}
             <div className="flex flex-col lg:flex-row justify-center lg:justify-normal gap-0 xl:gap-2 w-full lg:w-1/2 xl:w-full">
               {/* Label */}
@@ -297,6 +317,8 @@ const Projects = () => {
                         setBackend((prev) =>
                           prev === label.name ? "" : label.name
                         );
+                        setRender(true);
+                        setReset(true);
                       }}
                     >
                       <img
@@ -344,43 +366,6 @@ const Projects = () => {
             {/* === end of FRAMEWORK === */}
           </div>
           {/* === end of WRAPPER 2 : BACKEND & FRAMEWORK */}
-
-          {/* === BACKEND === */}
-          {/* <div className="hidden lg:flex flex-row justify-center gap-2 w-1/2 xl:w-full text-nowrap">
-            <h1 className="flex self-start text-base lg:p-0 font-medium mt-2 h-fit w-fit lg:h-full">
-              Backend :
-            </h1>
-            <div className="flex flex-wrap justify-center gap-1 lg:justify-normal w-full">
-              {
-                labels.find((label) => label.name === core())?.backend.length >
-                0
-                  ? labels
-                      .find((label) => label.name === core())
-                      ?.backend.map((backendItem, i) => (
-                        <figure key={i}>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setBackend(backendItem.name);
-                            }}
-                          >
-                            <img
-                              src={backendItem.logo}
-                              className={`h-10 w-10 p-1 rounded-full bg-white ${
-                                backend() != backendItem.name
-                                  ? "opacity-50 grayscale"
-                                  : ""
-                              } cursor-pointer object-fill`}
-                              draggable="false"
-                            />
-                          </button>
-                        </figure>
-                      ))
-                  : "" // Placeholder jika tidak ada framework
-              }
-            </div>
-          </div> */}
-          {/* === end of BACKEND === */}
         </div>
         {/* DESKTOP */}
       </div>
@@ -544,7 +529,9 @@ const Projects = () => {
       >
         <ProjectsList
           filter={{ type: type(), core: core(), backend: backend() }}
-          count={{ number: count(), set: setCount }}
+          counter={{ number: count(), set: setCount }}
+          projects={{ state: projectState(), setState: setProjectState }}
+          render={{ state: render(), setState: setRender }}
           reset={{ state: resetState(), setState: setResetState }}
         />
       </div>
