@@ -1,4 +1,4 @@
-import { createEffect, createSignal, Show } from "solid-js";
+import { createEffect, createSignal, onMount, Show } from "solid-js";
 import {
   logoHTML,
   logoCSS,
@@ -12,310 +12,129 @@ import {
   logoReefJS,
   logoSmallReefJS,
 } from "../../../assets/logos/index";
-import ContainerListProject from "./ContainerListProject";
-import CardDetail from "./ProjectDetail";
-import { setState } from "../../../store/store";
 import { goBeef, myBlog } from "../../../assets/projects";
 
-// === SAMPLE : Project Datas === //
-const projects = [
-  // *** PHP *** //
-  {
-    core: "PHP",
-    listProjects: [
-      {
-        id: 1,
-        name: "Project PHP 1",
-        logo: logoPHP,
-        type: "Web",
-        category: "E-Commerce",
-        backend: "Express",
-        frontend: ["Tailwind", "Laravel"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 2,
-        name: "Project PHP 2",
-        type: "Web",
-        logo: logoPHP,
-        category: "E-Commerce",
-        backend: "NestJS",
-        frontend: ["Tailwind", "Laravel"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 3,
-        name: "Project PHP 3",
-        type: "Web",
-        logo: logoPHP,
-        category: "E-Commerce",
-        backend: "Laravel",
-        frontend: ["Tailwind", "Laravel"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 4,
-        name: "Project PHP 4",
-        type: "Web",
-        logo: logoPHP,
-        category: "E-Commerce",
-        backend: "Gin",
-        frontend: ["Bootstrap", "Native"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 5,
-        name: "Project PHP 5",
-        type: "Web",
-        logo: logoPHP,
-        category: "E-Commerce",
-        backend: "Fastify",
-        frontend: ["Bulma", "Laravel"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 6,
-        name: "Project PHP 6",
-        type: "Web",
-        logo: logoPHP,
-        category: "E-Commerce",
-        backend: "Gin",
-        frontend: ["Bulma", "Laravel"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 7,
-        name: "Project PHP 7",
-        type: "Web",
-        logo: logoPHP,
-        category: "E-Commerce",
-        backend: "Express",
-        frontend: ["Bulma", "Laravel"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 8,
-        name: "Project PHP 8",
-        type: "Web",
-        logo: logoPHP,
-        category: "E-Commerce",
-        backend: "NestJS",
-        frontend: ["Bulma", "Laravel"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 9,
-        name: "Project PHP 9",
-        type: "Web",
-        logo: logoPHP,
-        category: "E-Commerce",
-        backend: "Fastify",
-        frontend: ["Tailwind", "Laravel"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 10,
-        name: "Project PHP 10",
-        type: "Web",
-        logo: logoPHP,
-        category: "E-Commerce",
-        backend: "Native",
-        frontend: ["Bulma", "Native"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-    ],
-  },
-  // *** JavaScript *** //
-  {
-    core: "JavaScript",
-    listProjects: [
-      {
-        id: 1,
-        name: "My Blog",
-        logo: logoJS,
-        type: "Web",
-        category: "Blog",
-        backend: "Express",
-        frontend: ["Tailwind", "Astro"],
-        status: "On Progress",
-        link: "https://blog-astro-delta.vercel.app/",
-        cover: myBlog,
-        maintenance: 0,
-        maintenance: 0,
-      },
-      {
-        id: 2,
-        name: "GoBeef : E-Commerce",
-        logo: logoJS,
-        type: "Hybrid",
-        category: "E-Commerce",
-        backend: "NestJS",
-        frontend: ["Tailwind", "Next"],
-        link: "https://go-beef.vercel.app/",
-        cover: goBeef,
-        status: "On Progress",
-        maintenance: 0,
-      },
-      {
-        id: 3,
-        name: "Project JavaScript 3",
-        logo: logoJS,
-        type: "Hybrid",
-        category: "E-Commerce",
-        backend: "Laravel",
-        frontend: ["Tailwind", "ReefJS"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 4,
-        name: "Project JavaScript 4",
-        logo: logoJS,
-        type: "Web",
-        category: "E-Commerce",
-        backend: "Gin",
-        frontend: ["Bootstrap", "Native"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 5,
-        name: "Project JavaScript 5",
-        logo: logoJS,
-        type: "Web",
-        category: "E-Commerce",
-        backend: "Fastify",
-        frontend: ["Bulma", "ReefJS"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 6,
-        name: "Project JavaScript 6",
-        logo: logoJS,
-        type: "Web",
-        category: "E-Commerce",
-        backend: "Gin",
-        frontend: ["Bulma", "ReefJS"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 7,
-        name: "Project JavaScript 7",
-        logo: logoJS,
-        type: "Web",
-        category: "E-Commerce",
-        backend: "Express",
-        frontend: ["Bulma", "ReefJS"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 8,
-        name: "Project JavaScript 8",
-        logo: logoJS,
-        type: "Web",
-        category: "E-Commerce",
-        backend: "NestJS",
-        frontend: ["Bulma", "ReefJS"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 9,
-        name: "Project JavaScript 9",
-        logo: logoJS,
-        type: "Web",
-        category: "E-Commerce",
-        backend: "Fastify",
-        frontend: ["Tailwind", "ReefJS"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-      {
-        id: 10,
-        name: "Project JavaScript 10",
-        logo: logoJS,
-        type: "Web",
-        category: "E-Commerce",
-        backend: "Express",
-        frontend: ["Bulma", "Native"],
-        status: "On Progress",
-        maintenance: 1,
-      },
-    ],
-  },
-];
-// === SAMPLE : Project Datas === //
+import ContainerListProject from "./ContainerListProject";
+// import CardDetail from "./ProjectDetail";
 
-const ProjectsList = (props) => {
-  const [filtered, setFiltered] = createSignal([]);
+// Sample datas
+import { projects } from "../../../samples/projects.json";
 
-  // === EFFECT ===
-  createEffect(() => {
-    const { core, type, backend } = props.filter || {};
-    let filteredProjects = projects.flatMap((project) =>
-      project.core === core || !core ? project.listProjects : []
+// === HANDLERS === //
+import HAF_Filtered_Projects from "../../../utils/handlers/FilterHandler";
+
+// === HELPERS === //
+import HEF_Format_Projects from "../../../utils/helpers/FormatProjectsHelper";
+
+// === HANDLERS ===
+const handleScroll = (event) => {
+  const container = event.target;
+  const projectItems = container.querySelectorAll(".project-item");
+
+  let closestItem = null;
+  let closestDistance = Infinity;
+
+  projectItems.forEach((item, index) => {
+    const rect = item.getBoundingClientRect();
+    const centerDistance = Math.abs(
+      rect.left + rect.width / 2 - window.innerWidth / 2
     );
 
-    if (type) {
-      filteredProjects = filteredProjects.filter((p) => p.type === type);
+    if (centerDistance < closestDistance) {
+      closestDistance = centerDistance;
+      closestItem = index + 1;
     }
-
-    if (backend) {
-      filteredProjects = filteredProjects.filter((p) => p.backend === backend);
-    }
-
-    filteredProjects.sort((a, b) => a.maintenance - b.maintenance);
-
-    setFiltered(filteredProjects);
   });
 
-  // === HANDLERS ===
-  const handleScroll = (event) => {
-    const container = event.target;
-    const projectItems = container.querySelectorAll(".project-item");
-
-    let closestItem = null;
-    let closestDistance = Infinity;
-
+  // ** SM Breakpoint ** //
+  if (window.innerWidth <= 640) {
     projectItems.forEach((item, index) => {
-      const rect = item.getBoundingClientRect();
-      const centerDistance = Math.abs(
-        rect.left + rect.width / 2 - window.innerWidth / 2
-      );
-
-      if (centerDistance < closestDistance) {
-        closestDistance = centerDistance;
-        closestItem = index + 1;
+      if (index + 1 === closestItem) {
+        item.classList.remove("scale-50");
+      } else {
+        item.classList.add("scale-50");
       }
     });
+  }
 
-    // ** SM Breakpoint ** //
-    if (window.innerWidth <= 640) {
-      projectItems.forEach((item, index) => {
-        if (index + 1 === closestItem) {
-          item.classList.remove("scale-50");
-        } else {
-          item.classList.add("scale-50");
-        }
-      });
+  if (closestItem !== null) {
+    props.count.set(closestItem);
+  }
+};
+// === end of HANDLERS === //
+
+// ==== RENDER COMPONENT ==== //
+const ProjectsList = (props) => {
+  const [filtered, setFiltered] = createSignal([]);
+  const [projectIndex, setProjectIndex] = createSignal({
+    start: 0,
+    end: 10,
+    limit: 10,
+    max: 0,
+    count: 10,
+    currentPage: 1,
+    totalPage: 1,
+  });
+
+  // === MAIN DATAS === //
+  const rules = {
+    "go-beef": goBeef,
+    "my-blog": myBlog,
+    "logo-js": logoJS,
+    "logo-php": logoPHP,
+  };
+
+  const projectDatas = HEF_Format_Projects(
+    projects,
+    "http://localhost:5173",
+    rules
+  );
+
+  // === EFFECT (Running when Filter Button on click) === //
+  // Rerender Project Lists
+  createEffect(() => {
+    HAF_Filtered_Projects(
+      { properties: props, datas: projectDatas },
+      { signal: projectIndex(), set_signal: setProjectIndex },
+      setFiltered
+    );
+  });
+
+  //  === MOUNT ===  //
+  onMount(() => {
+    HAF_Filtered_Projects(
+      { properties: props, datas: projectDatas },
+      { signal: projectIndex(), set_signal: setProjectIndex },
+      setFiltered
+    );
+  });
+
+  // PAGINATE PROJECT
+  const HAF_Paginate_Project = (mode, value, setValue, callback) => {
+    if (mode === "next") {
+      if (value.end >= value.max) return;
+
+      setValue((prev) => ({
+        ...prev,
+        start: prev.start + prev.limit,
+        end: Math.min(prev.end + prev.limit, prev.max),
+        count: prev.count + prev.limit,
+        currentPage: prev.currentPage + 1,
+      }));
     }
 
-    if (closestItem !== null) {
-      props.count.set(closestItem);
+    if (mode === "back") {
+      if (value.start <= 0) return; // Cegah mundur jika sudah di awal
+
+      setValue((prev) => ({
+        ...prev,
+        start: Math.max(prev.start - prev.limit, 0),
+        end: prev.start, // `end` mengikuti start sebelumnya
+        count: prev.count - prev.limit,
+        currentPage: prev.currentPage - 1,
+      }));
     }
+    callback();
   };
 
   return (
@@ -332,7 +151,7 @@ const ProjectsList = (props) => {
       {filtered().map((project, index) => (
         <div
           id={`container-${index}`}
-          className="relative w-full h-full lg:shrink-0 px-0 snap-center border border-red-600"
+          className="relative w-full h-full lg:shrink-0 px-0 snap-center"
           key={index}
         >
           <div className="flex flex-col justify-center w-full h-full">
@@ -353,7 +172,9 @@ const ProjectsList = (props) => {
                 {props.filter.core || "All"}
               </h1>
               <div className="hidden lg:flex justify-center gap-2 lg:text-xl self-center">
-                <h3>Projects: {filtered()?.length || 0}</h3>
+                <h3>
+                  Projects: {projectIndex().count || 0} of {projectIndex().max}
+                </h3>
               </div>
               {/* === MOBILE === */}
               <div className="flex lg:hidden justify-center gap-2 text-xl self-center">
@@ -366,11 +187,101 @@ const ProjectsList = (props) => {
             {/* Snap Scroll Container */}
             <div
               id={`container-list-project-${index}`}
-              className="grid grid-flow-col auto-cols-max align-middle justify-start lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-[10%] px-10 sm:px-16 md:px-6 lg:px-10 lg:pt-20 xl:pt-12 lg:pb-36 gap-12 lg:gap-8 text-slate-200 overflow-auto select-none snap-x lg:snap-y snap-mandatory"
+              className="
+              relative grid grid-flow-col auto-cols-max align-middle justify-start lg:flex lg:flex-row lg:flex-wrap lg:justify-center w-full h-full lg:w-full self-center py-[10%] px-10 sm:px-16 md:px-6 lg:px-10 lg:pt-20 xl:pt-12 lg:pb-36 gap-12 lg:gap-8 overvlow-x-auto overflow-y-hidden snap-x lg:snap-y snap-mandatory
+              text-slate-200 select-none"
               onScroll={handleScroll}
             >
               {/* Container List Project */}
-              <ContainerListProject datas={filtered()} />
+              <ContainerListProject datas={filtered()} index={projectIndex()} />
+              {/* === BUTTON PAGES === */}
+              <div className="absolute top-[45%] flex flex-row justify-between px-3 w-full">
+                {/* === BACK BUTTON === */}
+                <button
+                  className="text-5xl font-bold"
+                  onClick={() => {
+                    HAF_Paginate_Project(
+                      "back",
+                      projectIndex(),
+                      setProjectIndex,
+                      () => {
+                        HAF_Filtered_Projects(
+                          { properties: props, datas: projectDatas },
+                          {
+                            signal: projectIndex(),
+                            set_signal: setProjectIndex,
+                          },
+                          setFiltered
+                        );
+                      }
+                    );
+                  }}
+                >
+                  {projectIndex().start != 0 && (
+                    <div className="scale-x-[-1]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 50 50"
+                        width="1em"
+                        height="1em"
+                        className="animate-shakeLeftSlow"
+                      >
+                        <path
+                          fill="#7E5CAD"
+                          stroke="#2A004E"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="m35.417 25l-25 18.75V6.25z"
+                        />
+                      </svg>
+                    </div>
+                  )}
+                </button>
+                {/* === end of BACK BUTTON === */}
+                {/* === NEXT BUTTON === */}
+                <button
+                  className="text-5xl font-bold"
+                  onClick={() => {
+                    HAF_Paginate_Project(
+                      "next",
+                      projectIndex(),
+                      setProjectIndex,
+                      () => {
+                        HAF_Filtered_Projects(
+                          { properties: props, datas: projectDatas },
+                          {
+                            signal: projectIndex(),
+                            set_signal: setProjectIndex,
+                          },
+                          setFiltered
+                        );
+                      }
+                    );
+                  }}
+                >
+                  {projectIndex().currentPage < projectIndex().totalPage &&
+                    projectIndex().limit < projectIndex().max && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 50 50"
+                        width="1em"
+                        height="1em"
+                        className="animate-shakeRightSlow"
+                      >
+                        <path
+                          fill="#7E5CAD"
+                          stroke="#2A004E"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="m35.417 25l-25 18.75V6.25z"
+                        />
+                      </svg>
+                    )}
+                </button>
+                {/* === end of NEXT BUTTON === */}
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,238 @@
+{
+  "projects": [
+    {
+      "core": "PHP",
+      "listProjects": [
+        {
+          "id": 1,
+          "name": "Project PHP 1",
+          "type": "Web",
+          "logo": "logo-php",
+          "category": "E-Commerce",
+          "backend": "Express",
+          "frontend": ["Tailwind", "Laravel"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 2,
+          "name": "Project PHP 2",
+          "type": "Web",
+          "logo": "logo-php",
+          "category": "E-Commerce",
+          "backend": "NestJS",
+          "frontend": ["Tailwind", "Laravel"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 3,
+          "name": "Project PHP 3",
+          "type": "Web",
+          "logo": "logo-php",
+          "category": "E-Commerce",
+          "backend": "Laravel",
+          "frontend": ["Tailwind", "Laravel"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 4,
+          "name": "Project PHP 4",
+          "type": "Web",
+          "logo": "logo-php",
+          "category": "E-Commerce",
+          "backend": "Gin",
+          "frontend": ["Bootstrap", "Native"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 5,
+          "name": "Project PHP 5",
+          "type": "Web",
+          "logo": "logo-php",
+          "category": "E-Commerce",
+          "backend": "Fastify",
+          "frontend": ["Bulma", "Laravel"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 6,
+          "name": "Project PHP 6",
+          "type": "Web",
+          "logo": "logo-php",
+          "category": "E-Commerce",
+          "backend": "Gin",
+          "frontend": ["Bulma", "Laravel"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 7,
+          "name": "Project PHP 7",
+          "type": "Web",
+          "logo": "logo-php",
+          "category": "E-Commerce",
+          "backend": "Express",
+          "frontend": ["Bulma", "Laravel"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 8,
+          "name": "Project PHP 8",
+          "type": "Web",
+          "logo": "logo-php",
+          "category": "E-Commerce",
+          "backend": "NestJS",
+          "frontend": ["Bulma", "Laravel"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 9,
+          "name": "Project PHP 9",
+          "type": "Web",
+          "logo": "logo-php",
+          "category": "E-Commerce",
+          "backend": "Fastify",
+          "frontend": ["Tailwind", "Laravel"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 10,
+          "name": "Project PHP 10",
+          "type": "Web",
+          "logo": "logo-php",
+          "category": "E-Commerce",
+          "backend": "Native",
+          "frontend": ["Bulma", "Native"],
+          "status": "On Progress",
+          "maintenance": 1
+        }
+      ]
+    },
+    {
+      "core": "JavaScript",
+      "listProjects": [
+        {
+          "id": 1,
+          "name": "My Blog",
+          "logo": "logo-js",
+          "type": "Web",
+          "category": "Blog",
+          "backend": "Express",
+          "frontend": ["Tailwind", "Astro"],
+          "status": "On Progress",
+          "link": "https://blog-astro-delta.vercel.app/",
+          "cover": "my-blog",
+          "maintenance": 0
+        },
+        {
+          "id": 2,
+          "name": "GoBeef : E-Commerce",
+          "logo": "logo-js",
+          "type": "Hybrid",
+          "category": "E-Commerce",
+          "backend": "NestJS",
+          "frontend": ["Tailwind", "Next"],
+          "link": "https://go-beef.vercel.app/",
+          "cover": "go-beef",
+          "status": "On Progress",
+          "maintenance": 0
+        },
+        {
+          "id": 3,
+          "name": "Project JavaScript 3",
+          "logo": "logo-js",
+          "type": "Hybrid",
+          "category": "E-Commerce",
+          "backend": "Laravel",
+          "frontend": ["Tailwind", "ReefJS"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 4,
+          "name": "Project JavaScript 4",
+          "logo": "logo-js",
+          "type": "Web",
+          "category": "E-Commerce",
+          "backend": "Gin",
+          "frontend": ["Bootstrap", "Native"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 5,
+          "name": "Project JavaScript 5",
+          "logo": "logo-js",
+          "type": "Web",
+          "category": "E-Commerce",
+          "backend": "Fastify",
+          "frontend": ["Bulma", "ReefJS"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 6,
+          "name": "Project JavaScript 6",
+          "logo": "logo-js",
+          "type": "Web",
+          "category": "E-Commerce",
+          "backend": "Gin",
+          "frontend": ["Bulma", "ReefJS"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 7,
+          "name": "Project JavaScript 7",
+          "logo": "logo-js",
+          "type": "Web",
+          "category": "E-Commerce",
+          "backend": "Express",
+          "frontend": ["Bulma", "ReefJS"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 8,
+          "name": "Project JavaScript 8",
+          "logo": "logo-js",
+          "type": "Web",
+          "category": "E-Commerce",
+          "backend": "NestJS",
+          "frontend": ["Bulma", "ReefJS"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 9,
+          "name": "Project JavaScript 9",
+          "logo": "logo-js",
+          "type": "Web",
+          "category": "E-Commerce",
+          "backend": "Fastify",
+          "frontend": ["Tailwind", "ReefJS"],
+          "status": "On Progress",
+          "maintenance": 1
+        },
+        {
+          "id": 10,
+          "name": "Project JavaScript 10",
+          "logo": "logo-js",
+          "type": "Web",
+          "category": "E-Commerce",
+          "backend": "Express",
+          "frontend": ["Bulma", "Native"],
+          "status": "On Progress",
+          "maintenance": 1
+        }
+      ]
+    }
+  ]
+}

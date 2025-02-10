@@ -1,5 +1,5 @@
 import { createSignal } from "solid-js";
-import { getIPInfo, getPublicIP } from "../services/IPService";
+import { getIPInfo, getPublicIP } from "../utils/services/IPService";
 import PrivateClient from "../PrivateClient";
 
 const [publicIP, setPublicIP] = createSignal(null);

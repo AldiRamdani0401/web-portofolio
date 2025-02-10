@@ -12,7 +12,7 @@ import Projects from "../sections/Projects";
 
 const ContentLayout = () => {
   return (
-    <div id="content" className="relative">
+    <div id="content" className="relative h-full">
       {/* CAROUSEL */}
         <Carousel/>
       {/* ABOUT ME */}
