@@ -137,6 +137,13 @@ const frameworkLabels = [
   { name: "ReactNative", logo: logoReactNative },
 ];
 
+const typeProjects = [
+  { name: "Web" },
+  { name: "Mobile" },
+  { name: "Hybrid" },
+  { name: "Server" },
+];
+
 const Projects = () => {
   // === SIGNALS === //
   const [core, setCore] = createSignal("");
@@ -197,73 +204,24 @@ const Projects = () => {
               {/* Content */}
               <div className="flex flex-row justify-center mt-1 xl:mt-2 gap-2 lg:gap-1 lg:justify-normal xl:items-center w-full xl:w-fit h-fit lg:p-0">
                 {/* === Web === */}
-                <button
-                  type="button"
-                  className={`h-fit w-fit px-2 text-sm xl:text-base ${
-                    type() === "Web"
-                      ? "bg-indigo-800 hover:bg-indigo-500"
-                      : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
-                  } rounded-md`}
-                  onclick={() => {
-                    setType((prev) => (prev === "Web" ? "" : "Web"));
-                    setCount(1);
-                    setRender(true);
-                    setReset(true);
-                  }}
-                >
-                  Web
-                </button>
-                {/* === Mobile === */}
-                <button
-                  type="button"
-                  className={`h-fit w-fit px-2 text-sm xl:text-base ${
-                    type() === "Mobile"
-                      ? "bg-indigo-800 hover:bg-indigo-500"
-                      : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
-                  } rounded-md`}
-                  onclick={() => {
-                    setType((prev) => (prev === "Mobile" ? "" : "Mobile"));
-                    setCount(1);
-                    setRender(true);
-                    setReset(true);
-                  }}
-                >
-                  Mobile
-                </button>
-                {/* === Hybrid === */}
-                <button
-                  type="button"
-                  className={`h-fit w-fit px-2 text-sm xl:text-base ${
-                    type() === "Hybrid"
-                      ? "bg-indigo-800 hover:bg-indigo-500"
-                      : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
-                  } rounded-md`}
-                  onclick={() => {
-                    setType((prev) => (prev === "Hybrid" ? "" : "Hybrid"));
-                    setCount(1);
-                    setRender(true);
-                    setReset(true);
-                  }}
-                >
-                  Hybrid
-                </button>
-                {/* === Server === */}
-                <button
-                  type="button"
-                  className={`h-fit w-fit px-2 text-sm xl:text-base ${
-                    type() === "Server"
-                      ? "bg-indigo-800 hover:bg-indigo-500"
-                      : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
-                  } rounded-md`}
-                  onclick={() => {
-                    setType((prev) => (prev === "Server" ? "" : "Server"));
-                    setCount(1);
-                    setRender(true);
-                    setReset(true);
-                  }}
-                >
-                  Server
-                </button>
+                {typeProjects.map((typeProject) => (
+                  <button
+                    type="button"
+                    className={`h-fit w-fit px-2 text-sm xl:text-base ${
+                      type() === typeProject.name
+                        ? "bg-indigo-800 hover:bg-indigo-500"
+                        : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
+                    } rounded-md`}
+                    onclick={() => {
+                      setType((prev) => (prev === typeProject.name ? "" : typeProject.name));
+                      setCount(1);
+                      setResetState(true);
+                      setRender(true);
+                    }}
+                  >
+                    {typeProject.name}
+                  </button>
+                ))}
               </div>
             </div>
             {/* === end of PROJECT TYPE === */}
@@ -280,8 +238,8 @@ const Projects = () => {
                       onClick={() => {
                         setCore(label.name === core() ? "" : label.name);
                         setCount(1);
+                        setResetState(true);
                         setRender(true);
-                        setReset(true);
                       }}
                     >
                       <img
@@ -317,8 +275,8 @@ const Projects = () => {
                         setBackend((prev) =>
                           prev === label.name ? "" : label.name
                         );
-                        setRender(true);
                         setReset(true);
+                        setRender(true);
                       }}
                     >
                       <img

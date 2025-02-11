@@ -25,6 +25,7 @@ import { SAMPLE_PROJECT_DATAS } from "../../../samples/projects.json";
 
 // === HELPERS === //
 import HEF_Format_Projects from "../../../utils/helpers/FormatProjectsHelper";
+import HEF_GetURL from "../../../utils/helpers/GetURL";
 
 // === HANDLERS ===
 // const handleScroll = (event) => {
@@ -80,9 +81,18 @@ const HAF_Filtered_Projects = (
   const set_signal_state = set_signal;
 
   // Filter data
-  let result_filtered_project = datas.flatMap((project) =>
-    !filter_core || project.core === filter_core ? project.list_projects : []
-  );
+  // let result_filtered_project = datas.flatMap((project) =>
+  //   !filter_core || project.core === filter_core ? project.list_projects : []
+  // );
+
+  let result_filtered_project;
+  if (filter_core === "") {
+    result_filtered_project = datas.flatMap((project) => project.list_projects);
+  } else {
+    result_filtered_project = datas.flatMap((project) =>
+      project.core === filter_core ? project.list_projects : []
+    );
+  }
 
   // Filter berdasarkan type
   if (filter_type) {
@@ -124,7 +134,7 @@ const HAF_Filtered_Projects = (
   console.log("HANDLERS :", values);
 
   // Perbarui jumlah data yang sedang ditampilkan
-  if (signal_state.count == 0 || signal_state.max < signal_state.count) {
+  if (signal_state.count == 0) {
     set_signal_state((prev) => ({ ...prev, count: values.length }));
   }
 
@@ -158,11 +168,7 @@ const ProjectsList = (props) => {
   };
 
   // Format ulang project
-  const ENVIRONMENT = import.meta.env.VITE_ENVIRONMENT; // Ambil nilai ENV dari .env
-  const baseURL =
-    ENVIRONMENT === "dev"
-      ? import.meta.env.VITE_DEV_BASE_URL
-      : import.meta.env.VITE_PROD_BASE_URL;
+  const baseURL = HEF_GetURL();
 
   // Gunakan baseURL dalam fungsi HEF_Format_Projects
   const R_Reformat_Projects = HEF_Format_Projects(
@@ -173,6 +179,7 @@ const ProjectsList = (props) => {
 
   // Effect berjalan saat projects.state berubah
   createEffect(() => {
+    if (!props.render.state) return;
     if (props.reset.state) {
       setProjectState((prev) => ({
         ...prev,
@@ -185,7 +192,6 @@ const ProjectsList = (props) => {
         totalPage: 1,
       }));
     }
-    if (!props.render.state) return;
     HAF_Filtered_Projects(
       {
         properties: { filter: props.filter, projects: projectState() },
@@ -213,15 +219,14 @@ const ProjectsList = (props) => {
   // === end ON MOUNT === //
 
   // PAGINATE PROJECT
-  const HAF_Paginate_Project = (mode, value, setValue, load, callback) => {
+  const HAF_Paginate_Project = (mode, value, setValue, callback) => {
+    console.log("MODE :", mode);
     if (mode === "next") {
       if (value.end >= value.max) return;
-
       setValue((prev) => ({
         ...prev,
         start: prev.start + prev.limit,
         end: Math.min(prev.end + prev.limit, prev.max),
-        count: prev.count + load,
         currentPage: prev.currentPage + 1,
       }));
     }
@@ -233,7 +238,6 @@ const ProjectsList = (props) => {
         ...prev,
         start: Math.max(prev.start - prev.limit, 0),
         end: prev.start, // `end` mengikuti start sebelumnya
-        count: prev.max - prev.limit,
         currentPage: prev.currentPage - 1,
       }));
     }
@@ -261,12 +265,36 @@ const ProjectsList = (props) => {
         >
           <div className="flex flex-col justify-center w-full h-full">
             {/* === PROJECT COUNTER === */}
-            {
+            {/* {
               <CounterProject
                 filter_core={props.filter.core}
                 project_state={projectState()}
               />
-            }
+            } */}
+            <div
+              className={`
+              ${
+                (props.filter.core === "PHP" && "bg-blue-900") ||
+                (props.filter.core === "JavaScript" && "bg-yellow-600") ||
+                (props.filter.core === "NodeJS" && "bg-green-800") ||
+                (props.filter.core === "TypeScript" && "bg-blue-700") ||
+                (props.filter.core === "Golang" && "bg-blue-500") ||
+                (props.filter.core === "" && "bg-indigo-950")
+              } flex justify-center gap-8 text-white py-2 select-none sticky top-0 z-[777]
+            `}
+            >
+              <h1 className="text-xl lg:text-xl self-center font-bold">
+                {props.filter.core || "All"}
+              </h1>
+              <div className="hidden lg:flex justify-center gap-2 lg:text-xl self-center">
+                <h3 className="flex gap-1">
+                  <span>Projects: {projectState().start + 1}</span>-
+                  <span>
+                    {projectState().count} of {projectState().max}
+                  </span>
+                </h3>
+              </div>
+            </div>
             {/* === end of PROJECT COUNTER === */}
 
             {/* === CONTAINER : SNAP SCROLL === */}
@@ -289,7 +317,6 @@ const ProjectsList = (props) => {
                       "back",
                       projectState(),
                       setProjectState,
-                      filtered().length,
                       () => {
                         HAF_Filtered_Projects(
                           {
@@ -306,6 +333,13 @@ const ProjectsList = (props) => {
                           },
                           setFiltered
                         );
+                        setProjectState((prev) => ({
+                          ...prev,
+                          count:
+                            prev.count - prev.limit < prev.limit
+                              ? prev.limit
+                              : prev.count - prev.limit,
+                        }));
                       }
                     );
                   }}
@@ -340,7 +374,6 @@ const ProjectsList = (props) => {
                       "next",
                       projectState(),
                       setProjectState,
-                      filtered().length,
                       () => {
                         HAF_Filtered_Projects(
                           {
@@ -357,6 +390,10 @@ const ProjectsList = (props) => {
                           },
                           setFiltered
                         );
+                        setProjectState((prev) => ({
+                          ...prev,
+                          count: prev.count + filtered().length,
+                        }));
                       }
                     );
                   }}
@@ -395,34 +432,34 @@ const ProjectsList = (props) => {
 };
 
 // CHILD COMPONENTS
-function CounterProject(props) {
-  const { filter_core, project_state } = props;
+// function CounterProject(props) {
+//   const { filter_core, project_state } = props;
 
-  // console.log("COUNTER : ", props.project_state);
-  return (
-    <div
-      className={`
-    ${
-      (filter_core === "PHP" && "bg-blue-900") ||
-      (filter_core === "JavaScript" && "bg-yellow-600") ||
-      (filter_core === "NodeJS" && "bg-green-800") ||
-      (filter_core === "TypeScript" && "bg-blue-700") ||
-      (filter_core === "Golang" && "bg-blue-500") ||
-      (filter_core === "" && "bg-indigo-950")
-    } flex justify-center gap-8 text-white py-2 select-none sticky top-0 z-[777]
-    `}
-    >
-      <h1 className="text-xl lg:text-xl self-center font-bold">
-        {filter_core || "All"}
-      </h1>
-      <div className="hidden lg:flex justify-center gap-2 lg:text-xl self-center">
-        <h3>
-          {/* {console.log(projects.state.count)} */}
-          Projects: {project_state.count} of {project_state.max}
-        </h3>
-      </div>
-    </div>
-  );
-}
+//   // console.log("COUNTER : ", props.project_state);
+//   return (
+//     <div
+//       className={`
+//     ${
+//       (filter_core === "PHP" && "bg-blue-900") ||
+//       (filter_core === "JavaScript" && "bg-yellow-600") ||
+//       (filter_core === "NodeJS" && "bg-green-800") ||
+//       (filter_core === "TypeScript" && "bg-blue-700") ||
+//       (filter_core === "Golang" && "bg-blue-500") ||
+//       (filter_core === "" && "bg-indigo-950")
+//     } flex justify-center gap-8 text-white py-2 select-none sticky top-0 z-[777]
+//     `}
+//     >
+//       <h1 className="text-xl lg:text-xl self-center font-bold">
+//         {filter_core || "All"}
+//       </h1>
+//       <div className="hidden lg:flex justify-center gap-2 lg:text-xl self-center">
+//         <h3>
+//           {/* {console.log(projects.state.count)} */}
+//           Projects: {project_state.count} of {project_state.max}
+//         </h3>
+//       </div>
+//     </div>
+//   );
+// }
 
 export default ProjectsList;
