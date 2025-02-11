@@ -158,9 +158,16 @@ const ProjectsList = (props) => {
   };
 
   // Format ulang project
+  const ENVIRONMENT = import.meta.env.VITE_ENVIRONMENT; // Ambil nilai ENV dari .env
+  const baseURL =
+    ENVIRONMENT === "dev"
+      ? import.meta.env.VITE_DEV_BASE_URL
+      : import.meta.env.VITE_PROD_BASE_URL;
+
+  // Gunakan baseURL dalam fungsi HEF_Format_Projects
   const R_Reformat_Projects = HEF_Format_Projects(
     SAMPLE_PROJECT_DATAS,
-    "http://localhost:5173",
+    baseURL,
     rules
   );
 
