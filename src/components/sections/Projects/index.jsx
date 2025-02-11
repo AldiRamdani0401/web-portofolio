@@ -137,6 +137,13 @@ const frameworkLabels = [
   { name: "ReactNative", logo: logoReactNative },
 ];
 
+const typeProjects = [
+  { name: "Web" },
+  { name: "Mobile" },
+  { name: "Hybrid" },
+  { name: "Server" },
+];
+
 const Projects = () => {
   // === SIGNALS === //
   const [core, setCore] = createSignal("");
@@ -144,7 +151,18 @@ const Projects = () => {
   const [type, setType] = createSignal("");
   const [count, setCount] = createSignal(1);
 
+  const [render, setRender] = createSignal(false);
   const [resetState, setResetState] = createSignal(false);
+
+  const [projectState, setProjectState] = createSignal({
+    start: 0,
+    end: 10,
+    limit: 10,
+    max: 0,
+    count: 0,
+    currentPage: 1,
+    totalPage: 1,
+  });
 
   // MOBILE
   const [openFilter, setOpenFilter] = createSignal(false);
@@ -172,11 +190,11 @@ const Projects = () => {
         {/* DESKTOP */}
         <div
           className="
-          hidden xl:flex flex-row gap-2
+          hidden xl:flex flex-row gap-5 pt-2
           xl:w-full"
         >
           {/* === WRAPPER 1 : PROJECT TYPES & PROJECT CORE */}
-          <div className="flex flex-col py-1 gap-1 w-fit">
+          <div className="flex flex-col xl:py-1 gap-1 w-fit">
             {/* === PROJECT TYPE === */}
             <div className="flex flex-col lg:flex-row justify-center lg:justify-normal gap-0 py-1 xl:gap-2 w-full lg:w-1/2 xl:w-full">
               {/* Label */}
@@ -186,65 +204,24 @@ const Projects = () => {
               {/* Content */}
               <div className="flex flex-row justify-center mt-1 xl:mt-2 gap-2 lg:gap-1 lg:justify-normal xl:items-center w-full xl:w-fit h-fit lg:p-0">
                 {/* === Web === */}
-                <button
-                  type="button"
-                  className={`h-fit w-fit px-2 text-sm xl:text-base ${
-                    type() === "Web"
-                      ? "bg-indigo-800 hover:bg-indigo-500"
-                      : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
-                  } rounded-md`}
-                  onclick={() => {
-                    setType((prev) => (prev === "Web" ? "" : "Web"));
-                    setCount(1);
-                  }}
-                >
-                  Web
-                </button>
-                {/* === Mobile === */}
-                <button
-                  type="button"
-                  className={`h-fit w-fit px-2 text-sm xl:text-base ${
-                    type() === "Mobile"
-                      ? "bg-indigo-800 hover:bg-indigo-500"
-                      : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
-                  } rounded-md`}
-                  onclick={() => {
-                    setType((prev) => (prev === "Mobile" ? "" : "Mobile"));
-                    setCount(1);
-                  }}
-                >
-                  Mobile
-                </button>
-                {/* === Hybrid === */}
-                <button
-                  type="button"
-                  className={`h-fit w-fit px-2 text-sm xl:text-base ${
-                    type() === "Hybrid"
-                      ? "bg-indigo-800 hover:bg-indigo-500"
-                      : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
-                  } rounded-md`}
-                  onclick={() => {
-                    setType((prev) => (prev === "Hybrid" ? "" : "Hybrid"));
-                    setCount(1);
-                  }}
-                >
-                  Hybrid
-                </button>
-                {/* === Server === */}
-                <button
-                  type="button"
-                  className={`h-fit w-fit px-2 text-sm xl:text-base ${
-                    type() === "Server"
-                      ? "bg-indigo-800 hover:bg-indigo-500"
-                      : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
-                  } rounded-md`}
-                  onclick={() => {
-                    setType((prev) => (prev === "Server" ? "" : "Server"));
-                    setCount(1);
-                  }}
-                >
-                  Server
-                </button>
+                {typeProjects.map((typeProject) => (
+                  <button
+                    type="button"
+                    className={`h-fit w-fit px-2 text-sm xl:text-base ${
+                      type() === typeProject.name
+                        ? "bg-indigo-800 hover:bg-indigo-500"
+                        : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
+                    } rounded-md`}
+                    onclick={() => {
+                      setType((prev) => (prev === typeProject.name ? "" : typeProject.name));
+                      setCount(1);
+                      setResetState(true);
+                      setRender(true);
+                    }}
+                  >
+                    {typeProject.name}
+                  </button>
+                ))}
               </div>
             </div>
             {/* === end of PROJECT TYPE === */}
@@ -262,6 +239,7 @@ const Projects = () => {
                         setCore(label.name === core() ? "" : label.name);
                         setCount(1);
                         setResetState(true);
+                        setRender(true);
                       }}
                     >
                       <img
@@ -280,7 +258,7 @@ const Projects = () => {
           </div>
           {/* === end of WRAPPER 1 : PROJECT TYPES & PROJECT CORE */}
           {/* === WRAPPER 2 : BACKEND & FRAMEWORK */}
-          <div className="flex flex-col py-1">
+          <div className="flex flex-col xl:py-[9.3px]">
             {/* === BACKEND === */}
             <div className="flex flex-col lg:flex-row justify-center lg:justify-normal gap-0 xl:gap-2 w-full lg:w-1/2 xl:w-full">
               {/* Label */}
@@ -297,6 +275,8 @@ const Projects = () => {
                         setBackend((prev) =>
                           prev === label.name ? "" : label.name
                         );
+                        setReset(true);
+                        setRender(true);
                       }}
                     >
                       <img
@@ -344,43 +324,6 @@ const Projects = () => {
             {/* === end of FRAMEWORK === */}
           </div>
           {/* === end of WRAPPER 2 : BACKEND & FRAMEWORK */}
-
-          {/* === BACKEND === */}
-          {/* <div className="hidden lg:flex flex-row justify-center gap-2 w-1/2 xl:w-full text-nowrap">
-            <h1 className="flex self-start text-base lg:p-0 font-medium mt-2 h-fit w-fit lg:h-full">
-              Backend :
-            </h1>
-            <div className="flex flex-wrap justify-center gap-1 lg:justify-normal w-full">
-              {
-                labels.find((label) => label.name === core())?.backend.length >
-                0
-                  ? labels
-                      .find((label) => label.name === core())
-                      ?.backend.map((backendItem, i) => (
-                        <figure key={i}>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setBackend(backendItem.name);
-                            }}
-                          >
-                            <img
-                              src={backendItem.logo}
-                              className={`h-10 w-10 p-1 rounded-full bg-white ${
-                                backend() != backendItem.name
-                                  ? "opacity-50 grayscale"
-                                  : ""
-                              } cursor-pointer object-fill`}
-                              draggable="false"
-                            />
-                          </button>
-                        </figure>
-                      ))
-                  : "" // Placeholder jika tidak ada framework
-              }
-            </div>
-          </div> */}
-          {/* === end of BACKEND === */}
         </div>
         {/* DESKTOP */}
       </div>
@@ -544,7 +487,9 @@ const Projects = () => {
       >
         <ProjectsList
           filter={{ type: type(), core: core(), backend: backend() }}
-          count={{ number: count(), set: setCount }}
+          counter={{ number: count(), set: setCount }}
+          projects={{ state: projectState(), setState: setProjectState }}
+          render={{ state: render(), setState: setRender }}
           reset={{ state: resetState(), setState: setResetState }}
         />
       </div>

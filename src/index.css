@@ -4,7 +4,17 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: inter;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Inter", sans-serif;
 }
 
 @keyframes blink {
