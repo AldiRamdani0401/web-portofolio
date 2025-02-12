@@ -127,7 +127,7 @@ const ListMenu = (props) => {
               </div>
             </button>
             {/* Blog */}
-            <button
+            {/* <button
               onClick={() => {
                 scrollToSection("projects");
                 clickMenu();
@@ -139,7 +139,7 @@ const ListMenu = (props) => {
               <div className="flex justify-center align-middle gap-2">
                 <span>{languageMap().menu[4]}</span>
               </div>
-            </button>
+            </button> */}
           </div>
         </div>
         {/* === Download Resume === */}
