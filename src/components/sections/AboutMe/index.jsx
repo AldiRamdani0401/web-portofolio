@@ -42,62 +42,51 @@ const AboutMe = () => {
                 Aldi Ramdani
               </p>
               <p className="mb-4 text-justify">
-                <span className="ml-5 lg:ml-8">I am a Fullstack Developer</span>{" "}
-                with expertise in JavaScript, TypeScript, PHP, and Go, committed
-                to continuously enhancing my skills in software development.
-              </p>
-              {/* Indonesian */}
-              {/* <p className="mb-4 text-justify">
                 <span className="ml-5 lg:ml-8">
-                  Saya seorang Fullstack Developer
-                </span>{" "}
-                dengan keahlian JavaScript, TypeScript, PHP, Go, dan berkomitmen
-                untuk terus mengembangkan keterampilan saya di bidang software
-                development.
-              </p> */}
-
-              <p className="mb-4 text-justify">
-                <span className="ml-5 lg:ml-8">I have experience in building</span> efficient, scalable, and user-friendly applications. I excel in collaboration, adaptability, and critical thinking for solving complex problems. With a strong work ethic and eagerness to learn, I am ready to contribute to innovative projects.
+                  {languageMap()["sub-content"][0][0]}
+                </span>
               </p>
-              {/* Indonesian */}
-              {/* <p className="mb-4 text-justify">
-                <span className="ml-5 lg:ml-8">Saya berpengalaman</span> dalam
-                membangun aplikasi yang efisien, scalable, dan user-friendly,
-                saya juga mampu bekerja dalam kolaborasi, cepat beradaptasi, dan
-                berpikir kritis dalam pemecahan masalah kompleks. Dengan
-                semangat kerja dan belajar yang tinggi, saya siap berkontribusi
-                dalam proyek inovatif.
-              </p> */}
+              <p className="mb-4 text-justify">
+                <span className="ml-5 lg:ml-8">
+                  {" "}
+                  {languageMap()["sub-content"][0][1]}
+                </span>{" "}
+              </p>
               <div className="flex flex-col lg:flex-row gap-1 lg:gap-5">
                 <div className="flex flex-col gap-1">
-                  <p className="flex flex-row gap-2 lg:gap-3">
+                  {/* Fullname */}
+                  <p className="flex flex-row gap-2 lg:gap-3 text-nowrap">
                     <span className="text-left w-1/4 lg:w-fit text-yellow-300">
-                      Nama
+                      {languageMap()["sub-content"][0][2]}
                     </span>
                     <span className="text-yellow-300">:</span>
                     <span className="w-full text-left">Aldi Ramdani</span>
                   </p>
-                  <p className="flex flex-row gap-2 lg:gap-3">
+                  {/* Phone Number */}
+                  <p className="flex flex-row gap-2 lg:gap-3 text-nowrap">
                     <span className="text-left w-1/4 lg:w-fit text-yellow-300">
-                      Phone
+                      {languageMap()["sub-content"][0][3]}
                     </span>{" "}
                     <span className="text-yellow-300">:</span>{" "}
                     <span className="w-full text-left">+6285891361804</span>
                   </p>
                 </div>
                 <div className="flex flex-col gap-1">
+                  {/* Email */}
                   <p className="flex flex-row gap-2 lg:gap-3">
                     <span className="text-left w-1/4 lg:w-fit text-yellow-300">
-                      Email
+                      {languageMap()["sub-content"][0][4]}
                     </span>{" "}
                     <span className="text-yellow-300">:</span>{" "}
                     <span className="w-full text-left">
                       ramdanialdi889@gmail.com
                     </span>
                   </p>
+                  {/* Address */}
                   <p className="flex flex-row gap-2 lg:gap-3">
-                    <span className="text-left w-1/4 lg:w-fit text-yellow-300">
-                      Alamat
+                    <span className="text-left w-1/4 lg:w-fit text-yellow-300 text-nowrap">
+                      {" "}
+                      {languageMap()["sub-content"][0][5]}
                     </span>{" "}
                     <span className="text-yellow-300">:</span>{" "}
                     <span className="w-full text-left lg:text-nowrap">
@@ -143,11 +132,12 @@ const AboutMe = () => {
                 <h1 className="self-end font-medium text-lg">2021 - 2025</h1>
                 <p className="text-justify font-light">
                   As an Informatics Engineering student at STTI Sony Sugema, I
-                  have developed a strong understanding of software and hardware.
-                  This program has equipped me with relevant hard and soft skills
-                  to tackle challenges in technology development. This academic
-                  experience has strengthened my abilities, preparing me to
-                  contribute effectively to both industry and society.
+                  have developed a strong understanding of software and
+                  hardware. This program has equipped me with relevant hard and
+                  soft skills to tackle challenges in technology development.
+                  This academic experience has strengthened my abilities,
+                  preparing me to contribute effectively to both industry and
+                  society.
                 </p>
               </div>
               {/* Indonesian */}
