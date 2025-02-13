@@ -11,6 +11,7 @@ import {
   logoLaravel,
   logoNative,
   logoNestJS,
+  logoNextJS,
   logoNodeJS,
   logoPHP,
   logoReact,
@@ -134,6 +135,7 @@ const frameworkLabels = [
   { name: "Astro", logo: logoAstro },
   { name: "React", logo: logoReact },
   { name: "SolidJS", logo: logoSolidJS },
+  { name: "NextJS", logo: logoNextJS },
   { name: "ReactNative", logo: logoReactNative },
 ];
 
@@ -147,8 +149,9 @@ const typeProjects = [
 const Projects = () => {
   // === SIGNALS === //
   const [core, setCore] = createSignal("");
-  const [backend, setBackend] = createSignal("");
   const [type, setType] = createSignal("");
+  const [backend, setBackend] = createSignal("");
+  const [framework, setFramework] = createSignal("");
   const [count, setCount] = createSignal(1);
 
   const [render, setRender] = createSignal(false);
@@ -213,7 +216,9 @@ const Projects = () => {
                         : "hover:font-medium hover:text-slate-200 xl:hover:text-indigo-300"
                     } rounded-md`}
                     onclick={() => {
-                      setType((prev) => (prev === typeProject.name ? "" : typeProject.name));
+                      setType((prev) =>
+                        prev === typeProject.name ? "" : typeProject.name
+                      );
                       setCount(1);
                       setResetState(true);
                       setRender(true);
@@ -247,6 +252,7 @@ const Projects = () => {
                         className={`h-8 w-8 lg:h-10 lg:w-10 p-[1px] xl:p-[2px] rounded-full bg-white ${
                           core() !== label.name ? "opacity-50 grayscale" : ""
                         } cursor-pointer object-fill`}
+                        title={label.name}
                         draggable="false"
                       />
                     </button>
@@ -275,7 +281,8 @@ const Projects = () => {
                         setBackend((prev) =>
                           prev === label.name ? "" : label.name
                         );
-                        setReset(true);
+                        setCount(1);
+                        setResetState(true);
                         setRender(true);
                       }}
                     >
@@ -284,6 +291,7 @@ const Projects = () => {
                         className={`h-10 w-10 p-1 rounded-full bg-white ${
                           backend() != label.name ? "opacity-50 grayscale" : ""
                         } cursor-pointer object-fill`}
+                        title={label.name}
                         draggable="false"
                       />
                     </button>
@@ -303,17 +311,22 @@ const Projects = () => {
                     <button
                       type="button"
                       onClick={() => {
-                        setCore(label.name === core() ? "" : label.name);
-                        setBackend("");
-                        setType("");
+                        setFramework(
+                          label.name === framework() ? "" : label.name
+                        );
                         setCount(1);
+                        setResetState(true);
+                        setRender(true);
                       }}
                     >
                       <img
                         src={label.logo}
                         className={`h-8 w-8 lg:h-10 lg:w-10 p-[1px] xl:p-[2px] rounded-full bg-white ${
-                          core() !== label.name ? "opacity-50 grayscale" : ""
+                          framework() !== label.name
+                            ? "opacity-50 grayscale"
+                            : ""
                         } cursor-pointer object-fill`}
+                        title={label.name}
                         draggable="false"
                       />
                     </button>
@@ -486,7 +499,12 @@ const Projects = () => {
         scroll-smooth snap-x snap-mandatory xl:snap-none lg:scrollbar-x-hide xl:scrollbar-x-hide"
       >
         <ProjectsList
-          filter={{ type: type(), core: core(), backend: backend() }}
+          filter={{
+            type: type(),
+            core: core(),
+            backend: backend(),
+            framework: framework(),
+          }}
           counter={{ number: count(), set: setCount }}
           projects={{ state: projectState(), setState: setProjectState }}
           render={{ state: render(), setState: setRender }}

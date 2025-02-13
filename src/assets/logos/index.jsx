@@ -34,6 +34,7 @@ import logoTypeScript from "./typescript.png";
 import logoGin from "./gin.png";
 import logoNestJS from "./nestjs.svg";
 import logoNative from "./native.svg";
+import logoNextJS from "./next-js.png";
 
 export {
   logoHTML,
@@ -71,5 +72,6 @@ export {
   logoTypeScript,
   logoGin,
   logoNestJS,
-  logoNative
+  logoNative,
+  logoNextJS
 };
