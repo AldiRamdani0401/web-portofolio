@@ -12,7 +12,7 @@ import {
   logoReefJS,
   logoSmallReefJS,
 } from "../../../assets/logos/index";
-import { goBeef, myBlog } from "../../../assets/projects";
+import { cbtStti, goBeef, myBlog } from "../../../assets/projects";
 
 import ContainerListProject from "./ContainerListProject";
 // import CardDetail from "./ProjectDetail";
@@ -72,9 +72,11 @@ const HAF_Filtered_Projects = (
   const filter_core = properties.filter.core;
   const filter_type = properties.filter.type;
   const filter_backend = properties.filter.backend;
+  const filter_framework = properties.filter.framework;
+
 
   // Projects (props)
-  const init_projects_state = properties.projects.state;
+  // const init_projects_state = properties.projects.state;
 
   // Signals (props)
   const signal_state = signal;
@@ -105,6 +107,13 @@ const HAF_Filtered_Projects = (
   if (filter_backend) {
     result_filtered_project = result_filtered_project.filter(
       (p) => p.backend === filter_backend
+    );
+  }
+
+  // Filter berdasarkan framework
+  if (filter_framework) {
+    result_filtered_project = result_filtered_project.filter(
+      (p) => p.framework === filter_framework
     );
   }
 
@@ -163,6 +172,7 @@ const ProjectsList = (props) => {
   const rules = {
     "go-beef": goBeef,
     "my-blog": myBlog,
+    "cbt-stti": cbtStti,
     "logo-js": logoJS,
     "logo-php": logoPHP,
   };
